@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 对于传统PVE,RPG地图设计的一些看法
+title: 对于传统PVE型RPG地图设计的一些看法
 categories: [War3, Design]
 ---
 
