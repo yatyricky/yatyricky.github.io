@@ -5,8 +5,8 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Nefinity
-tagline:             Forge Fun
+title:               Poole
+tagline:             The Jekyll Butler
 url:                 http://getpoole.com
 paginate:            1
 baseurl:             ""
