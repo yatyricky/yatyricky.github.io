@@ -9,9 +9,8 @@ layout: default
   {% endif %}
   <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
   {{ content }}
+  {% include comments.html %}
 </article>
-
-{% include comments.html %}
 
 {% if site.related_posts != empty %}
 <aside class="related">
