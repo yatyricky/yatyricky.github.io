@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一名武汉大学毕业生的反思
-categories: [education]
+categories: [social]
 author: 小吴
 ---
 
