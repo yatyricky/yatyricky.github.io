@@ -4,13 +4,17 @@ layout: default
 
 <article class="post">
   <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-author">
   {% if page.author %}
-    <p class="post-author">{{ page.author }}</p>
+    {{ page.author }} @ 
   {% endif %}
-  {% if page.sourcelink %}
-    <p class="post-sourcelink"><a href="{{ page.sourcelink }}">{{ page.sourcelink }}</a></p>
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  </p>
+
+  {% if page.source %}
+    <p class="post-source">Source: {{ page.source }}</p>
   {% endif %}
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+  
   {{ content }}
   {% include comments.html %}
 </article>

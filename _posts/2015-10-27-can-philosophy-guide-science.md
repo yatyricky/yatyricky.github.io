@@ -3,7 +3,7 @@ layout: post
 title: 哲学能指导科学吗？能。
 categories: [thoughts]
 author: Big圣
-sourcelink: https://www.zhihu.com/question/23941477/answer/68148213
+source: https://www.zhihu.com/question/23941477/answer/68148213
 ---
 
 【前言】：这篇文章写于2015.10.17日，文章的主要观点是相应的哲学观对具体科学有巨大的影响。
