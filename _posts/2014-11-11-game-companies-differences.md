@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 从七个方面弹国内外游戏公司的差别
+title: 从七个方面谈国内外游戏公司的差别
 categories: [game, industry]
 author: 李姬韧
 ---
