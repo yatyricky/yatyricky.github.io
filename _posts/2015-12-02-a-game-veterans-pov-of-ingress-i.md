@@ -22,7 +22,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 早在两年多年以前，我的朋友（我们称之为H）就接触到了这个游戏，一玩之后惊为神作，然后立即给我普及。游戏的背景大意上来说，是忽然有一天，地面上开始长一种神秘物质“XM”。这种东西可以被收集和作为新能源利用。有一部分人（我们称之为“绿狗”）觉得这是伟大救主降临的证据，因而欢欣雀跃，他们因此得名“降临派”（Enlightened）；另一部分人（我们称之为“高贵的蓝军”）则认为这种物质来得神秘，恐非吉兆，主张予以限制，故而世人称之为“反抗军”（Resistance）。不管你怎么看这件事，我是个蓝军的信息应该能一眼看出。除此之外，游戏分蓝绿两党互相打，应该也不难察觉。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-1.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-1.jpg)
 
 *The world around you is not what is seems*
 
@@ -30,7 +30,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 现在我要讲到这个游戏第一个也是最令我震撼的地方。游戏提供了一些辅助功能，你可以看到全世界所有的入口、线和场！当然，在一定的地图比例上，只有足够大的场或足够长的线才能被看到。多大才叫大，多长才叫长？蓝军有一条线从冰岛连到了北非的摩洛哥，距离几乎有5000公里。这是什么概念？地球的半径是6340公里。绿军也不含糊，从阿拉斯加的乌那拉斯卡岛连到美国西海岸的旧金山，距离怕也得有4000公里以上。这就是该游戏给我的第一个震撼：说文革时期，好些年青人跑去思考世界战略的问题，那是空谈。但是在《Ingress》里，你真的能连结几千公里之外的另一个入口，所有《Ingress》玩家在地图上都能看到这条线——或许在月球上都看得到！
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-2.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-2.jpg)
 
 *《Ingress中》几乎涵盖整个俄罗斯和大半个加拿大的场（Field）*
 
@@ -47,7 +47,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 第二个让我震撼之处是“雄心”。可想而知，要创造一条5000公里长的线，是不会太容易的。游戏对创造这么长的线有诸多限制，比如说你首先得有一个入口相关的钥匙（Key），然后在另一个入口才能连接有钥匙的入口。这就是说，理论上你必须带着你的钥匙跑到5000公里以外。5000公里啊，不客气地说，我活了30多年，也就是去年去欧洲那次才飞过这么长的航线。正常情况下在国内要走5000公里你得从拉萨飞哈尔滨，或是从哈尔滨飞三亚（4000公里左右）。可以说，绝大多数中国人在他的一生中都没跑过这么远的距离，而中国好歹是世界第三大国家，中国人都不行，but who？
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-3.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-3.jpg)
 
 *疯狂的玩家们划出了一条横跨大西洋的线（Link）*
 
@@ -65,7 +65,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 第三点是“自由”：游戏有一种模式叫战区战，描述得简单点就是团P、国战。战区战的时候所使用的管理方法包括策划、职责分配、通讯、结果检测、冗余容错等一系列内容，在我看来并不亚于真实的战斗。战区战中也必然会有一位由阵容指定的英雄（或一个英雄小组），他将负责连上关键的那一根线，画出覆盖成千上万平方公里的场，从而在一个计分点（CP，check Point）来临之时为我方拿下胜利。就像十年前WOW的安其拉开门，英雄只有一个，而在他身后的，是一个团队，一个公会乃至一个服务器上联盟/部落两个阵营所有人想要对抗安其拉虫族的敢战决心。从这个意义上说，游戏里存在英雄（当然英雄也是由大家创造的）。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-4.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-4.jpg)
 
 *Portal*
 
@@ -77,7 +77,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 首先，玩这个游戏一定程度上可以锻炼身体。游戏里有一个成就是行走的距离，要求你拿着手机（并保持游戏开启）行走至多5000公里。5000公里啊兄弟，一个人正常情况下一天行走不会超过10公里（大约一万三千步），微信朋友圈里一般过两万步你就有名次了。这意味着你起码要把这个游戏玩上500天，一年半，而一个游戏能让人玩上一年半，光靠“游戏性”、核心玩法，恐怕是不够的。所幸我们可以安慰自己，我这么走来走去，是在锻炼身体呀！本来IT民工们就不爱运动，闲暇之时走一走，活动活动，对健康有好处。没错，我也是抱着这个目的来玩这游戏的。前已言之这游戏里你当不了沙巴克城主，但是你可以通过锻炼来使自己变得强壮一些，或者至少是不那么容易发病。这里插播个段子，我姨妈，六十岁出头了，热爱生活，经常出去摄影，有点像老来俏。有一次我看她吃排毒养颜胶囊，感慨道，姨妈您还养颜哪！姨妈说哪啊，我只是排毒——玩这游戏你养不了颜，但是多走走路，或许可以排排毒，让脊椎、颈椎老化得慢一点。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-5.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-5.jpg)
 
 *有人提供了一种方案是把手机绑狗身上，理论上这是可行的，从实践角度来说我不建议这么做……*
 
@@ -87,7 +87,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 最后，这个游戏一定程度上能实现你的某种雄心壮志。这种雄心壮志理论上没有边界，或者说，它的边界就是地球本身，是人类本身（这可以近似理解为没有边界）。怎么说呢？只要你足够强，你可以画出相当大的CF（Control Field，控制场），比如已经有人多次从格陵兰射出长线，把北加拿大囊括其中。另一方面，日本岛被大CF覆盖已经不是什么新闻了，它岛国的地理特征决定了它特别容易被盖住。当然，你的这种行为并不会真的对美洲、对日本产生什么影响，那里的人们照样工作、生活。但对于《Ingress》玩家来说，被这样的大CF覆盖会令他们产生一种从属感（本阵营）和绝望（敌对阵营），因为你不能在CF之内建立CF，而建立CF算是《Ingress》这个游戏里玩家行为的最高层级。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-6.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-6.jpg)
 
 *《Ingress》的强社交性让玩家在线下走到一起*
 
@@ -105,7 +105,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 在解释它之前我要说明一点：理论上，你可以通过一些模拟位置的软件来骗过游戏服务器，从而实现足不出户、心动千里的结果，比如人在福州，但是用这种模拟位置软件，把上海的一个PO打掉了。理论上这是可以做到的，我们一般称之为“飞机”。游戏规则并不允许这么做，但高速上虽有限速而很多人还是要超，可见对部分人而言规则设置出来就是为了供违反之用。我只是要说明，飞机是不对的，不应该用外挂打飞机（用手打的我管不着）。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-7.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-7.jpg)
 
 *一位身为日本公务员的《Ingress》玩家在很长一段时间坚守政府大楼阵地，一旦发现PO被破坏就迅速夺回，最终被对方阵营玩家举报受到处罚……*
 
@@ -125,7 +125,7 @@ source: http://www.chuapp.com/2015/12/02/218238.html
 
 游戏里你可以直接查阅曾完成任务的列表。这个列表是按顺序排列的，所以你能看到一条活动轨迹：北京、福州、新加坡；东京、台北、佛罗伦萨；美国、香港、石景山……如果你真的有心一点点去倒推，可以还原出这个玩家的运动轨迹。对于玩家本人而言，看着一个个任务徽章，似乎也能回忆起自己到过的每一个地方。吾友张大锤有段名言，“宇宙是一个假象，是不是。我不相信当代科学。除非有一个人骑马一直朝前走，路过所有的草原，海，山，爱情，相遇，别离，城市和岁月，最终回到你身边，这样我才同意你球可能是圆的，对不对。”那么，你看着《Ingress》里“探员”那一栏的任务徽章列表，是否会想起自己走过的草原、海、山、爱情、相遇、别离、城市和岁月？
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-12-a-game-veterans-pov-of-ingress-i-8.jpg)
+![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-02-a-game-veterans-pov-of-ingress-i-8.jpg)
 
 *Portal*
 
