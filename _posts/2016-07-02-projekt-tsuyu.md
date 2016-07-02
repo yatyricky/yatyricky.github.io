@@ -4,7 +4,7 @@ title: Projekt Tsuyu
 categories: [game, ingress]
 ---
 
-> 之所以叫“梅雨行动”呢，可能主要是因为这次行动的Agent所在城市是中国内地最大的沿海城市武汉吧。
+> 之所以叫“梅雨行动”呢，可能主要是因为这次行动的Agents所在城市是中国内地最大的沿海城市武汉吧。
 
 ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-1.jpg)
 
@@ -64,7 +64,7 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 ### 武汉市清Block人员因故不能操作
 
-7月2日早晨Nefinite清理，但是会留出2个小时隐患时间。
+7月2日早晨@Nefinite清理，但是会留出2个小时隐患时间。
 
 ### 武汉发大水
 
@@ -146,7 +146,7 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 *真是没良心呢*
 
-本来想多hack一些key回去的，毕竟战略位置不错，可是因为还有一个队友在外面，加上时间和天气的关系，我们马上前往@bujishaonian所在的[@钟楼](https://www.ingress.com/intel?ll=30.192255,114.947775&z=17&pll=30.192255,114.947775)，插脚，CF，炸绿PO，一气呵成（不过还是有一个很迷的PO[@失修佛塔](https://www.ingress.com/intel?ll=30.193221,114.949428&z=17&pll=30.193221,114.949428)找不着，最终放弃了）。
+本来想多hack一些keys回去的，毕竟战略位置不错，可是因为还有一个队友在外面，加上时间和天气的关系，我们马上前往@bujishaonian所在的[@钟楼](https://www.ingress.com/intel?ll=30.192255,114.947775&z=17&pll=30.192255,114.947775)，插脚，CF，炸绿PO，一气呵成（不过还是有一个很迷的PO[@失修佛塔](https://www.ingress.com/intel?ll=30.193221,114.949428&z=17&pll=30.193221,114.949428)找不着，最终放弃了）。
 
 收尾时雨也下得小了一些，众蓝顺利返汉，活动圆满结束，约饭！
 
