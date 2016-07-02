@@ -146,7 +146,9 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 *真是没良心呢*
 
-本来想多hack一些keys回去的，毕竟战略位置不错，可是因为还有一个队友在外面，加上时间和天气的关系，我们马上前往@bujishaonian所在的[@钟楼](https://www.ingress.com/intel?ll=30.192255,114.947775&z=17&pll=30.192255,114.947775)，插脚，CF，炸绿PO，一气呵成（不过还是有一个很迷的PO[@失修佛塔](https://www.ingress.com/intel?ll=30.193221,114.949428&z=17&pll=30.193221,114.949428)找不着，最终放弃了）。
+本来想多hack一些keys回去的，毕竟战略位置不错，可是因为还有一个队友在外面，加上时间和天气的关系，我们马上前往@bujishaonian所在的[@钟楼](https://www.ingress.com/intel?ll=30.192255,114.947775&z=17&pll=30.192255,114.947775)，插脚，CF，炸绿PO，一气呵成（不过还是有一个很迷的PO[@失修佛塔](https://www.ingress.com/intel?ll=30.193221,114.949428&z=17&pll=30.193221,114.949428)找不着，最终放弃了），最终效果：
+
+![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-14.jpg)
 
 收尾时雨也下得小了一些，众蓝顺利返汉，活动圆满结束，约饭！
 
