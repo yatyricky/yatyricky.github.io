@@ -118,11 +118,11 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-3.jpg)
 
-最终我们基本按照原计划的时间分别在栗山禅寺放下了@bujishaonian，并且剩下的Agents顺利抵达矿山公园，然而当我们准备开始操作的时候，大家的网络都抽风了……
+最终我们基本按照原计划的时间分别在栗山禅寺放下了@bujishaonian，并且剩下的Agents顺利抵达矿山公园，然而当我们准备开始操作的时候，行动组的网络抽风了……
 
 ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-4.jpg)
 
-好在Enl并没有那么神，我们还是有惊无险地操作成功。
+好在Enl并没有那么神，在@Doveccl和@bujishaonian清除blocks之后，我们还是有惊无险地操作成功。
 
 ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-5.jpg)
 
@@ -166,6 +166,16 @@ Hail Resistance!
 
 *P.S. 懒军在吃饭的时候充分展现了懒军的本性，抓着一个饭PO摸啊摸啊摸啊摸啊摸啊......*
 
-*至于水蛭的事情，还是不要往下看了吧*
+## 花絮
+
+bujishaonian一个人在荒郊野岭孤独等待，也少不了群里的菊苣调戏
+
+![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-16.jpg)
+
+这是他当时的处境，一个人也没有
+
+![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-17.jpg)
+
+至于水蛭的事情，还是不要往下看了吧
 
 ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-15.jpg)
