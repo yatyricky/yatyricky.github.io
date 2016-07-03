@@ -68,7 +68,7 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 ### 武汉发大水
 
-没法子……计划取消。
+开船。
 
 ### 车祸
 
@@ -165,3 +165,7 @@ Hail Resistance!
 最后特别感谢@bujishaonian，为了我们的计划，一个人在深山老林里面孤独地等待2个小时，辛苦了！
 
 *P.S. 懒军在吃饭的时候充分展现了懒军的本性，抓着一个饭PO摸啊摸啊摸啊摸啊摸啊......*
+
+*至于水蛭的事情，还是不要往下看了吧*
+
+![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-15.jpg)
