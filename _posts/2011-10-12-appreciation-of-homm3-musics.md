@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 英雄无敌3城镇音乐赏析
-categories: [poker]
+categories: [game,design,music]
 author: choudoufu2008
 ---
 
@@ -9,7 +9,7 @@ author: choudoufu2008
 
 -- *ICEplate*
 
-## 塔楼
+## 1. 塔楼
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-tower.jpg)
 
