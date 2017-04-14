@@ -35,7 +35,7 @@ vim /etc/shadowsocks-libev/config.json
 ```javascript
 {
     "server":"0.0.0.0",
-    "server_port":23333,
+    "server_port":6666,
     "local_port":1080,
     "password":"y0urPa55W0rd",
     "timeout":60,
