@@ -8,7 +8,7 @@ categories: [linux,ss]
 
 ## Step 1 - 购买VPS
 
-经朋友推荐，我选择了[Vultr](https://www.vultr.com/)的VPS，作为SS的服务器。请购买其洛杉矶的节点，选择最便宜的方案即可，操作系统选择Ubuntu 16.10 x64。
+经朋友推荐，我选择了[Vultr](https://www.vultr.com/)的VPS，作为SS的服务器。推荐日本或者洛杉矶的节点，选择最便宜的方案即可，操作系统选择Ubuntu 16.10 x64。
 
 [这里](https://doub.io/vps-tj/)有更加完整的VPS服务商列表，可作为SS的服务器的替代选项。
 
@@ -16,7 +16,7 @@ categories: [linux,ss]
 
 完整的SS部署教程在[这里](https://github.com/shadowsocks/shadowsocks-libev)，下文只针对Ubuntu 16.10 x64进行说明。
 
-1. 使用[PuTTY](http://www.putty.org/)或者[Xshell](https://www.netsarang.com/products/xsh_overview.html)等工具登录到你的VPS，为方便起见，使用root即可
+1. 使用[PuTTY](http://www.putty.org/)或者[Xshell](https://www.netsarang.com/products/xsh_overview.html)等工具登录到你的VPS，为方便起见，直接使用root登录
 2. 安装shadowsocks-libev
 
     ```bash
