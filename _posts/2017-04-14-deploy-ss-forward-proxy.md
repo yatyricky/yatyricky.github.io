@@ -8,13 +8,13 @@ categories: [linux,ss]
 
 ## Step 1 - 购买VPS
 
-经朋友推荐，我选择了[Vultr](https://www.vultr.com/)的VPS，作为SS的服务器。推荐日本或者洛杉矶的节点，选择最便宜的方案即可，操作系统选择Ubuntu 16.10 x64。
+经朋友推荐，我选择了[Vultr](https://www.vultr.com/)的VPS，作为SS的服务器。推荐日本或者洛杉矶的节点，选择最便宜的方案即可，操作系统选择Ubuntu 17.04 x64。
 
 [这里](https://doub.io/vps-tj/)有更加完整的VPS服务商列表，可作为SS的服务器的替代选项。
 
 ## Step 2 - 安装SS
 
-完整的SS部署教程在[这里](https://github.com/shadowsocks/shadowsocks-libev)，下文只针对Ubuntu 16.10 x64进行说明。
+完整的SS部署教程在[这里](https://github.com/shadowsocks/shadowsocks-libev)，下文只针对Ubuntu 17.04 x64进行说明。
 
 1. 使用[PuTTY](http://www.putty.org/)或者[Xshell](https://www.netsarang.com/products/xsh_overview.html)等工具登录到你的VPS，为方便起见，直接使用root登录
 2. 安装shadowsocks-libev
@@ -193,6 +193,42 @@ BBR 目的是要尽量跑满带宽, 并且尽量不要有排队的情况, 效果
     看到有 tcp_bbr 模块即说明bbr已启动
 
 **现在开始使用科学的方式接入互联网吧:)**
+
+## （可选）提高安全性
+
+另外，建议开启ufw防火墙以提高安全性。
+
+1. 查看ufw是否开启
+
+    ```bash
+    ufw status verbose
+    ```
+
+    一般来说是关闭状态，你会看到```Status: inactive```。
+
+2. 设置默认规则
+
+    ```bash
+    ufw default deny incoming
+    ufw default allow outgoing
+    ```
+
+3. 允许SSH端口和你的SS端口
+
+    ```bash
+    ufw allow 22
+    ufw allow 2333
+    ```
+
+    如果不允许22端口，你以后就没法连接这台服务器了；如果不允许你的SS端口，你也没法连接其SS服务了。
+
+4. 开启ufw
+
+    ```bash
+    ufw enable
+    ```
+
+    如果一开始你的ufw就是开启的，```ufw reload```即可。
 
 ## 致谢与参考资料
 
