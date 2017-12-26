@@ -13,6 +13,8 @@ author: choudoufu2008
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-tower.jpg)
 
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054164&auto=0&height=66"></iframe>
+
 大提琴配合小提琴的弦乐的开场首先给人带来一种飘渺，悠远的神秘感，其间间插的小提琴拨弦的跳音还有长笛的快节奏的爬音给这个段旋律中有增添了不少奇异的色彩，仿佛让人看到了云中的海市蜃楼那飘忽不定，时隐时现的身影。
 
 1分10秒开始的以大提琴为主的弦乐齐奏的主旋律短促，有力。给人一种如同拨开云雾，走过又高又尖的城堡的大门，走进法师的城市的感觉，看着这样一个充满了法术，机械，巨人，美丽却又充满忙碌和嘈杂的城市，仿佛能看到图书馆前大法师们在争论着学术问题，小精怪跑来跑去的为他们的法师主人们传递信件，铁人井井有条的搬运着建筑城堡用的巨石，而泰坦则在一旁指挥着。
@@ -32,6 +34,8 @@ author: choudoufu2008
 ## 2. 墓园
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-necropolis.jpg)
+
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054178&auto=0&height=66"></iframe>
 
 当……当……当……，随着一声声的钟声，我们的英雄一步步地走进亡灵们的城市，刚一踏进城门，耳边就想起了尖细的哀号，细锐的女声很好的渲染了亡灵城那阴森，凄凉的气氛。
 
@@ -53,6 +57,8 @@ author: choudoufu2008
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-rampart.jpg)
 
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054170&auto=0&height=66"></iframe>
+
 开场的在弦乐器的衬托下圆号很温婉的凑出了旋律，期间间插着类似琵琶的弦乐器弹奏出的简短音符，瞬间将我们带到了一个宁静，祥和的草原之上。前方小土丘般的矮人住屋，远处和树林融为一体的城堡，还有高高的悬崖上盘旋的金龙，一切都显得这么的祥和，美丽。18秒处竖琴的连续拨弦，产生了流水一般的效果将我们一下从远处拉到了近处。瞬间，刚刚还如画一般的风景，现在我们的英雄已经置身其中。双簧管的主旋律让人觉得即使走进，风景依然那么美丽，那么自然，仿佛空气都变得美味了。
 
 47秒开始小提琴和双簧管还有圆号掺插着演奏着主旋律，如同我们的英雄漫步在草原之上，身边经过的女精灵轻盈而又不失高贵的对他点头致意，白沙般的裙子在阳光下闪闪发亮。
@@ -68,6 +74,8 @@ author: choudoufu2008
 ## 4. 地狱
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-inferno.jpg)
+
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054174&auto=0&height=66"></iframe>
 
 在小提琴短促而急速的和弦的衬托下一种充斥着焦躁，闷热和硫磺酸臭的空气扑面而来，让我们的英雄不忍掩面继续前行。在双簧管的重复旋律下18秒处骤然引出了大号的慢拍子的主旋律，大号的带有金属光泽且略带爆破性的低沉音色完美的演绎了一种无可争议权威感和压迫感，仿佛我们跟随着我们的英雄终于站在了恶魔城堡那雕刻着邪恶浮雕的巨大城门前。漆黑，巨大，厚重的城门让人仅是站在门前就感到无限的震撼和绝望。
 
@@ -86,6 +94,8 @@ author: choudoufu2008
 ## 5. 要塞
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-fortress.jpg)
+
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054172&auto=0&height=66"></iframe>
 
 在大提琴的节奏下，双簧管奏出了一种诡异的旋律，加上3秒和9秒处单簧管的一组降音旋律，很好的衬托出了一股奇异，诡秘，又有点令人不知所措的气氛。就如同我们的英雄，不经意期间迷失在了幽深的树林中。然而这树林不是寒冷地区的针叶林，而是类似雨林的热带林地，脚底下的泥土也分外潮湿，脚踩过的地方甚至能渗出水来。在遮天蔽日的阔叶林下，有时是齐腰高的灌木，有时又是散发着淡淡沼气的沼泽，空气中也弥漫着沉重的雾气，还有那总是嗡嗡的萦绕在身边的飞虫。“看来这真不是个适宜人居住的环境”我们的英雄一边想着，一边艰难的继续前行。
 
@@ -107,6 +117,8 @@ author: choudoufu2008
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-castle.jpg)
 
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054162&auto=0&height=66"></iframe>
+
 在小军鼓的鼓点下缓慢而激昂的人类城的主旋律从一开始就奏响了。如同我们的英雄经过长途跋涉，终于来到了人类帝国的都城。虽然经历过无数风雨战乱，但是人类这座充满荣耀与自豪的城市依然屹立不倒。英雄一进入城内就发现街道上人群熙攘，仿佛有什么节日庆典一般。在讯问过路人之后才知道，今天是新国王的加冕仪式，届时新国王和大主教都将在城堡前的广场上致词，加冕仪式后还会有盛大的庆典。我们的英雄也无心再去酒馆，就这么随着人流走向了中心广场。没过多久，就看见衣着华贵的国王在皇家卫队簇拥下从缓缓降下的城堡大门后慢慢走出，在那里迎接从城市的另一端的大教堂那里缓缓走来的大主教的队伍。如同这激昂的旋律，只见大主教身着华贵雍容的主教长袍，一手握着象征大主教权利的尖端雕刻有十字架的主教权杖，一手持着封面有镶金雕花的厚厚的圣典，迈着缓慢而稳健的步伐在侍从和护卫的簇拥下向城堡走去，头上的主教冠上镶嵌的宝石在阳光的照耀下闪闪发亮。
 
 50秒处开始的旋律，虽然旋律上没有变化，但是小军鼓的鼓点已经没有了，取而代之的是提琴声部的加强，让曲子听起来更加的威严与庄重。如同大主教已经到达城堡门前的广场，加冕仪式也正式开始。大主教一手将权杖的一端轻放在新国王的肩上，另一手捧着翻开的圣典宣读着，宣读着神赐予国王领导他的子民的神圣权利；宣读着身为国王，应该领导人民走向幸福胜过的义务；宣读着身为国王应该带领人民走向胜利的责任。最后大主教宣布“起来吧，我的孩子。从现在起你就是我国新的国王！”顿时，台下欢呼不断，掌声连绵。我们年轻的新国王转过身，面向他的子民，开始了他身为国王的第一次的致词。
@@ -121,6 +133,8 @@ author: choudoufu2008
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-stronghold.jpg)
 
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054166&auto=0&height=66"></iframe>
+
 一开场就是一阵雄浑壮阔的旋律，提琴；双簧管；定音鼓十分恰到好处的配合，再加上13秒处加入的管乐声部。旋律中那激昂壮阔的感觉就像我们的英雄站在了野蛮城的大门前。这座由巨石，木材为主的风格粗旷的城市乍看去肯原始，但是仔细看看那稳固的石墙和厚重的城门才能感觉到这是一座坚不可摧的城堡。
 
 随着我们的英雄进入城市，25秒处旋律出现了转变，旋律变得舒缓，平静。正如英雄所见到的景象，跨入这座城市，并没有看到任何其他种族的人们所流传的关于野蛮人的生活方式：血腥的打斗，混乱的争吵。相反，目光所及之处是一片欣欣向荣，绿皮肤的兽人们也懂得耕田种地，也懂得蓄养牲畜，也懂得砌砖盖瓦。他们用自己的双手完善着这自己居住的家园，加固着这抵御外敌的城堡。
@@ -134,6 +148,8 @@ author: choudoufu2008
 ## 8. 地下城
 
 ![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-dungeon.jpg)
+
+<iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054168&auto=0&height=66"></iframe>
 
 一开场的一阵巴松旋律就立刻把我吸引住了，紧接而来的巴松，大号等低音部乐器的伴奏下的巴松旋律，奏出了一阵诡秘的感觉，仿佛我们的英雄为了探访地下城，几乎迷失在这幽深的地下隧道网络之中，不知不觉已经进入了很深的地下。“这种地方真的会有城市吗？”漆黑潮湿的地下洞穴中摸索前进的英雄想到。可是渐渐的前方看到了点点灯火，英雄不禁加快了脚步。
 
