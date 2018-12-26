@@ -1,76 +1,56 @@
-``` javascript
-const fs = require("fs");
-const assert = require("assert");
-const path = require("path");
-const readline = require("readline");
+``` csharp
+using System.Text.RegularExpressions;
+using System.Text;
 
-function replaceTemplate(fp, temp, lines, indent = 2) {
-  const tempHeader = 1;
-  const tempBody = 2;
-  const tempOutside = 3;
-  const stateStack = [];
-  let indentSpaces = "";
-  for (let i = 0; i < indent; i++) {
-    indentSpaces += " ";
-  }
-  let indentToUse = "";
-  let outBuffer = "";
-  let tempId = "";
-  const lr = readline.createInterface({
-    input: fs.createReadStream(fp)
-  });
-  stateStack.push(tempOutside);
-  lr.on("line", (line) => {
-    const regex = /(\s*)\/\/ template:([a-zA-Z0-9_]+)/g;
-    const match = regex.exec(line);
-    if (match) {
-      if (match[2] === "end") {
-        assert.strictEqual(stateStack[stateStack.length - 1] === tempBody || stateStack[stateStack.length - 1] === tempHeader, true);
-        // pop
-        stateStack.pop();
-        if (stateStack[stateStack.length - 1] === tempHeader) { stateStack.pop(); }
-        assert.strictEqual(stateStack[stateStack.length - 1], tempOutside);
-        // flush
-        for (const elem of lines) {
-          outBuffer += `${indentToUse}${elem}\n`;
+public class PrecompileScripts
+{
+
+    public string ReplaceTemplateComment(string text, string template, string[] lines)
+    {
+        string[] ctxs = Regex.Split(text, @"\r?\n|\r");
+        bool inTemplateBody = false;
+        string indent = "";
+        StringBuilder sb = new StringBuilder();
+        Regex regex = new Regex(@"(\s*)\/\/ template:([a-zA-Z0-9_]+)");
+        for (int i = 0; i < ctxs.Length; i++)
+        {
+            Match match = regex.Match(ctxs[i]);
+            if (match.Success)
+            {
+                string directive = match.Groups[2].ToString();
+                if (directive.Equals("end"))
+                {
+                    if (inTemplateBody)
+                    {
+                        inTemplateBody = false;
+                        for (int j = 0; j < lines.Length; j++)
+                        {
+                            sb.Append(indent).Append(lines[j]).Append('\n');
+                        }
+                    }
+                }
+                else if (directive.Equals(template))
+                {
+                    inTemplateBody = true;
+                    indent = match.Groups[1].ToString();
+                }
+                sb.Append(ctxs[i]);
+                if (i < ctxs.Length - 1)
+                {
+                    sb.Append('\n');
+                }
+            }
+            else if (!inTemplateBody)
+            {
+                sb.Append(ctxs[i]);
+                if (i < ctxs.Length - 1)
+                {
+                    sb.Append('\n');
+                }
+            }
         }
-      } else {
-        assert.strictEqual(stateStack[stateStack.length - 1] === tempOutside, true);
-        stateStack.push(tempHeader);
-        tempId = match[2];
-        const indents = Math.floor(match[1].length / indent);
-        for (let i = 0; i < indents; i++) {
-          indentToUse += indentSpaces;
-        }
-      }
-      outBuffer += line + "\n";
-    } else {
-      if (stateStack[stateStack.length - 1] === tempHeader) {
-        stateStack.push(tempBody);
-      } else if (stateStack[stateStack.length - 1] === tempBody) {
-        if (tempId !== temp) {
-          outBuffer += line + "\n";
-        }
-      } else if (stateStack[stateStack.length - 1] === tempOutside) {
-        outBuffer += line + "\n";
-      } else {
-        throw new Error(`Unknown state ${stateStack[stateStack.length - 1]}`);
-      }
+        return sb.ToString();
     }
-  });
-  lr.on("close", () => {
-    console.log("success");
-    fs.writeFileSync(fp, outBuffer);
-  });
-}
 
-const fpConfigts = path.join("armyio-laya", "src", "Config.ts");
-
-const obj = JSON.parse(fs.readFileSync(path.join("armyio-laya", "bin", "resources", "unity-exported", "formation.lh")).toString());
-const cubes = obj.child[0].child;
-const replaceTexts = [];
-for (const elem of cubes) {
-  replaceTexts.push("[" + (0 - elem.customProps.translate[0]) + ", " + elem.customProps.translate[2] + "],");
 }
-replaceTemplate(fpConfigts, "PLAYER_SOLDIERS_FORMATION", replaceTexts);
 ```
