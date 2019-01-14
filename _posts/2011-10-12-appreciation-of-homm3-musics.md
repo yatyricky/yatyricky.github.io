@@ -11,7 +11,7 @@ author: choudoufu2008
 
 ## 1. 塔楼
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-tower.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/tower.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054164&auto=0&height=66"></iframe>
 
@@ -33,7 +33,7 @@ author: choudoufu2008
 
 ## 2. 墓园
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-necropolis.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/necropolis.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054178&auto=0&height=66"></iframe>
 
@@ -55,7 +55,7 @@ author: choudoufu2008
 
 ## 3. 壁垒
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-rampart.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/rampart.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054170&auto=0&height=66"></iframe>
 
@@ -73,7 +73,7 @@ author: choudoufu2008
 
 ## 4. 地狱
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-inferno.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/inferno.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054174&auto=0&height=66"></iframe>
 
@@ -93,7 +93,7 @@ author: choudoufu2008
 
 ## 5. 要塞
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-fortress.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/fortress.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054172&auto=0&height=66"></iframe>
 
@@ -115,7 +115,7 @@ author: choudoufu2008
 
 ## 6. 城堡
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-castle.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/castle.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054162&auto=0&height=66"></iframe>
 
@@ -131,7 +131,7 @@ author: choudoufu2008
 
 ## 7. 据点
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-stronghold.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/stronghold.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054166&auto=0&height=66"></iframe>
 
@@ -147,7 +147,7 @@ author: choudoufu2008
 
 ## 8. 地下城
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2011-10-12-appreciation-of-homm3-musics-dungeon.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/appreciation-of-homm3-musics/dungeon.jpg)
 
 <iframe frameborder="0" border="0" width="520" height="86" src="https://music.163.com/outchain/player?type=2&id=5054168&auto=0&height=66"></iframe>
 
