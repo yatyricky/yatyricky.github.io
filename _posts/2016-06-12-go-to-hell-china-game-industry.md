@@ -8,7 +8,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 > 中国游戏行业被免费游戏、页游、手游反复续命，但如果他们不能真正学会并做到尊重玩家，那么中国版雅达利大崩溃就一定会发生。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-1.gif)
+<video><source src="http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/1.mp4" type="video/mp4"></video>
 
 ## 从雅达利大崩溃说起
 
@@ -20,7 +20,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 在臭名昭著的《ET》带来的恶评之下，整个美国游戏行业在一瞬间崩盘了。彻底的死了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-2.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/2.jpg)
 
 我们回顾这段游戏行业的历史：
 
@@ -28,7 +28,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 而因为这次的成功，雅达利高层没有从这款游戏本身的素质上寻找为什么成功，转而把这次成功归结于IP的重要促销作用。公司战略层并由此出发，从此想到了另外一个电影导演，斯皮尔伯格的另外一个大名鼎鼎的作品《ET》。于是，雅达利将它买了下来，在1983年花费2000万美元这个离谱的价格后。然后……雅达利为《ET》制定了一个不切实际的计划——让一名程序员在六个星期之内完成《ET》。然后赶在1983年圣诞促销上市，甚至为了赶上圣诞促销，连游戏测试也取消了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-3.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/3.jpg)
 
 *《ET》游戏沦为垃圾*
 
@@ -36,7 +36,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 最终，我们看到了这样的一个结果：雅达利过于乐观的估计了《ET》的市场前景，过于荒谬的放弃了对游戏本身“游戏性”的把关，过于疯狂的生产了《ET》的卡带数量（400万套，直接生产成本1000万美元以上，还不含运输推广压货费用）。最终，雅达利经过疯狂的电视促销之后，史上的游戏灾难《ET》游戏卡带“只”卖出了150万套，整个剩余250万套卡带滞销。所有美国附带游戏销售的街边小店反应过来了，但他们也进了太多无法退货的游戏卡带。于是，他们开始疯狂杀价打折赔本出售这些，最后卡带价格掉到1美元也无人问津。最后，雅达利这次事件中亏损5亿美元（当时一年前最辉煌的时候，整个电子游戏行业年市场大小才20亿美元）落个被拆分的下场，剩余全部卡带被送到沙漠掩埋销毁，视频游戏行业整个崩溃。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-4.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/4.jpg)
 
 *1983年的启示：丑陋的制作环境毁灭游戏市场*
 
@@ -44,7 +44,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 那个时代，美国的玩家们心里面对雅达利为首的游戏行业早就抱怨已久。一直以来，美国的游戏玩家根本不知道要怎么挑选他们想玩的游戏。他们只能相信那个看起来实力最强，那个能在电视上疯狂买广告位刷屏，那个能疯狂的购买知名IP并改编成游戏的公司——雅达利。然而，当雅达利也把自己信誉一手毁灭掉之后，整个游戏市场就崩溃了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-5.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/5.mp4)
 
 *《太空侵略者》的山寨作品数不胜数*
 
@@ -56,7 +56,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 任天堂拯救游戏行业的原因就在于，任天堂建立了严格到苛刻的主机游戏运行规则，这套规则的逻辑背后是绝对的尊重用户（在绝对的尊重任天堂的规则之上就做到了）：首先是高昂的保证金制度让金钱实力不足的小开发商知难而退；接着是严格的审核制度保证玩家购买了之后游戏品质有绝对保证；最后一条限制游戏开发商的发行游戏数量这个就比较变态了，我们先不讨论。总之，任天堂这套规则建立起来之后，玩家们再也不担心他买到的游戏的质量了。他们只需要认识这是任天堂发行的卡带，那么不管他买到任何一个游戏，都是绝对不会亏本的选择。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-6.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/6.jpg)
 
 做完了这些事情之后，任天堂在全球玩家心目中，重新建立了任天堂的游戏就等于绝对品质保证的口碑。这启发了后来的加入的新的野心家们:世嘉，索尼，甚至后来的微软，都纷纷仿造任天堂的规则玩法，先后建立了属于自己的视频游戏的版图帝国。
 
@@ -64,7 +64,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 欧美，日本这些游戏先行世界，粗放式的无约束体系都失败了。虽然失败即意味着残酷的死亡，但是死亡对游戏行业和整个玩家群体来说，却是不幸之中的大幸。看似残酷的死亡规则，却洗去了劣质开发商，洗去了不思进取靠IP老本，洗去了游戏行业浮躁。死亡，让开发商重新认识到“玩家才是上帝”。于是，死亡的冬天之后，春光明媚。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-7.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/7.jpg)
 
 *PC-Engien主机被劣质游戏害死*
 
@@ -78,7 +78,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 历史上将证明，第二种模式只能是第一种的过渡，是一个会死亡，会被历史淘汰的模式。只有第一种模式是可以稳定长期存在的。当游戏行业进入中国的时候已经是游戏行业的新夏了，中国得到的已经是第一种模式。于是中国一瞬间诞生了诸如《天地劫》、《仙剑奇侠传》、《剑侠情缘》、《轩辕剑》等诸多经典。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-8.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/8.jpg)
 
 *《轩辕剑叁——云和山的彼端》是许多玩家心中的神作*
 
@@ -94,7 +94,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 于是我们渐渐看到了这样的结果：《传奇》这样的二流网游成功之后，网游市场被激活。低劣的游戏开发商拿着各种山寨换肤的游戏大卖特卖。在妖气山为首的这样的无良游戏商场上，各种竞价摆放着质量低劣的山寨网游。而且，这些游戏赚了相当长时间的快钱。因为中国互联网人口红利的持续，新加入网络游戏的玩家并不知道什么游戏品质好，更好玩。玩家总得被坑到醒悟了之后，从小白变成老白之后，才会离去。中国互联网人口红利这一轮持续时间相当长，直到最终2008年后网游玩家人口红利失去，这个无序发展才差不多结束。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-9.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/9.gif)
 
 *市场充斥着垃圾网游*
 
@@ -102,13 +102,13 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 于是，短短几年时间内，随着网页端上班族的人口红利迅速消失。网页游戏端市场基本崩溃，页游广告彻底沦为卖肉骗新人的把戏。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-10.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/10.gif)
 
 历史到这个时候。本来是中国开发商获取教训反思，然后努力提高游戏质量的时候了。但是，历史给中国玩家们开了个玩笑。中国的劣质开发商们又一次发现了新的大陆：移动互联网。随着苹果APP商店模式的建立，苹果和安卓手机的疯狂热销的开始。同时，原本无比强大的任天堂和索尼却浑然不知，故步自封，结果移动市场给新的开发商留下了巨大的市场空白。于是醒悟过来的开发商们油嘴滑舌施展神通，风投的热钱就一股脑的冲进手游市场。
 
 于是，不知道游戏历史教训为何物的中国人，以相比页游更快的速度把手游市场从蓝海变成了红海，从红海变成了血海，从血海变成了死海。当各种APP铺天盖地无孔不入放置着各种不知道质量为何物的游戏APP下载入口的时候，玩家对手游的信任度最终消耗到了破产。今天，除了极少数金字塔尖的幸运与实力兼具的开发商外。手游开发商们已经尸横遍野。哪怕全球手游市场还在疯狂的增长，但是这疯狂的增长已经与这些低质的山寨商无关了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-11.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/11.gif)
 
 *畸形的手游产业思维*
 
@@ -118,7 +118,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 但是。我们总是神奇看到，中国游戏行业的几次濒临崩溃，几次游戏行业从业者大下岗的命运都被新的技术创造出来的需求给给续命上了。中国的PC端游戏市场两次几乎崩溃，第一次濒临崩溃被免费游戏续了第一命；接着，中国免费游戏在彻底崩溃之前，又转型PVP游戏，续了第二命；随着门槛抬高，无力开发端游的开发商找到网页游戏市场续了第三命；网页游戏市场基本崩溃后，中国人又发现，手游市场又爆炸了。这就第四次续命了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-12.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/12.jpg)
 
 *手游市场真的拯救了中国游戏产业吗？*
 
@@ -126,4 +126,4 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 中国的游戏行业，我希望你能死一次。玩家才是上帝，我希望这不是我一个人在说呓语。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-06-12-go-to-hell-china-game-industry-13.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/13.jpg)

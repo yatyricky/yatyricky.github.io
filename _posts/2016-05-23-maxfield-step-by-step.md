@@ -23,11 +23,11 @@ categories: [ingress]
 
 * 在Intel里面，复制所有你要连的po的信息到电子表格里面
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-1.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/1.jpg)
 
 *点击链接图标可以获取该po的坐标*
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-2.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/2.jpg)
 
 *填写信息到电子表格*
 
@@ -36,7 +36,7 @@ categories: [ingress]
  - 第二列填写复制到的链接
  - 第三列填写你现有的该po的key，以便于你还需要多少key，也可直接填0可以看到最终需要多少key
  
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-3.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/3.jpg)
 
 *输出结果*
 
@@ -47,7 +47,7 @@ categories: [ingress]
 
 * 在MAXFIELD网站里面，将刚才电子表格里面的结果复制粘贴到这里
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-4.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/4.jpg)
 
 *准备提交*
 
@@ -55,7 +55,7 @@ categories: [ingress]
 * 点击Submit提交
 * 由于该网站性能不好，要等一段时间才能出结果，点击下图链接可以查看结果
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-5.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/5.jpg)
 
 *进入这个链接*
 
@@ -65,7 +65,7 @@ categories: [ingress]
 
 ### Script Output 总览
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-6.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/6.jpg)
 
 * Total time: 预计行动总耗时 32 minutes
 * Number of portals: Po数量 11
@@ -78,14 +78,14 @@ categories: [ingress]
 
 ### Key Preparation Info 准备钥匙
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-7.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/7.jpg)
 
 * 第一列为需求的总钥匙数
 * 第二列为缺少的钥匙数
 
 ### Agent Link Assignments 路线规划
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-05-23-maxfield-step-by-step-8.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/maxfield-step-by-step/8.jpg)
 
 * 第一列是行动步骤，带星标的步骤可以提前连接
 * 第二列是玩家，因为该网站可以为多个玩家画一个地区同时规划，因此有此列，如果只有1个玩家，请无视

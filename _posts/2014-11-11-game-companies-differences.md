@@ -7,7 +7,7 @@ author: 李姬韧
 
 我在国内做了三年策划，在腾讯做了MMORPG《轩辕传奇》，在莉莉丝参与《刀塔传奇》早期设计，目前在南加州大学（USC）读游戏设计专业（Interactive Media & Games）。
 
-![Duel](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-11-11-game-companies-differences-1.jpg)
+![Duel](http://plb5hiaqr.bkt.clouddn.com/game-companies-differences/1.jpg)
 
 从这几个角度讲不同：
 
@@ -39,7 +39,7 @@ author: 李姬韧
 
 其次，怎么样的体验才爽呢？要刺激，释放感强，做现实中做不了的事情。这极大程度导致了国外有相当一部分游戏中有大量的暴利色情元素（色情并不是指H game，而是游戏故事中去个脱衣舞酒吧看到各种裸体这样的段子）。一个极端的游戏是Hatred。在这个游戏中，你扮演的主角憎恨这个世界，走上街头杀害各种无辜的人，哪怕他们向你苦苦哀求。
 
-![Hatred](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-11-11-game-companies-differences-2.jpg)
+![Hatred](http://plb5hiaqr.bkt.clouddn.com/game-companies-differences/2.jpg)
 
 *Hatred游戏画面，主角击杀一个无辜路人，路人求饶*
 
@@ -49,7 +49,7 @@ author: 李姬韧
 
 两边现在都是迭代式（iterative）的设计，但是美国游戏设计流程的核心是原型设计（prototype）与玩法测试（playtest，不是QA），也就是把想要设计的玩法做一个最简版本出来，甚至是在纸面上的版本，然后给人玩，判断这个玩法好不好玩，怎么改进。植物大战僵尸有个设计经验分享，就很好的讲了这个过程。
 
-![PVZ prototype](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-11-11-game-companies-differences-3.jpg)
+![PVZ prototype](http://plb5hiaqr.bkt.clouddn.com/game-companies-differences/3.jpg)
 
 *植物大战僵尸早期的原型设计*
 
@@ -125,7 +125,7 @@ Playtest玩法测试，因为国外是过程体验，邀请一个用户来玩几
 
 这个名字很不好，其实应该叫做meaningful play。比如USC学生做的Darfur Is Dying，还有一个TED演讲[gaming for understanding](https://www.ted.com/talks/brenda_brathwaite_gaming_for_understanding?language=en)。这种类型的游戏在美国已经有很多人在探索，有独立游戏开发者，也有新闻传媒等领域的从业者。最近刚看到我们学校一个PHD在做用Oculus VR还原事件现场来讲述新闻的。 
 
-![Darfur is Dying](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-11-11-game-companies-differences-4.jpg)
+![Darfur is Dying](http://plb5hiaqr.bkt.clouddn.com/game-companies-differences/4.jpg)
 
 *Darfur is Dying游戏截图，选择一个达尔富尔人去取水，取水过程中很可能被当地武装劫走。*
 

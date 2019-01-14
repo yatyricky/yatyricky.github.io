@@ -12,7 +12,7 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 小李的奥斯卡取经之路终于取得了阶段性胜利，助其封帝的作品就是最近正在国内院线热映的电影《荒野猎人》。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-1.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/1.jpg)
 
 *《荒野猎人》剧照之与熊搏斗*
 
@@ -22,11 +22,11 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 为什么美国人热衷荒野？《热观察》栏目梳理发现，美国影视作品的“荒野”情结，或许与美国的历史、现实及文化存在着某种程度的联系。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-2.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/2.jpg)
 
 *1980年电影《荒野有情天》海报 2007年电影《荒野生存》海报 2014年电影《涉足荒野》海报*
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-3.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/3.jpg)
 
 *2015年，奥巴马参加美国探索频道的《荒野求生》节目*
 
@@ -40,19 +40,19 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 美国边疆学派的创始人特纳就曾在《论拓荒精神的历史作用》一文中指出，“**美国思想的显著特性是依靠边疆形成的。**”
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-4.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/4.jpg)
 
 *19世纪美国西部地区的自然风光*
 
 为了在荒地上存活下来，移民们必须充分发挥自己的力量来开垦荒地。因此，在西进运动开展后的较早时期内，拓荒农民构成了拓荒人员的主体，是美国西部开发事业的核心力量。他们必须根据西部地区土壤和植被的实际状况来调整其开垦的具体方式。比如俄亥俄州、印第安纳东部、密歇根州和威斯康星属于森林带，在繁茂的原始森林开垦土地，其困难程度可想而知。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-5.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/5.jpg)
 
 *现存的美国西部原始森林风光*
 
 据美国著名历史学家加里·纳什的《美国人民》一书记载，最先到达的拓荒者们基本上会选择在林木比较稀疏的地方和溪流附近开垦土地。他们先清理地里的树木，再用随身携带的斧头砍掉灌木丛和树。碰到有些不易砍伐的树木，他们会采用“环状剥树皮”的古老方法，即沿着树干剥下一圈树皮，然后以火烧之。这样的垦荒方法相当低效，却也别无选择。一般而言，一个拓荒家庭一年只能清理出3-5英亩左右的农业用地。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-6.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/6.jpg)
 
 *拓荒者们随身携带的工具为简易的斧头*
 
@@ -62,7 +62,7 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 尽管开荒面临着诸种困难，拓荒者们始终坚持耕作，大量荒地得以转变为商业化农场。大规模的谷物种植业和畜牧业开始飞跃式发展。随着农业的发展，西部地区的制造业、运输业、食品加工业等产业也得以崛起。拓荒者们征服荒野的雄心在多番波折后终于实现。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-7.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/7.jpg)
 
 *随着西进运动的发展，原先的不毛之地逐渐蜕变为城镇*
 
@@ -76,17 +76,17 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 由于西部荒野是这段残酷之路的终点，“荒野”亦承载了美国历史的灰暗面，铭记着那些被牺牲的群体，时刻提醒当代美国人反思族裔融合与平等的问题。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-8.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/8.jpg)
 
 *19世纪的印第安人*
 
 1830年，出于缓解东部地区日益增长的人口压力等原因，美国国会通过了总统安德鲁·杰克逊的《强迫印第安人迁移法》的提案，原本居住在美国东部地区的印第安人必须要迁往密西西比河以西的“印第安领地”。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-9.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/9.jpg)
 
 *1838年，大量切罗基人向西迁移*
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-10.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/10.jpg)
 
 *切罗基人迁移路线示意图*
 
@@ -96,7 +96,7 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 据部分学者推测，在这一时期，大约有超过十万的印第安人被卷入了西迁事件，有近两万人在路上丧命。1987年，美国国会把这段血泪之路定为“国家历史之路”，试图以此来祭奠在西迁中受尽苦难的印第安族人。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-11.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/11.jpg)
 
 *国家历史之路“血泪之路”标牌*
 
@@ -104,11 +104,11 @@ source: http://view.163.com/16/0331/19/BJGS143C000159OQ.html
 
 “荒野”题材的影视作品在美国的兴盛，不仅因为荒野与真实的美国历史紧密相连，还在于其经由文人雅士的浪漫化、诗意化想象后成为克服现代性焦虑的重要意象。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-12.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/12.jpg)
 
 *《荒野生存》剧照/“自由和单纯的美丽，是世界上最不应该错过的东西。”*
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-03-31-why-americans-love-wilderness-13.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/why-americans-love-wilderness/13.jpg)
 
 *《荒野生存》剧照/从左至右、从上至下依次为主人公“涉溪”、“拥浪”、“临海”、“奔跑”*
 

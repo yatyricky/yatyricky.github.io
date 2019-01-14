@@ -8,7 +8,7 @@ source: http://www.pokerlistings.com/10-ways-texas-hold-em-beginners-bleed-money
 
 > 一名德州的新手通常会犯一些共通的错误，避免此文中的错误会显著提升你的牌技，当然更重要的，你的钱。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-01-31-ten-ways-texas-holdem-beginners-bleed-money-1.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/ten-ways-texas-holdem-beginners-bleed-money/1.jpg)
 
 ## 1. 忽略座位顺序
 
@@ -28,7 +28,7 @@ source: http://www.pokerlistings.com/10-ways-texas-hold-em-beginners-bleed-money
 
 尝试诈唬很多的人永远不合理，一般玩家不愿意也不会弃掉一手牌力不错的手牌。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-01-31-ten-ways-texas-holdem-beginners-bleed-money-2.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/ten-ways-texas-holdem-beginners-bleed-money/2.jpg)
 
 ## 3. 暴露太多表情
 
@@ -46,7 +46,7 @@ source: http://www.pokerlistings.com/10-ways-texas-hold-em-beginners-bleed-money
 
 一个简单的法则就是：**根据底池大小来进行下注，从1/2底池到1倍底池通常是不错的下注区间。**
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-01-31-ten-ways-texas-holdem-beginners-bleed-money-3.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/ten-ways-texas-holdem-beginners-bleed-money/3.jpg)
 
 ## 5. 玩太多手牌（打得松）
 
@@ -62,7 +62,7 @@ source: http://www.pokerlistings.com/10-ways-texas-hold-em-beginners-bleed-money
 
 如果你有2个对手，A8这样的手牌就非常不错，但是当你后面还有8位玩家时，这样的手牌基本上就没什么价值了，因为其他玩家很有可能有更大的踢脚或者大口袋对。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-01-31-ten-ways-texas-holdem-beginners-bleed-money-4.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/ten-ways-texas-holdem-beginners-bleed-money/4.jpg)
 
 ## 7. 打太大
 
@@ -90,7 +90,7 @@ source: http://www.pokerlistings.com/10-ways-texas-hold-em-beginners-bleed-money
 
 要有耐心，不要因为情绪而做出错误的决定，不仅仅是新手，很多老手也会因为这个原因而破产。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2014-01-31-ten-ways-texas-holdem-beginners-bleed-money-5.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/ten-ways-texas-holdem-beginners-bleed-money/5.jpg)
 
 ## 10. 对同花手牌估值过高
 

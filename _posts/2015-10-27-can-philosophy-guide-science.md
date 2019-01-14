@@ -27,11 +27,11 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 必须上一本几百年前的牛X书籍，如下图：
 
-![Fig1](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-1.jpg)
+![Fig1](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/1.jpg)
 
 封面印刷有点模糊，看顶部那个模糊的单词**Philosophia**，也即哲学。没错，这本书就是牛顿的代表作《[自然哲学的数学原理](https://link.zhihu.com/?target=http%3A//baike.baidu.com/view/44630.htm)》。
 
-![Fig2](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-2.jpg)
+![Fig2](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/2.jpg)
 
 这本书是经典物理学的集大成，内容包罗万象（涵盖微积分）。乃们可以想想如果哲学于科学是个P，那这位科学泰斗何故在“数学原理”加个前缀“自然哲学”这么几个字。
 
@@ -52,17 +52,17 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 > 如果把哲学理解为在最普遍和最广泛形式中对知识的追求，那么，哲学显然就可以被认为是全部的科学之母。
 
-![爱因斯坦像](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-3.jpg)
+![爱因斯坦像](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/3.jpg)
 
 *爱因斯坦像*
 
 另外，大学时代曾读过一本很经典的书，名为《现代国外自然科学家哲学思想》，封面如下：
 
-![Fig4](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-4.jpg)
+![Fig4](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/4.jpg)
 
 这本90年代初被国内学者编就的介绍性书籍涵盖了近现代科学大牛们的世界观（也即哲学观点），因为内容丰富的一逼，所以笔者私下购买了，现拍一张部分目录照片，如下：
 
-![Fig5](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-5.jpg)
+![Fig5](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/5.jpg)
 
 看姓名。
 
@@ -94,7 +94,7 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 2. 哲学：未被验证理性思考下的事物
 3. 宗教：未被验证情感衍射下的事物
 
-![Fig6](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-6.jpg)
+![Fig6](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/6.jpg)
 
 一般意义上是这么定义【科学】这个词的——
 
@@ -187,7 +187,7 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 当我们在知识的道路上迈进的时候，我们必须让哲学理念的无形之手从一片迷雾中伸出来引导我们，它像一支先遣队，深入到情况最不明朗的敌方境内布下前哨。
 
-![物理学家薛定谔像](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-7.jpg)
+![物理学家薛定谔像](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/7.jpg)
 
 *物理学家薛定谔像*
 
@@ -202,7 +202,7 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 我们知道被分子撞击的悬浮微粒做无规则运动的现象叫做布朗运动。
 
-![布朗运动示意图](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-8.jpg)
+![布朗运动示意图](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/8.jpg)
 
 早先是由英国植物学家布朗在1826年时通过显微镜观察悬浮在水面的花粉是发现的，但仅仅是发现这一现象并没有做出额外的解释。直至20世界初的1905年，爱因斯坦才对这个现象做出了合理的解释。他认为花粉粒的无规则是因为水是由无数分子组成并在做无规则的热运动导致的。这就让“物质普遍由更小的微粒如分子原子组成的”这一原子论得到了实验的验证。
 
@@ -249,7 +249,7 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 德国哲学家康德认为，**人类知识体系的完善基于人类拥有共同的先验天赋：正是由于人类有着共同的时空观念，才使得数学知识具有普遍有效性；正是由于人类有着共同的悟性范畴，才使得自然科学知识成为可能。**
 
-![康德像](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-9.jpg)
+![康德像](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/9.jpg)
 
 *康德像*
 
@@ -259,7 +259,7 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 所以，若是离开了人主体的相应器官，空气的振动和物体放射的电磁波就永远无法转化为声音和颜色。你可以想象下鱼眼中的世界是怎么样的，蝙蝠眼中的世界是怎么样的，蛇眼中的世界是怎么样的。换句话说，我们所感知的世界如果离开了相应的器官将是不可想象的。（具体可参见回答：[狗为什么会莫名其妙的对着空气叫？真的是因为它们看得见我们看不见的东西吗？](http://www.zhihu.com/question/34217264/answer/58147126)）
 
-![蛇眼中的人](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-10.jpg)
+![蛇眼中的人](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/10.jpg)
 
 *举例：蛇眼中的人*
 
@@ -281,17 +281,17 @@ source: https://www.zhihu.com/question/23941477/answer/68148213
 
 如下图：
 
-![Fig11](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-11.jpg)
+![Fig11](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/11.jpg)
 
 一般狗会忽略绳子——它们会不停地从透明盒子的上方挠食物；经过几十次的尝试之后，它们才会纯靠偶然发现解法。就算在狗学会了用绳子把食物拉出来以后，只要绳子的位置稍微改变一下，狗就不会解决这个新问题了。
 
 如下图：
 
-![Fig12](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-12.jpg)
+![Fig12](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/12.jpg)
 
 或者：
 
-![Fig13](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-10-27-can-philosophy-guide-science-13.jpg)
+![Fig13](http://plb5hiaqr.bkt.clouddn.com/can-philosophy-guide-science/13.jpg)
 
 如果把此处的狗假想为人，人假想为具有某种更高感官层次的智慧生物，那么启迪就来了。
 

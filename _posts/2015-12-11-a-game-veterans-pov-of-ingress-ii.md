@@ -40,7 +40,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 公交车，主要是满足游戏里一个叫UPV（Unique Portal Visit）的成就，不过你可能会遇到等红灯；等红灯没事干啊，顺手炸个Po，是不是很合理？公交车最野的地方在于你自己可能都不知道一路上会遇到什么Po（除非你对城市、对公共交通很熟悉，但在大城市里要做到这一点谈何容易）。打个比方，周末你出门随便找个公交坐两小时，一路打过去，会有随机的喜悦。当然，这得是你有座的情况，站两个小时，一只手拉吊环另一只手凭空画手机，不时还被老大娘野蛮冲撞，那种生活还是算了。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-1.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/1.jpg)
 
 *开着特斯拉在中控大屏上玩《Ingress》*
 
@@ -48,7 +48,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 那电动车比小汽车好在哪呢？这还用说吗，汽车不能走的地方，电动车能走；汽车必须要遵守的交规，在电动车眼里就是个屁。我经常看到狂野不羁的电摩骑士以30码的速度奔跑在理论限速70的高架桥上，而且不是在路边，是路中间。他们的黑发在劲风中飘扬，身上的牛仔战衣猎猎作响，弃身后万千汽车喇叭声于不顾。这么潇洒的人，世间能得几回闻？电动车最大的优势是灵活：在城市里找个停车位不容易，要找个停电动车位就简单多了，甚至很多地方你根本都不需要下车。我就经常看到频道里出现“××被攻击”的提示，等我匆匆赶到案发现场时，只看到一个骑着电摩徐徐离开的绿色背影（后半句为想像）。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-2.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/2.jpg)
 
 *中南海门口甚至门里也有Po，但没人敢问它是由谁，怎么申请来的*
 
@@ -62,7 +62,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 我记得当年《龙与地下城OL》新开一个版本，允许玩家在特定地图里互相PK，有点像WOW里的竞技场。因为版本刚开加上那还是2006年，制作组没经验，有些设定令人啼笑皆非。比如我，一个饱经风霜、装备精良、曾亲手屠杀过红龙维拉的矮人战士，踩着机关弹簧打算飞到桥对面秒对面的法师，还飞在空中时就中了一道冰射线直接被打得粉碎，一看战斗记录那冰射线能打90D12（扔90个12面骰子）的血我当时HP好像才300多……法师的爆发力可见一斑。WOW则另有情趣：在遥远的60级年代，在偏僻的西瘟疫农场，你经常可以看到灵猴之奥爆法师在大锅周围徐徐跳动，一会的功夫就打了一地尸体，鸡啄米一样捡啊捡，有时卡了就长跪不起……是当年一道独特的靓丽风景。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-3.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/3.jpg)
 
 *安徽芜湖地板厂*
 
@@ -74,7 +74,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 菊花也是《Ingress》术语，指的是一个被连了多条线的Po，看起来就像个菊花的样子。游戏并没有限制连入同一个Po的Link线，所以你可以往一个Po射很多条Link。游戏既然是对抗主题，每摧毁一根敌方连线都会有经验，线越多经验也越多，所以炸菊花Po是刷经验的好方法。.对老玩家来说这是个基础操作，手熟的人30秒就能搞定满盾8级Po，当你看到攻击警报再切换过去看时Po已经被打爆了——法师并不是只会奥爆，他还会大火球！
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-4.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/4.jpg)
 
 *游戏中出现过的最大菊花，据信有3000余朵花瓣，出自日本*
 
@@ -96,7 +96,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 和Druid相反，Necromancer虽然也有大批追随者，血男、铁男、火男或是几十个复生傀儡……但Nec永远独身一人。他运用尸体的技巧出神入化，他善于给别人各种诅咒，他下的毒无人可解……大家都不喜欢他，然而他依然坚强地生存着，并且永远是一股不可忽视的力量。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-5.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/5.jpg)
 
 *土大师纪念活动*
 
@@ -128,7 +128,7 @@ source: http://www.chuapp.com/2015/12/11/219612.html
 
 “那我把它藏起来总行了吧，远远地藏起来，藏在一个没有人能找得到的地方。”
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-11-a-game-veterans-pov-of-ingress-ii-6.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-ii/6.jpg)
 
 *《Ingress》地图里的Cliffside Temple（上图，山白神庙），实际上是福州永泰青龙瀑布入口的一个道观（下图）*
 

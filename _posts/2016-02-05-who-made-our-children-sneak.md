@@ -7,7 +7,7 @@ author: 生如笑话
 
 > 当一个民族集体成为告密者，互相监视并等待着出卖，信仰、诚实、正直，这些一个民族进步和文明的必须基石成为必须首先毁坏的事物的时候，前途将如何?
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-02-05-who-made-our-children-sneak-1.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/who-made-our-children-sneak/1.jpg)
 
 我的小外甥放学晚了，回家说：“老师让我们揭发班上的坏人坏事，每人要写10条，写不到10条不准放学。”小外甥的话让我不禁一楞：“你写了吗?”“当然写啦，每个人都写的。”小外甥说：“只是我怎么也写不满10条，所以到最后才走。”说着，饿坏了孩子狼吞虎咽地大吃起来。
 

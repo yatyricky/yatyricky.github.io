@@ -20,7 +20,7 @@ source: http://www.chuapp.com/2015/12/24/221451.html
 
 最后一种叫“#NL-1331”：1331是一辆车，同时也是一个游戏里的Portal。这辆车会按照运营部门需要于指定时间开到指定地点，如果玩家赶赴此处并与之互动，就可以获得一个成就奖牌——不幸的是，该车目前只在美国境内游历，据说是因为长度超过6米，黄牌办不下来入京证——一个想法，不一定对。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-24-a-game-veterans-pov-of-ingress-iii-1.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-iii/1.jpg)
 
 *NL-1331号快车*
 
@@ -84,7 +84,7 @@ Abaddon 04的主战场是日本冲绳，分战场是韩国首尔、新加坡和�
 
 2015.Dec.12th UTC+9 17：11，仿佛伴着天边霞光的黯淡有一口无形大钟在虚空中鸣响，Abaddon 04 Okinawa的战斗结束了。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-24-a-game-veterans-pov-of-ingress-iii-2.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-iii/2.jpg)
 
 绿军在Abaddon 04（冲绳战区）中获得胜利，从而获得了4个最终分数，计分牌来到了8：9，蓝军仅以微弱优势领先，局势变得微妙起来。不过，在紧随其后的米兰战役中蓝军直取米兰、格但斯克和波尔图三场，最终以5392对3292的总比分获胜，再入4个最终分数，从而以13分的总成绩提前宣告本赛季的胜利。虽然绿军后来又赢得了奥克兰战役但已于事无补。最终比分定格在13：12，蓝军保持了两年以来赛季不败的成绩，Vi va la de Resistance！
 
@@ -104,13 +104,13 @@ Abaddon 04的主战场是日本冲绳，分战场是韩国首尔、新加坡和�
 
 赛季一开始的战斗是“快速碎片战”（Flash Shard Anomaly）：碎片会在某个被事先预告的时刻出现在特定城市的随机Portal上，在指定的时刻如果该Portal被连接到另一个Portal，碎片就会迁跃过去。而双方就各有一些目标Portal，成功让碎片迁跃到目标Portal（俗称“射门”）将获得1个点数，碎片战结束时，点数多的一方获胜。大局上来说，运营方选择的4个城市里蓝绿军各有2个优势城市，这也是十分公平的。但在2015.10.24的伦敦战役中，蓝军在劣势情况下通过一个BAF（Big/Bad Ass Field，指那些超级大、在世界地图上也清晰可见的巨型控制场）成功盖住了伦敦乃至整个英国，从而遏制了绿军一鼓作气的势头，争取了宝贵的时间，最终反败为胜！
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-24-a-game-veterans-pov-of-ingress-iii-3.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-iii/3.jpg)
 
 *覆盖了伦敦乃至整个英国的BAF（图片来自知乎用户“透明壕”）*
 
 另一种形式的碎片战则是发生在战区内，3个分战场各会刷出4枚碎片，每把1枚碎片运送到主战场可以获得600分！要知道，即令是极大优势下，主战场的分差也不过只有3000左右。换言之如果你能把12个碎片全都运过去，将会获得压倒性的分数，从而瞬间结束战斗！因为这过于美好，所以根本不可能实现：双方都防范着对手的射门动作，后卫们拉了百八十条防守Block，织就天罗地网，梅西来了也要铩羽而归。在几乎所有战区的战斗中都没有任何碎片真正地被送到主战场，几乎是所有……
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-24-a-game-veterans-pov-of-ingress-iii-4.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-iii/4.jpg)
 
 *游戏中的碎片会在游戏中清晰地显现出来，就漂浮在Portal上方。如果多块碎片位于同一个Portal上方，你就会看到它们原来的形状：一个漂浮的人头。你会想到什么？我觉得这很像是修仙小说里被“死亡一指”秒杀后裂解成若干块而又充斥着怨念，不甘心就此逝去的痛苦灵魂*
 
@@ -120,7 +120,7 @@ Charlotte，中译“夏洛特”，长期以来是一个充斥诗意的词汇�
 
 游戏中还有一种早期的碎片战，形式更为朴素：世界各地随机刷出碎片，对战双方设法控制碎片所在Portal并以上文所提到的方式令其逐步跃迁到指定地点。“世界各地随机”是什么意思？就是字面意思，真的是随机分布在世界各地，其分布之散乱，超越了国籍、种族、贫富……指定地点是哪儿？蓝军目标是基隆，绿军在旧金山。换句话说，你可能要把碎片运输上万公里！……让我来讲一个故事，一个真实的故事。
 
-![Figure](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2015-12-24-a-game-veterans-pov-of-ingress-iii-5.jpg)
+![Figure](http://plb5hiaqr.bkt.clouddn.com/a-game-veterans-pov-of-ingress-iii/5.jpg)
 
 *世界各地随机*
 
