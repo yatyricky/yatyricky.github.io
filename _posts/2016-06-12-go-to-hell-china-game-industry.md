@@ -8,7 +8,7 @@ source: http://play.163.com/16/0612/11/BPBTLKDU00314V8J.html
 
 > 中国游戏行业被免费游戏、页游、手游反复续命，但如果他们不能真正学会并做到尊重玩家，那么中国版雅达利大崩溃就一定会发生。
 
-<video><source src="http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/1.mp4" type="video/mp4"></video>
+<iframe src="http://plb5hiaqr.bkt.clouddn.com/go-to-hell-china-game-industry/1.mp4"></iframe>
 
 ## 从雅达利大崩溃说起
 
