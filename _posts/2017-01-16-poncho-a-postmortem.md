@@ -22,7 +22,7 @@ It’s 2011. Danny Hayes (me) and Jack Odell both have day jobs, but wanted to m
 
 Then, one day, Jack created an interesting character design:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-Poncho-Run-Right.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/Poncho-Run-Right.gif)
 
 I instantly fell in love with this character. I was excited. We still didn’t know what kind of game we’d make, but we knew it was going to be about this guy. A platformer seemed like a good fit, so we spent some time talking about how to make it innovative and interesting compared to other Platformers.
 
@@ -39,15 +39,15 @@ Throughout 2011 and most of 2012 we went through a bunch of prototypes, re-desig
 * Build the game in actual 3D, using a world of 3D cubes with 2D characters to create a 2.5d effect. Realise that it doesn’t look good and start again using a 2D planed environment layered over itself hundreds of times to create the 2.5D effect we wanted.
 * Redesign of PONCHO to make him more cute and iconic looking:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-Poncho-Run-Right-1-copy.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/Poncho-Run-Right-1-copy.gif)
 
 * Design level art to look like this:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-Background-test.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/Background-test.jpg)
 
 * Start adding some cool ass characters:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-idle.gif)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/idle.gif)
 
 It went on like that. By the end of the first year of development, we had most of a story, basic shifting gameplay and several levels with a bunch of characters and menus. But while mine and Jack’s art was passable, we wanted a real pixel pro to join the team and take over the art side of things.
 
@@ -55,11 +55,11 @@ It went on like that. By the end of the first year of development, we had most o
 
 I posted on a bunch of pixel art sites, saying that we were looking for an artist to join our team. I had saved some money from my day job so we could afford some real talent. We got something like 50 applications, including one guy who strangely only had a portfolio of Hentai to show us, and one who’s portfolio included nothing but a single pixel art tree. Luckily there was also Matthew Weekes and he was just the best. After several months, the game looked like this:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-Screen-Shot.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/Screen-Shot.jpg)
 
 Awesome. We finally had a quality game on our hands, and everything was starting to feel real. Also, in case you were wondering just how many layers and images are on the screen at any given time, have a gander at this early progress level:
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-Screen-Shot-2.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/Screen-Shot-2.jpg)
 
 ## The design issues
 
@@ -166,7 +166,7 @@ PONCHO is marmite. You either like it, or you hate it. While some players put th
 
 But my favourite memory is of a young girl, maybe 7 years old, constantly dragging her parents back to the PONCHO booth so she could play it more. It was her favourite. I almost felt like crying, that single thing is probably my favourite memory of all the Poncho years. It made all the stress seem worth it, if only for moment.
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-photo.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/photo.jpg)
 
 *From left to right, Matt, Jack and me, at the Rezzed expo. We got a better space that time! ^\_^*
 
@@ -186,7 +186,7 @@ Due to these events, we had no money, I lost my home, we lost our sony dev kits,
 
 In a sense, what we released was not the full game, especially the PS4 version which was taken away and finished by another company. We were never even able to test the PS4 version before it was released either, later finding out changes had been made that we didn’t want and it was full of bugs. We even had to cut the reward for collecting all of the junkyard king’s minions, which was gonna give the player a bonus end credits scene. I took out more loans just to survive and finish the steam version of the game, as we were not able to attempt to try and secure funding elsewhere. I started to smoke cannabis in order to just kinda cope with things. But, after months of pain, stress and general depression, we hit a release date.
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-01-16-poncho-a-postmortem-ponchodevtime.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/poncho-a-postmortem/ponchodevtime.jpg)
 
 ## 2016 & the worst year of my life
 

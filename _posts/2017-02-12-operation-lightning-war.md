@@ -6,7 +6,7 @@ categories: [game, ingress]
 
 > 在其他地区的Agents们在碎片战中基战正酣的时候，武汉的几条老咸鱼决定日常一发传统娱乐项目——盖武汉。这次计划非常仓促，但是执行非常迅速，从立项：13:45，到完结：19:11，总共耗时：5小时26分钟，私以为可以称之为闪电战了吧。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-1.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/1.jpg)
 
 *我们甚至连intel人员都没了，所以就发一张最终效果图吧*
 
@@ -20,8 +20,8 @@ categories: [game, ingress]
 
 > @Nefinite: 现在潜江和感恩的任务一直存在啊，是吧？  
 > @Tangtx: 对呀，你要动？  
-> @Nefinite: ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-2.jpg)  
-> @Tangtx: ![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-3.jpg)  
+> @Nefinite: ![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/2.jpg)  
+> @Tangtx: ![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/3.jpg)  
 
 ### 14:30 - 出发
 
@@ -35,7 +35,7 @@ categories: [game, ingress]
 
 ### 15:10 - 荷花仙子
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-4.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/4.jpg)
 
 其实荷花仙子掉了之后我们也考虑过中间长达3个半小时的空档期，但是考虑到只是随机一炸，荷花仙子的Block也不是特别严重，并且掉了之后绿军也无法从潜江之外的地方做什么，再加上潜江实在是没有我蓝Agent，也只能这样了。
 
@@ -55,19 +55,19 @@ categories: [game, ingress]
 
 在@Lynnnnnnd抵达随州期间，大家陆续就位，计划也有一些微小的变化，不过无伤大雅。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-5.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/5.jpg)
 
 ## 19:11 - Action
 
 没什么好说的，直接上图。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-6.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/6.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-7.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/7.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-8.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/8.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-12-operation-lightning-war-9.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/operation-lightning-war/9.jpg)
 
 最后，@dsabiplane驱车赶往最后一站，成功黑牌，不过此处没有截图T_T。
 

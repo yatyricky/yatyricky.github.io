@@ -48,7 +48,7 @@ categories: [war3,game,industry]
 
 制作一张地图的核心理念无异于制作一个游戏，在笔者看来，超过一半的作者不懂游戏设计。因此出现了如下的结果：
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-03-01-we-developers-present-and-future-1.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/we-developers-present-and-future/1.png)
 
 虽然游戏设计是一门非常广的学问，涉及领域非常之多，通常针对某一特定类型的游戏，大家需要去学习不同的学科，但是我们是在做魔兽地图，在目前市面上看来，无论是什么类型的地图，至少包含以上三个问题。结合笔者对以往一些制图社区以及作者的了解，设计了如上问题。
 
@@ -85,7 +85,7 @@ categories: [war3,game,industry]
 
 把握整个地图的美术风格统一是一件困难的事情，好消息是暴雪已经为我们提供了一套完整的资源，也就是自带的模型、地形纹理、UI等等；坏消息是有超过一半的作者太关注于模型这一个点，而忽略了整体的美术设计。下面是美术相关的各方面渗透率调查结果：
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-03-01-we-developers-present-and-future-2.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/we-developers-present-and-future/2.png)
 
 有近60%的作者是伸手党，他们之中又有很大一部分是想自学模型制作的（也有一部分只想学制作，不奉行拿来主义的人）。这是个好现象，但是很不幸，学习模型制作的难度和学习编程的难度相当，可能对于一些人来说两者难度有偏差，但是总体来看，笔者认为是一样的。
 
@@ -97,7 +97,7 @@ categories: [war3,game,industry]
 
 无论是使用GUI的触发器（大家口中常说的T）、编写JASS脚本、还是使用其他的技术来控制整个地图，笔者都将其总结为编程能力，而编程能力可以简单地分解为算法（数学、物理）和数据结构，而大约一半的作者在这一块的总体能力，确实是不高的。调查结果如下：
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-03-01-we-developers-present-and-future-3.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/we-developers-present-and-future/3.png)
 
 * 冲锋类技能针对的是地图制作的基本技巧，属于最基础的计时器的应用，其次是初中物理
 * 弹幕技能主要针对的主要是数学能力，并且很难用GUI触发器去方便地实现，如果要完美实现并且易于维护的话，至少需要大学一年级水平的编程能力
@@ -124,7 +124,7 @@ categories: [war3,game,industry]
 
 再加上作者圈子的沟通很少，社区里面还是以吹水和无聊的黑科技居多，每一个人遇到的问题都不一样。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-03-01-we-developers-present-and-future-4.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/we-developers-present-and-future/4.png)
 
 当一个问题得以解决的时候，也极少有人会去将问题复盘，总结，并分享到社区。所以当一个初阶作者遇到问题的时候，他们最终解决问题的渠道是社区里面认识的好友，久而久之，WE作者圈形成了一个沟通不畅的树形结构。因此，同类的问题可能多个作者分支里面有不同的解决方法，大多数解决方案，在笔者看来，都是野路子。这些野路子能暂时解决问题，但是会给地图带来无穷无尽的后患，地图中的各种疑难杂症通常都是因为复制了别人的不明代码，不过谁在乎呢？
 

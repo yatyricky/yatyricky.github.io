@@ -6,7 +6,7 @@ categories: [game, ingress]
 
 > 之所以叫“梅雨行动”呢，可能主要是因为这次行动的Agents所在城市是中国内地最大的沿海城市武汉吧。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-1.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/1.jpg)
 
 ## 动机
 
@@ -112,47 +112,47 @@ CF[@老头儿](https://www.ingress.com/intel?ll=30.213567,114.907775&z=17&pll=30
 
 首先，众懒军还在睡觉或者刚起床的时候，@ppppj就开着一颗赛艇到[@黄陂奥特莱斯](https://www.ingress.com/intel?ll=30.731292,114.253712&z=17&pll=30.731292,114.253712)冒着雨玩了一下手机，然后@Nefinite就出门接到了@Doveccl前往会合点，顺便吃个午饭，然后自爆照片以便于友军识别。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-2.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/2.jpg)
 
 虽然天气很差，但是我们蓝军的Agents还是很快就集合了，变形，出发！
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-3.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/3.jpg)
 
 最终我们基本按照原计划的时间分别在栗山禅寺放下了@bujishaonian，并且剩下的Agents顺利抵达矿山公园，然而当我们准备开始操作的时候，行动组的网络抽风了……
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-4.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/4.jpg)
 
 好在Enl并没有那么神，在@Doveccl和@bujishaonian清除blocks之后，我们还是有惊无险地操作成功。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-5.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/5.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-6.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/6.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-7.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/7.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-9.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/9.jpg)
 
 完成之后，等到@bujishaonian act的时候，惊的发现他竟然没有SBUL，连不了，好吧，那么就让我们孤独的守望者继续等待吧。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-8.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/8.jpg)
 
 然后我们4个简单地安慰了一下队友，马上就游山玩水膜key去了。
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-10.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/10.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-11.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/11.jpg)
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-12.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/12.jpg)
 
 *真是没良心呢*
 
 本来想多hack一些keys回去的，毕竟战略位置不错，可是因为还有一个队友在外面，加上时间和天气的关系，我们马上前往@bujishaonian所在的[@钟楼](https://www.ingress.com/intel?ll=30.192255,114.947775&z=17&pll=30.192255,114.947775)，插脚，CF，炸绿PO，一气呵成（不过还是有一个很迷的PO[@失修佛塔](https://www.ingress.com/intel?ll=30.193221,114.949428&z=17&pll=30.193221,114.949428)找不着，最终放弃了），最终效果：
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-14.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/14.jpg)
 
 收尾时雨也下得小了一些，众蓝顺利返汉，活动圆满结束，约饭！
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-13.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/13.jpg)
 
 Hail Resistance!
 
@@ -170,12 +170,12 @@ Hail Resistance!
 
 bujishaonian一个人在荒郊野岭孤独等待，也少不了群里的菊苣调戏
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-16.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/16.jpg)
 
 这是他当时的处境，一个人也没有
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-17.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/17.jpg)
 
 至于水蛭的事情，还是不要往下看了吧
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2016-07-02-projekt-tsuyu-15.jpg)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/projekt-tsuyu/15.jpg)

@@ -32,7 +32,7 @@ source: http://www.tightpoker.com/value-betting.html
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr11.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr11.png)
 
 > **转牌3♣ 底池$67**  
 > CO看牌  
@@ -40,14 +40,14 @@ source: http://www.tightpoker.com/value-betting.html
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr12.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr12.png)
 
 > **河牌3♠ 底池$67**  
 > CO看牌  
 
 请问你接下来该怎么办？如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr13.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr13.png)
 
 首先我们来分析一下现在的局势。CO不太可能有一张Q，因为如果他有Q的话，根据你转牌的看牌行为，他会在河牌率先加注。一种可能的手牌是KJ，他在翻前跛入，而KJ是一手大家都愿意看一下翻牌的牌，那么你也不会从他手中获得任何价值因为他买顺失败。但是另一方面，KJ对你也是没有任何威胁的，最多也是T加一张比你更差的踢脚。他在翻牌跟注因为他认为你只是想偷底池而已。
 
@@ -70,7 +70,7 @@ source: http://www.tightpoker.com/value-betting.html
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr21.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr21.png)
 
 我们先暂停一下，你的对手可能有些什么牌？需要考虑的有3点：
 
@@ -87,7 +87,7 @@ AK基本就不成立了，因为几乎所有的玩家会在拿到AK时翻前加�
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr22.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr22.png)
 
 这意味着什么？口袋对2已经不太可能了。T♥制造了一个非常湿润非常可怕的牌面，如果CO中了set他几乎一定会下注或者re-raise。
 
@@ -96,7 +96,7 @@ AK基本就不成立了，因为几乎所有的玩家会在拿到AK时翻前加�
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr23.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr23.png)
 
 底池现在有$129，你该怎么办呢？
 
@@ -122,7 +122,7 @@ AK基本就不成立了，因为几乎所有的玩家会在拿到AK时翻前加�
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr31.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr31.png)
 
 > **转牌T♣ 底池$14**  
 > 大盲看牌  
@@ -131,7 +131,7 @@ AK基本就不成立了，因为几乎所有的玩家会在拿到AK时翻前加�
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr32.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr32.png)
 
 > **转牌Q♥ 底池$14**  
 > 大盲看牌  
@@ -139,7 +139,7 @@ AK基本就不成立了，因为几乎所有的玩家会在拿到AK时翻前加�
 
 如图所示
 
-![Fig](https://raw.githubusercontent.com/yatyricky/yatyricky.github.io/master/public/2017-02-04-value-betting-advanced-strategy-pr33.png)
+![Fig](http://plb5hiaqr.bkt.clouddn.com/value-betting-advanced-strategy/pr33.png)
 
 现在底池有$14，你该怎么做？
 
