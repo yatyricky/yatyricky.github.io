@@ -43,13 +43,12 @@ systemctl stop nginx
 letsencrypt certonly --standalone -d your.domian
 vim /etc/nginx/sites-available/default
 server {
-    listen 443;
+    listen 443 ssl;
     listen [::]:443;
     server_name your.domain;
-    ssl on;
     ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_protocols SSLv3 TLSv1.2;
     ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
     ssl_prefer_server_ciphers on;
     # other config
