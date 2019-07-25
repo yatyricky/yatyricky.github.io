@@ -1,8 +1,13 @@
-已知点 p1 p2 求直线 ax + by + c = 0
-a = p1.y - p2.y
-b = p2.x - p1.x
-c = |p1.x p2.x|
-    |p1.y p2.y|
+已知点 $P,Q$
 
-p到vw的投影
-proj = (vp · vw) x vw + v
+求直线 $ax + by + c = 0$
+
+$a = y_P - y_Q$
+
+$b = x_Q - x_P$
+
+$c = \begin{bmatrix} x_P & x_Q \\ y_P & y_Q \end{bmatrix}$
+
+$p$到$vw$的投影
+
+$proj = (vp · vw) × vw + v$
