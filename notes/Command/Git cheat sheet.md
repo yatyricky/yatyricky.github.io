@@ -18,6 +18,17 @@ git reset --hard 0d1d7fc32
 git config --global alias.rb "pull --rebase"
 # unset aliases
 git config --global --unset alias.rb
+
+# local ignore path
+.git/info/exclude
+
+# assume file unchanged
+git update-index --assume-unchanged path
+git update-index --no-assume-unchanged path
+
+# list files marked as assume unchanged
+# assume unchanged files first flag is lower case
+git ls-files -v | grep '^[[:lower:]]'
 ```
 
 ```
