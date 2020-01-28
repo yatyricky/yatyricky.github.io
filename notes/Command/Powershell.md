@@ -10,3 +10,9 @@ Invoke-WebRequest -Uri https://api.weixin.qq.com/wxa/getwxacode?access_token=ACC
 $postParams = '{"key": "value"}'
 Invoke-WebRequest -Uri https://my.request -Method POST -Headers @{"Content-Type"="application/json"} -Body $postParams | Select-Object -Expand Content
 ```
+
+Generate SSH Keys
+
+``` powershell
+ssh-keygen -t rsa -C "Key Name"
+```
