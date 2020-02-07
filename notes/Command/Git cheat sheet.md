@@ -29,6 +29,9 @@ git update-index --no-assume-unchanged path
 # list files marked as assume unchanged
 # assume unchanged files first flag is lower case
 git ls-files -v | grep '^[[:lower:]]'
+
+# Amend commit message. change the most recent commit message
+git commit --amend
 ```
 
 ```
