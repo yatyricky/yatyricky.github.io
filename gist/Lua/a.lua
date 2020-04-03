@@ -1,7 +1,9 @@
--- require("common")
+require("lib/table_ext")
 
-local a = 1
-local b = nil
-local c = nil
+math.randomseed(os.time())
 
-print(a or b or c)
+local a = {1,2,3,4,5}
+
+for i = 1, 10 do
+    print(table.join(table.randomSubset(a, 4), ", "))
+end

@@ -11,8 +11,10 @@ $postParams = '{"key": "value"}'
 Invoke-WebRequest -Uri https://my.request -Method POST -Headers @{"Content-Type"="application/json"} -Body $postParams | Select-Object -Expand Content
 ```
 
-Generate SSH Keys
-
 ``` powershell
+# Generate SSH Keys
 ssh-keygen -t rsa -C "Key Name"
+
+# Enable run scripts
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```

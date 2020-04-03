@@ -293,3 +293,20 @@ function table.query(data, opts)
         end
     end
 end
+
+function table.randomSubset(tab, n)
+    local result = {}
+    local c = 0
+    for k, item in pairs(tab) do
+        c = c + 1
+        if #result < n then
+            table.insert(result, item)
+        else
+            local s = math.floor(math.random() * c)
+            if s < n then
+                result[s + 1] = item
+            end
+        end
+    end
+    return result
+end

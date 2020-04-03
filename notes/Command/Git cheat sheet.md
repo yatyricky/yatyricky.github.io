@@ -1,5 +1,12 @@
 Git global config location: `~/.gitconfig`
 
+# Line Engdings
+
+``` sh
+git config --global core.autocrlf false
+git config --global core.eol lf
+```
+
 ``` sh
 # open before, ~1 is important
 git checkout <Commit>~1 <Path to file>
@@ -35,13 +42,16 @@ git commit --amend
 ```
 
 ```
-st = status
-sh = stash save temp
-ush = stash pop stash@{0}
-ll = log --pretty=format:'%h - %an, %ar : %s'
-rb = pull --rebase
-ds = checkout -- .
-cm = commit -m
-am = commit -am
-ck = checkout
+[alias]
+	st = status
+	sh = stash save temp
+	ush = stash pop stash@{0}
+	ll = log --pretty=format:'%h - %an, %ar : %s'
+	rb = pull --rebase
+	ds = checkout -- .
+	cm = commit -m
+	am = commit -am
+	ck = checkout
+	aa = add -A
+	rs = reset -- .
 ```
