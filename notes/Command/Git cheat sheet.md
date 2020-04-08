@@ -1,13 +1,17 @@
-Git global config location: `~/.gitconfig`
+``` sh
+# local ignore path
+.git/info/exclude
+
+# Git global config path:
+`~/.gitconfig`
 
 # Line Engdings
-
-``` sh
 git config --global core.autocrlf false
 git config --global core.eol lf
-```
 
-``` sh
+# Text Search
+git grep -w -e "GetComponent" -- "client/Assets"
+
 # open before, ~1 is important
 git checkout <Commit>~1 <Path to file>
 
@@ -25,9 +29,6 @@ git reset --hard 0d1d7fc32
 git config --global alias.rb "pull --rebase"
 # unset aliases
 git config --global --unset alias.rb
-
-# local ignore path
-.git/info/exclude
 
 # assume file unchanged
 git update-index --assume-unchanged path
