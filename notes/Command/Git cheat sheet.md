@@ -43,16 +43,20 @@ git commit --amend
 ```
 
 ```
+[core]
+	autocrlf = false
+	eol = lf
 [alias]
+	aa = add -A
 	st = status
 	sh = stash save temp
 	ush = stash pop stash@{0}
-	ll = log --pretty=format:'%h - %an, %ar : %s'
+	dsh = stash clear
+	ll = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(cyan)%an%C(reset) %C(white)%s%C(reset)%C(bold yellow)%d%C(reset)' --all
 	rb = pull --rebase
 	ds = checkout -- .
 	cm = commit -m
-	am = commit -am
 	ck = checkout
-	aa = add -A
-	rs = reset -- .
+	rs = reset --
+	cf = clean -f
 ```
