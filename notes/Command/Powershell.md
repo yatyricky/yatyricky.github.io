@@ -1,3 +1,12 @@
+## Core
+
+``` powershell
+# Enable run scripts
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+
+## WebRequest
+
 https://developers.weixin.qq.com/minigame/dev/api/getWXACode.html
 
 ``` powershell
@@ -11,10 +20,16 @@ $postParams = '{"key": "value"}'
 Invoke-WebRequest -Uri https://my.request -Method POST -Headers @{"Content-Type"="application/json"} -Body $postParams | Select-Object -Expand Content
 ```
 
+## SSH
+
 ``` powershell
 # Generate SSH Keys
 ssh-keygen -t rsa -C "Key Name"
+```
 
-# Enable run scripts
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+## Pipe
+
+```powershell
+git status | findstr "prefab" | measure-object -line
+
 ```
