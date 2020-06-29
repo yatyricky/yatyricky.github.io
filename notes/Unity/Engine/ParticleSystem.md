@@ -1,0 +1,1 @@
+particle mode: local/ world/ hierarchy

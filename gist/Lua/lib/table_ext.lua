@@ -368,3 +368,23 @@ end
 --     end
 --     return true
 -- end
+
+function table.removeItem(tab, item)
+    local c = #tab
+    local i = 1
+    local d = 0
+    while i <= c do
+        local it = tab[i]
+        if it == item then
+            d = d + 1
+        else
+            if d > 0 then
+                tab[i - d] = it
+            end
+        end
+        i = i + 1
+    end
+    for i = 0, d - 1 do
+        tab[c - i] = nil
+    end
+end

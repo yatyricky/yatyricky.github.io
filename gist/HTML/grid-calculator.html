@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Calculator</title>
+</head>
+
+<body>
+    <table>
+        <tr><td>Width</td><td><input type="text" id="width" /></td></tr>
+        <tr><td>Cell Width</td><td><input type="text" id="cell-width" /></td></tr>
+        <tr><td>Items</td><td><input type="text" id="items" /></td></tr>
+        <tr><td>Spacing</td><td><input type="text" id="spacing" /></td></tr>
+        <tr><td>Left</td><td><input type="text" id="left" /></td></tr>
+    </table>
+    <button id="calculate">Calculate</button>
+    <div id="logger"></div>
+</body>
+<script>
+    let domLogger = document.getElementById("logger")
+    function ensure(...items) {
+        if (items.some(e => isNaN(e))) {
+            return false
+        }
+        return true
+    }
+
+    function setBGColor(dom, color) {
+        dom.style.backgroundColor = color
+    }
+
+    let domwidth = document.getElementById("width")
+    let domcellWidth = document.getElementById("cell-width")
+    let domspacing = document.getElementById("spacing")
+    let domitems = document.getElementById("items")
+    let domleft = document.getElementById("left")
+
+    document.getElementById("calculate").addEventListener("click", () => {
+        let width = parseFloat(domwidth.value)
+        let cellWidth = parseFloat(domcellWidth.value)
+        let spacing = parseFloat(domspacing.value)
+        let items = parseFloat(domitems.value)
+        let left = parseFloat(domleft.value)
+        console.log(width, cellWidth, spacing, items, left)
+        
+        setBGColor(domwidth, "#ffffff")
+        setBGColor(domcellWidth, "#ffffff")
+        setBGColor(domspacing, "#ffffff")
+        setBGColor(domitems, "#ffffff")
+        setBGColor(domleft, "#ffffff")
+
+        if (ensure(width, cellWidth, items)) {
+            if (isNaN(left)) {
+                if (isNaN(spacing)) {
+                    let leftOver = width - cellWidth * items
+                    spacing = Math.floor( leftOver / (items + 1))
+                    domspacing.value = spacing
+                    setBGColor(domspacing, "#eecc33")
+                }
+                domleft.value = (width - cellWidth * items - spacing * (items - 1)) / 2
+                setBGColor(domleft, "#eecc33")
+            } else {
+                if (isNaN(spacing)) {
+                    domspacing.value = (width - cellWidth * items - left * 2) / (items - 1)
+                    setBGColor(domspacing, "#eecc33")
+                }
+            }
+        }
+    })
+</script>
+
+</html>

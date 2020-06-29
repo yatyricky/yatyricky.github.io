@@ -65,3 +65,13 @@ function class(classname, super)
     end
     return cls
 end
+
+function assert(value, expected)
+    local ta = type(value)
+    local tb = type(expected)
+    if value == expected then
+        print(string.format("[OK] %s(%s) is %s(%s)", value, type(value), expected, type(expected)))
+    else
+        print(string.format("[FAIL] %s(%s) is not %s(%s)", value, type(value), expected, type(expected)))
+    end
+end

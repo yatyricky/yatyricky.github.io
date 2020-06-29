@@ -1,28 +1,29 @@
 ``` js
-const MAX_INSTANCES = 65535
-let freed = 0
+const MAX_INSTANCES = 3
+let freed = -1
 let count = 0
 let table = []
 
 function alloc() {
     let ref = freed
-    if (ref != 0) {
+    if (ref !== -1) {
         freed = table[ref]
     } else {
-        count = count + 1
-        ref = count
+        ref = count++
     }
     if (ref > MAX_INSTANCES) {
-        return 0
+        // return 0
     }
-    table[ref] = -1
+    table[ref] = -2
     return ref
 }
 
 function free(ref) {
-    if (ref == 0) {
+    if (ref < 0) {
+        console.log("ref -1")
         return
-    } else if (table[ref] != -1) {
+    } else if (table[ref] !== -2) {
+        console.log("already freed")
         return
     }
     table[ref] = freed

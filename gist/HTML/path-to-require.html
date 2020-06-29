@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Path To Require</title>
 </head>
 <body>
     <div>
@@ -15,12 +15,21 @@
 <script>
 let input = document.getElementById("reqfast")
 let output = document.getElementById("reqfastout")
+let saved = (localStorage.getItem("strings") || "").split("|")
+saved = saved.sort().filter(e => e.trim().length !== 0)
+output.innerHTML = saved.join("<br/>")
 input.oninput = () => {
     let str = input.value.replace(/\\/g, ".")
         .replace("client.Assets.LuaFramework.Lua.", "")
         .replace(".lua", "")
     let ts = str.split(".")
-    output.innerText = `local ${ts[ts.length - 1]} = require("${str}")`
+    let expr = `local ${ts[ts.length - 1]} = require("${str}")`
+    if (saved.indexOf(expr) === -1) {
+        saved.push(expr)
+        saved = saved.sort()
+        localStorage.setItem("strings", saved.join("|"))
+    }
+    output.innerHTML = saved.join("<br/>")
 }
 </script>
 </html>
