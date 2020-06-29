@@ -1,4 +1,4 @@
-OPPO/VIVO安装Debug包 INSTALL_FAILED_TEST_ONLY
+# OPPO/VIVO安装Debug包 INSTALL_FAILED_TEST_ONLY
 
 https://developer.android.com/guide/topics/manifest/application-element
 android:testOnly
@@ -8,3 +8,7 @@ android:testOnly
 导致 AS 中 Run 在大部分手机上只能用`adb install -r -t x.apk` 安装，在OPPO/VIVO手机上直接无法安装，提示 fail 'null'.
 
 在`gradle.properties`中添加`android.injected.testOnly=false`即可
+
+# "Default Activity Not Found" on Android Studio upgrade
+If you see that error occur after upgrading versions of IntelliJ IDEA or Android Studio, or after Generating a new APK, you may need to refresh the IDE's cache.
+`File -> Invalidate Caches / Restart...`
