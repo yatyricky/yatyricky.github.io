@@ -12,3 +12,6 @@ android:testOnly
 # "Default Activity Not Found" on Android Studio upgrade
 If you see that error occur after upgrading versions of IntelliJ IDEA or Android Studio, or after Generating a new APK, you may need to refresh the IDE's cache.
 `File -> Invalidate Caches / Restart...`
+
+# gradle download maven-metadata.xml
+尝试使用或者不使用 gradle 代理
