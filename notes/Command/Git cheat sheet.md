@@ -40,6 +40,10 @@ git ls-files -v | grep '^[[:lower:]]'
 
 # Amend commit message. change the most recent commit message
 git commit --amend
+
+# proxy
+git config --global http.proxy 'socks5://127.0.0.1:10808'
+git config --global https.proxy 'socks5://127.0.0.1:10808'
 ```
 
 ```
