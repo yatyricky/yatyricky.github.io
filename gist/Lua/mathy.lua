@@ -25,6 +25,16 @@ local function DivideIntoArray(dividend, divisor)
     return ret
 end
 
-print(table.show(DivideIntoArray(12.3, 3.77)))
+-- print(table.show(DivideIntoArray(12.3, 3.77)))
 -- print(table.show(DivideIntoArray(10, 3)))
 -- print(table.show(DivideIntoArray(10, 2)))
+
+local function mrandom(stdDev)
+    local half = stdDev * 0.5
+    return (math.random() * half  + math.random() * half) - half
+end
+
+local m = 1
+for i = 1, 10 do
+    print(m, mrandom(m))
+end

@@ -388,3 +388,23 @@ function table.removeItem(tab, item)
         tab[c - i] = nil
     end
 end
+
+function table.filterInPlace(tab, filter)
+    local c = #tab
+    local i = 1
+    local d = 0
+    while i <= c do
+        local it = tab[i]
+        if filter(it) then
+            if d > 0 then
+                tab[i - d] = it
+            end
+        else
+            d = d + 1
+        end
+        i = i + 1
+    end
+    for i = 0, d - 1 do
+        tab[c - i] = nil
+    end
+end

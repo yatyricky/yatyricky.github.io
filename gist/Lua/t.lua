@@ -290,4 +290,6 @@ for key, value in pairs(classes) do
     export = export .. "\n".. stringifyClass(value)
 end
 
+print (export)
+
 return export
