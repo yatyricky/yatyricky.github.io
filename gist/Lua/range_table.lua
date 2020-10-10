@@ -35,7 +35,7 @@ local function GetValueFromRangeTable(t, key)
 end
 
 local tab = {
-    [0] = 0,
+    -- [0] = 0,
     [10] = 1,
     [25] = 2,
     [50] = 3,

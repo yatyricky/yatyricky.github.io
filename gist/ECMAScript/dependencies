@@ -1,0 +1,45 @@
+    implementation 'androidx.multidex:multidex:2.0.1'
+	implementation 'com.android.support:appcompat-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+	implementation 'com.android.support:appcompat-v7:28.+' // Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml:10
+	implementation 'com.android.support:cardview-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+	implementation 'com.android.support:customtabs:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+	implementation 'com.android.support:recyclerview-v7:28.+' // Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml:9
+//    implementation 'com.android.support:support-annotations:22.0.0'
+	implementation 'com.android.support:support-v4:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+	implementation 'com.applovin:applovin-sdk:9.14.2' // Assets/MaxSdk/AppLovin/Editor/Dependencies.xml:4
+	implementation 'com.applovin.mediation:chartboost-adapter:8.1.0.7' // Assets/MaxSdk/Mediation/Chartboost/Editor/Dependencies.xml:8
+	implementation 'com.applovin.mediation:facebook-adapter:[6.0.0.1]' // Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml:8
+	implementation 'com.applovin.mediation:google-adapter:[19.4.0.0]' // Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml:5
+	implementation 'com.applovin.mediation:ironsource-adapter:7.0.1.1.1' // Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml:8
+	implementation 'com.applovin.mediation:unityads-adapter:3.4.8.3' // Assets/MaxSdk/Mediation/UnityAds/Editor/Dependencies.xml:4
+	implementation 'com.facebook.android:facebook-applinks:[7.1.0, 8)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:6
+	implementation 'com.facebook.android:facebook-core:[7.1.0, 8)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:5
+	implementation 'com.facebook.android:facebook-gamingservices:[7.1.0, 8)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:9
+	implementation 'com.facebook.android:facebook-login:[7.1.0, 8)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:7
+	implementation 'com.facebook.android:facebook-share:[7.1.0, 8)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:8
+	implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0' // Assets/MaxSdk/AppLovin/Editor/Dependencies.xml:5
+	implementation 'com.google.android.gms:play-services-base:16.1.0' // Assets/MaxSdk/Mediation/Chartboost/Editor/Dependencies.xml:9
+	implementation 'com.google.firebase:firebase-analytics-unity:6.6.0' // Assets/Firebase/Editor/AnalyticsDependencies.xml:20
+	implementation 'com.google.firebase:firebase-analytics:17.2.0' // Assets/Firebase/Editor/MessagingDependencies.xml:15
+	implementation 'com.google.firebase:firebase-app-unity:6.6.0' // Assets/Firebase/Editor/AppDependencies.xml:20
+	implementation 'com.google.firebase:firebase-auth-unity:6.6.0' // Assets/Firebase/Editor/AuthDependencies.xml:20
+	implementation 'com.google.firebase:firebase-auth:19.0.0' // Assets/Firebase/Editor/AuthDependencies.xml:13
+	implementation 'com.google.firebase:firebase-common:19.1.0' // Assets/Firebase/Editor/AppDependencies.xml:13
+	implementation 'com.google.firebase:firebase-iid:[20.0.0]' // Assets/Firebase/Editor/MessagingDependencies.xml:13
+	implementation 'com.google.firebase:firebase-messaging-unity:6.6.0' // Assets/Firebase/Editor/MessagingDependencies.xml:22
+	implementation 'com.google.firebase:firebase-messaging:20.0.0' // Assets/Firebase/Editor/MessagingDependencies.xml:17
+	implementation 'com.google.games:gpgs-plugin-support:0.10.09' // Assets/GooglePlayGames/Editor/GooglePlayGamesPluginDependencies.xml:11
+	implementation 'com.parse.bolts:bolts-android:1.4.0' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:4
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation project(':Firebase')
+	implementation project(':GooglePlayGamesManifest.plugin')
+	implementation project(':MaxMediationGoogle')
+	implementation(name: 'applovin-max-unity-plugin', ext:'aar')
+	implementation(name: 'audience-network-sdk-5.6.0', ext:'aar')
+	implementation(name: 'common', ext:'aar')
+	implementation(name: 'facebook-android-wrapper-7.19.2', ext:'aar')
+	implementation(name: 'facebook-android-wrapper-7.21.2', ext:'aar')
+	implementation(name: 'GoogleAIDL', ext:'aar')
+	implementation(name: 'GooglePlay', ext:'aar')
+	implementation(name: 'installreferrer-1.0', ext:'aar')
+	implementation(name: 'unityOBBDownloader', ext:'aar')
