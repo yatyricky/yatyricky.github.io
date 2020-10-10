@@ -3,11 +3,13 @@ function table.isEmpty(t)
 end
 
 function table.show(t, name, indent)
-    local cart     -- a container
+    local cart  -- a container
     local autoref  -- for self references
 
     -- (RiciLake) returns true if the table is empty
-    local function isemptytable(t) return next(t) == nil end
+    local function isemptytable(t)
+        return next(t) == nil
+    end
 
     local function basicSerialize(o)
         local so = tostring(o)
@@ -18,9 +20,10 @@ function table.show(t, name, indent)
                 return string.format("%q", so .. ", C function")
             else
                 -- the information is defined through lines
-                return string.format("%q", so .. ", defined in (" ..
-                info.linedefined .. "-" .. info.lastlinedefined ..
-                ")" .. info.source)
+                return string.format(
+                    "%q",
+                    so .. ", defined in (" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source
+                )
             end
         elseif type(o) == "number" or type(o) == "boolean" then
             return so
@@ -40,8 +43,7 @@ function table.show(t, name, indent)
             cart = cart .. " = " .. basicSerialize(value) .. ";\n"
         else
             if saved[value] then
-                cart = cart .. " = {}; -- " .. saved[value]
-                .. " (self reference)\n"
+                cart = cart .. " = {}; -- " .. saved[value] .. " (self reference)\n"
                 autoref = autoref .. name .. " = " .. saved[value] .. ";\n"
             else
                 saved[value] = name
@@ -148,7 +150,7 @@ function table.query(data, opts)
 
     local bst = nil
     local function bstAdd(data)
-        local newNode = { v = data, l = nil, r = nil }
+        local newNode = {v = data, l = nil, r = nil}
         if bst == nil then
             bst = newNode
         else
@@ -326,13 +328,13 @@ function table.equals(a, b, path)
         end
     end
     for k, v in pairs(a) do
-        if not table.equals(v, b[k], path ..tostring(k).."/") then
-            return false, path..tostring(k).."/"
+        if not table.equals(v, b[k], path .. tostring(k) .. "/") then
+            return false, path .. tostring(k) .. "/"
         end
     end
     for k, v in pairs(b) do
         if a[k] == nil then
-            return false, path..tostring(k).."/"
+            return false, path .. tostring(k) .. "/"
         end
     end
     return true
@@ -389,22 +391,97 @@ function table.removeItem(tab, item)
     end
 end
 
-function table.filterInPlace(tab, filter)
-    local c = #tab
-    local i = 1
-    local d = 0
-    while i <= c do
-        local it = tab[i]
-        if filter(it) then
-            if d > 0 then
-                tab[i - d] = it
-            end
+---Checks if a table is used as an array. That is: the keys start with one and are sequential numbers
+---NOTE: it returns true for an empty table
+---@param t table
+---@return bool
+function table.isArray(t)
+    if type(t) ~= "table" then
+        return false
+    end
+    --check if all the table keys are numerical and count their number
+    local count = 0
+    for k, v in pairs(t) do
+        if type(k) ~= "number" then
+            return false
         else
-            d = d + 1
+            count = count + 1
         end
-        i = i + 1
     end
-    for i = 0, d - 1 do
-        tab[c - i] = nil
+    --all keys are numerical. now let's see if they are sequential and start with 1
+    for i = 1, count do
+        --Hint: the VALUE might be "nil", in that case "not t[i]" isn't enough, that's why we check the type
+        if not t[i] and type(t[i]) ~= "nil" then
+            return false
+        end
     end
+    return true
+end
+
+---@param t table
+---@param indent string
+---@return string
+function table.toJSON(t, indent)
+    local function parsePrimitive(o)
+        local to = type(o)
+        if to == "string" then
+            return '"' .. o .. '"'
+        end
+        local so = tostring(o)
+        if to == "function" then
+            -- local info = debug.getinfo(o, "S")
+            -- info.name is nil because o is not a calling level
+            -- if info.what == "C" then
+            --     return '"' .. so .. ", C function" .. '"'
+            -- else
+            --     -- the information is defined through lines
+            --     return '"' .. so .. ", defined in (" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source .. '"'
+            -- end
+            return '"' .. so .. '"'
+        else
+            return so
+        end
+    end
+
+    local function parseTable(t, lindent, pindent, cached)
+        if type(t) ~= "table" then
+            return parsePrimitive(t)
+        end
+        cached = cached or {}
+        local str = tostring(t)
+        if cached[str] then
+            return '"_ ref ' .. str .. '"'
+        end
+        cached[str] = true
+        local sb = "{"
+        if lindent then
+            sb = sb .. "\n"
+        end
+        local idt = lindent or ""
+        local oindent = indent or ""
+        local nindent = lindent and idt .. oindent or nil
+        local colonw = lindent and " " or ""
+        sb = sb .. idt .. '"_ ":' .. colonw .. '"' .. str .. '"'
+        for k, v in pairs(t) do
+            if lindent then
+                sb = sb .. ",\n"
+            else
+                sb = sb .. ","
+            end
+            local ks
+            if type(k) == "number" then
+                ks = "_ " .. k
+            else
+                ks = tostring(k)
+            end
+            sb = sb .. idt .. '"' .. ks .. '":' .. colonw .. parseTable(v, nindent, lindent, cached)
+        end
+        if lindent then
+            sb = sb .. "\n" .. (pindent or "")
+        end
+        sb = sb .. "}"
+        -- cached[str] = false
+        return sb
+    end
+    return parseTable(t, indent)
 end
