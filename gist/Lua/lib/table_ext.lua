@@ -3,7 +3,7 @@ function table.isEmpty(t)
 end
 
 function table.show(t, name, indent)
-    local cart  -- a container
+    local cart     -- a container
     local autoref  -- for self references
 
     -- (RiciLake) returns true if the table is empty
@@ -17,13 +17,10 @@ function table.show(t, name, indent)
             local info = debug.getinfo(o, "S")
             -- info.name is nil because o is not a calling level
             if info.what == "C" then
-                return string.format("%q", so .. ", C function")
+                return string.format("%q", so .. ":C function")
             else
                 -- the information is defined through lines
-                return string.format(
-                    "%q",
-                    so .. ", defined in (" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source
-                )
+                return string.format("%q", so .. ":(" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source)
             end
         elseif type(o) == "number" or type(o) == "boolean" then
             return so
@@ -40,34 +37,34 @@ function table.show(t, name, indent)
         cart = cart .. indent .. field
 
         if type(value) ~= "table" then
-            cart = cart .. " = " .. basicSerialize(value) .. ";\n"
+            cart = cart .. "=" .. basicSerialize(value) .. ";"
         else
             if saved[value] then
-                cart = cart .. " = {}; -- " .. saved[value] .. " (self reference)\n"
-                autoref = autoref .. name .. " = " .. saved[value] .. ";\n"
+                cart = cart .. "=(" .. saved[value] .. ");"
+                autoref = autoref .. name .. "=" .. saved[value] .. ";"
             else
                 saved[value] = name
 
                 if isemptytable(value) then
-                    cart = cart .. " = {}; (" .. tostring(value) .. ")\n"
+                    cart = cart .. "={(" .. tostring(value) .. ")};"
                 else
-                    cart = cart .. " = { (" .. tostring(value) .. ")\n"
+                    cart = cart .. "={(" .. tostring(value) .. ");"
                     for k, v in pairs(value) do
                         k = basicSerialize(k)
                         local fname = string.format("%s[%s]", name, k)
                         field = string.format("[%s]", k)
                         -- three spaces between levels
-                        addtocart(v, fname, indent .. "   ", saved, field)
+                        addtocart(v, fname, indent, saved, field)
                     end
-                    cart = cart .. indent .. "};\n"
+                    cart = cart .. indent .. "};"
                 end
             end
         end
     end
 
-    name = name or "__unnamed__"
+    name = name or "__root"
     if type(t) ~= "table" then
-        return name .. " = " .. basicSerialize(t)
+        return name .. "=" .. basicSerialize(t)
     end
     cart, autoref = "", ""
     addtocart(t, name, indent)
