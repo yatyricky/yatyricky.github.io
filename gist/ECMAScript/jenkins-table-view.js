@@ -1,5 +1,6 @@
 const axios = require("axios")
 const fs = require("fs")
+const path = require("path")
 
 let max = 1200
 let min = 1210
@@ -62,7 +63,7 @@ async function exec() {
                 JOB_NUMBER: build,
                 COMMIT_ID: commitId,
                 USER: user,
-                TIMESTAMP: time,
+                TIMESTAMP: new Date(time),
             }
             for (let i = 0; i < params.length; i++) {
                 const param = params[i];
@@ -114,7 +115,7 @@ async function exec() {
         }
         sb = sb + "\n"
     }
-    fs.writeFileSync("all-jenkins.csv", sb)
+    fs.writeFileSync(path.join(__dirname, "all-jenkins.csv"), sb)
 }
 
 exec()
