@@ -38,6 +38,10 @@ if ([s isEqualToString:@"abc"])
 }
 ```
 
+string.startsWith
+
+if ([myString hasPrefix:@"http"]).
+
 # JSON
 
 ``` java

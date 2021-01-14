@@ -31,3 +31,10 @@ for i = 1, #numbers do
     local n = numbers[i]
     print(string.format("original %s, encoded %s, decoded %s", n, encode(n), decode(encode(n))))
 end
+
+function string.endsWith(str1, str2)
+    return string.sub(str1, (#str1 - #str2) + 1, #str1) == str2
+end
+
+print(string.endsWith("￥14.00", ".00"))
+print(string.endsWith("¥13.99", ".00"))

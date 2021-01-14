@@ -50,6 +50,9 @@ gitk --all --date-order -- <file path>
 
 # prune tags
 git fetch --prune origin "+refs/tags/*:refs/tags/*"
+
+# delete tag
+git push origin :refs/tags/tagname
 ```
 
 ```
