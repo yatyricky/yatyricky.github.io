@@ -38,3 +38,36 @@ end
 
 print(string.endsWith("￥14.00", ".00"))
 print(string.endsWith("¥13.99", ".00"))
+
+print("--------")
+
+local function parseStringRet(retVal)
+    print("I/SAGISDK lua received ret value", retVal, "eol")
+    local t = type(retVal)
+    print("type", t)
+    if t ~= "string" then
+        print("return value from native should be string, got", t, "eol")
+        return nil
+    end
+    print("len", #retVal)
+    if #retVal == 0 then
+        return nil
+    end
+    local signature = string.sub(retVal, 1, 1)
+    local value = string.sub(retVal, 1)
+    print("signature", signature, "value", value)
+    if signature == "S" then
+        return value
+    elseif signature == "Z" then
+        return value == "1"
+    elseif signature == "D" then
+        return tonumber(value)
+    else
+        print("return value from native is unknown type, got", signature, "eol")
+        return value
+    end
+end
+
+print(parseStringRet("Z1"))
+print(parseStringRet("Z0"))
+print(parseStringRet("D15.7"))

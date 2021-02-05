@@ -1,0 +1,1 @@
+aapt d --values badging some_apk_name.apk
