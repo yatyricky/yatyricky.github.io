@@ -1,16 +1,17 @@
-require("lib/table_ext")
+require("gist/Lua/lib/table_ext")
 
-local oldMap = require("MapDB")
-local newMap = require("newMap")
+local tab = setmetatable({}, {__mode="v"})
 
--- math.randomseed(os.time())
+local f1 = function() print("func1") end
+local f2 = function() print("func2") end
+local f3 = function() print("func3") end
 
--- local a = {1,2,3,4,5}
+tab[1] = f1
+tab[3] = f2
+tab[7] = f3
 
--- for i = 1, 10 do
---     print(table.join(table.randomSubset(a, 4), ", "))
--- end
+print(table.show(tab))
 
-local res, why = table.equals(oldMap, newMap)
-
-print((res and "true" or "false") .. " - " .. (why and why or "NIL"))
+f1 = nil
+collectgarbage()
+print(table.show(tab))
