@@ -1,10 +1,14 @@
+local t_insert = table.insert
+
 function table.isEmpty(t)
     return next(t) == nil
 end
 
-function table.show(t, name, indent)
+function table.show(t, name, indent, nice)
     local cart     -- a container
     local autoref  -- for self references
+    local eol = nice and "\n" or ";"
+    local indentIncre = nice and (indent and indent or "  ") or ""
 
     -- (RiciLake) returns true if the table is empty
     local function isemptytable(t)
@@ -37,26 +41,26 @@ function table.show(t, name, indent)
         cart = cart .. indent .. field
 
         if type(value) ~= "table" then
-            cart = cart .. "=" .. basicSerialize(value) .. ";"
+            cart = cart .. "=" .. basicSerialize(value) .. eol
         else
             if saved[value] then
-                cart = cart .. "=(" .. saved[value] .. ");"
-                autoref = autoref .. name .. "=" .. saved[value] .. ";"
+                cart = cart .. "=(" .. saved[value] .. ")" .. eol
+                autoref = autoref .. name .. "=" .. saved[value] .. eol
             else
                 saved[value] = name
 
                 if isemptytable(value) then
-                    cart = cart .. "={(" .. tostring(value) .. ")};"
+                    cart = cart .. "={(" .. tostring(value) .. ")}" .. eol
                 else
-                    cart = cart .. "={(" .. tostring(value) .. ");"
+                    cart = cart .. "={(" .. tostring(value) .. ")" .. eol
                     for k, v in pairs(value) do
                         k = basicSerialize(k)
                         local fname = string.format("%s[%s]", name, k)
                         field = string.format("[%s]", k)
                         -- three spaces between levels
-                        addtocart(v, fname, indent, saved, field)
+                        addtocart(v, fname, indent .. indentIncre, saved, field)
                     end
-                    cart = cart .. indent .. "};"
+                    cart = cart .. indent .. "}" .. eol
                 end
             end
         end
@@ -121,18 +125,18 @@ function table.join(t, delimeter, formatter)
     return res
 end
 
----@generic K, V, T, U, W
----@param data table<K, V> | V[]
----@param opts { select: (fun(k: K, v: V): T), where: (fun(k: K, v: V): boolean), any: (fun(k: K, v: V): boolean), all: (fun(k: K, v: V): boolean), sort: (fun(a: T | V, b: T | V): boolean), distinct: (fun(k: K, v: V): U), groupBy: (fun(k: K, v: V): W), asList: boolean }
----@param opts.select (fun(k: K, v: V): T) K is key, V is value.
----@param opts.where (fun(k: K, v: V): boolean) Condition.
----@param opts.sort (fun(a: T | V, b: T | V): boolean) If select is present, use select's return value, otherwise use V.
----@param opts.distinct (fun(k: K, v: V): U) The first of those who return the same U will be used. After sort.
----@param opts.groupBy (fun(k: K, v: V): W) All those who return the same W will be grouped. After sort.
+---@generic TKey, TValue, TSelected, TDistinct, TGroup
+---@param data table<TKey, TValue> | TValue[]
+---@param opts { select: (fun(k: TKey, v: TValue): TSelected), where: (fun(k: TKey, v: TValue): boolean), any: (fun(k: TKey, v: TValue): boolean), all: (fun(k: TKey, v: TValue): boolean), sort: (fun(a: TSelected | TValue, b: TSelected | TValue): boolean), distinct: (fun(k: TKey, v: TValue): TDistinct), groupBy: (fun(k: TKey, v: TValue): TGroup), asList: boolean }
+---@param opts.select (fun(k: TKey, v: TValue): TSelected) TKey is key, TValue is value.
+---@param opts.where (fun(k: TKey, v: TValue): boolean) Condition.
+---@param opts.sort (fun(a: TSelected | TValue, b: TSelected | TValue): boolean) If select is present, use select's return value, otherwise use TValue.
+---@param opts.distinct (fun(k: TKey, v: TValue): TDistinct) The first of those who return the same TDistinct will be used. After sort.
+---@param opts.groupBy (fun(k: TKey, v: TValue): TGroup) All those who return the same TGroup will be grouped. After sort.
 ---@param opts.asList boolean Ignore table's key, use 1, 2, 3... instead.
----@param opts.all (fun(k: K, v: V): boolean) table.query returns boolean. Ignores select.
----@param opts.any (fun(k: K, v: V): boolean) table.query returns boolean. Ignores select and all.
----@return table<K, V> | T[] | boolean
+---@param opts.all (fun(k: TKey, v: TValue): boolean) table.query returns boolean. Ignores select.
+---@param opts.any (fun(k: TKey, v: TValue): boolean) table.query returns boolean. Ignores select and all.
+---@return table<TKey, TValue> | TSelected[] | table<TGroup, table<TKey, TValue> | TSelected[]> | boolean
 function table.query(data, opts)
     -- parse opts
     opts = opts or {}
@@ -144,10 +148,11 @@ function table.query(data, opts)
     local distinct = opts.distinct
     local groupBy = opts.groupBy
     local asList = opts.asList or (sort ~= nil)
+    local count = 0
 
     local bst = nil
     local function bstAdd(data)
-        local newNode = {v = data, l = nil, r = nil}
+        local newNode = { v = data, l = nil, r = nil }
         if bst == nil then
             bst = newNode
         else
@@ -234,6 +239,7 @@ function table.query(data, opts)
                 end
             end
         end
+        count = count + 1
     end
     if returnTable then
         local distinctRet
@@ -288,7 +294,11 @@ function table.query(data, opts)
         if any then
             return false
         elseif all then
-            return true
+            if count > 0 then
+                return true
+            else
+                return false
+            end
         end
     end
 end
@@ -481,4 +491,43 @@ function table.toJSON(t, indent)
         return sb
     end
     return parseTable(t, indent)
+end
+
+---@generic V
+---@param tab V[]
+---@param filter fun(item: V): bool
+---@return V[] removed items
+function table.filterInPlace(tab, filter)
+    local ret = {}
+    local c = #tab
+    local i = 1
+    local d = 0
+    while i <= c do
+        local it = tab[i]
+        if filter(it) then
+            if d > 0 then
+                tab[i - d] = it
+            end
+        else
+            t_insert(ret, it)
+            d = d + 1
+        end
+        i = i + 1
+    end
+    for i = 0, d - 1 do
+        tab[c - i] = nil
+    end
+    return ret
+end
+
+
+---@generic T, V
+---@param t table<T, V>
+---@return T[]
+function table.keys(t)
+    local keys = {}
+    for k, _ in pairs(t) do
+        keys[#keys + 1] = k
+    end
+    return keys
 end

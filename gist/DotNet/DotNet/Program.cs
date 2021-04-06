@@ -252,28 +252,30 @@ namespace DotNet
             //TestManualAllocFree();
             //JavaParser.Start(); 
             //Console.WriteLine(GetTypeName(typeof(DateTime)));
-            var keys = new List<string>
-            {
-                "1",
-                "10",
-                "2",
-            };
-            keys.Sort((a, b) =>
-            {
-                for (int i = 0, n = Math.Min(a.Length, b.Length); i < n; i++)
-                {
-                    var cdiff = a[i] - b[i];
-                    if (cdiff != 0)
-                    {
-                        return cdiff;
-                    }
-                }
-                return a.Length - b.Length;
-            });
-            foreach (var item in keys)
-            {
-                Console.WriteLine(item);
-            }
+            //var keys = new List<string>
+            //{
+            //    "1",
+            //    "10",
+            //    "2",
+            //};
+            //keys.Sort((a, b) =>
+            //{
+            //    for (int i = 0, n = Math.Min(a.Length, b.Length); i < n; i++)
+            //    {
+            //        var cdiff = a[i] - b[i];
+            //        if (cdiff != 0)
+            //        {
+            //            return cdiff;
+            //        }
+            //    }
+            //    return a.Length - b.Length;
+            //});
+            //foreach (var item in keys)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            NPPATest.Start();
         }
     }
 }
