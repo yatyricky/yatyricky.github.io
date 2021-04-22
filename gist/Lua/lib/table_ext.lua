@@ -347,6 +347,35 @@ function table.equals(a, b, path)
     return true
 end
 
+function table.isSubsetOf(a, b, info)
+    info = info or { path = { "" }, left = nil, right = nil }
+    local ta = type(a)
+    local tb = type(b)
+    if ta ~= tb then
+        info.left = string.format("Left=[%s]%s", ta, tostring(a))
+        info.right = string.format("Right=[%s]%s", tb, tostring(b))
+        print(false, table.concat(info.path, "/"), info.left, info.right)
+    else
+        if ta ~= "table" then
+            if a == b then
+                return true
+            else
+                info.left = string.format("Left=[%s]%s", ta, tostring(a))
+                info.right = string.format("Right=[%s]%s", tb, tostring(b))
+                print(false, table.concat(info.path, "/"), info.left, info.right)
+            end
+        else
+            for k, v in pairs(a) do
+                table.insert(info.path, tostring(k))
+                if b then
+                    table.isSubsetOf(v, b[k], info)
+                end
+                table.remove(info.path, #info.path)
+            end
+        end
+    end
+end
+
 -- function table.equals2(o1, o2, ignore_mt)
 --     if o1 == o2 then return true end
 --     local o1Type = type(o1)
