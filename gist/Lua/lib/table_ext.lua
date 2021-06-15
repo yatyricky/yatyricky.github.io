@@ -1,3 +1,5 @@
+require("gist/Lua/lib/global")
+
 local t_insert = table.insert
 
 function table.isEmpty(t)
@@ -148,147 +150,134 @@ function table.query(data, opts)
     local distinct = opts.distinct
     local groupBy = opts.groupBy
     local asList = opts.asList or (sort ~= nil)
+    local returnTable = (any == nil and all == nil) -- return type is table or bool
     local count = 0
+    local _insert = table.insert
 
-    local bst = nil
-    local function bstAdd(data)
-        local newNode = { v = data, l = nil, r = nil }
-        if bst == nil then
-            bst = newNode
-        else
-            local cursor = bst
-            local prev
-            local isl = true
-            while cursor ~= nil do
-                prev = cursor
-                if sort(data, cursor.v) then
-                    cursor = cursor.l
-                    isl = true
-                else
-                    cursor = cursor.r
-                    isl = false
-                end
-            end
-            if isl then
-                prev.l = newNode
-            else
-                prev.r = newNode
-            end
-        end
-    end
-
-    local returnTable = select or (any == nil and all == nil) -- return type is table or bool
     local ret = {}
-    local key
-    local value
-    for k, v in pairs(data) do
-        if where then
-            if where(k, v) then
-                if returnTable then
-                    if asList then
-                        key = #ret + 1
-                    else
-                        key = k
-                    end
-                    if select then
-                        value = select(k, v)
-                    else
-                        value = v
-                    end
-                    if sort then
-                        bstAdd(value)
-                    end
-                    ret[key] = value
-                else
-                    if any then
-                        if any(k, v) then
-                            return true
-                        end
-                    elseif all then
-                        if not all(k, v) then
-                            return false
-                        end
-                    end
-                end
+
+    local function iterate(k, v)
+        local s
+        if select then
+            s = select(k, v)
+        else
+            s = v
+        end
+        if returnTable then
+            if asList then
+                _insert(ret, s)
+            else
+                ret[k] = s
             end
         else
-            if returnTable then
-                if asList then
-                    key = #ret + 1
-                else
-                    key = k
+            if any then
+                if any(k, v, s) then
+                    return true, true
                 end
-                if select then
-                    value = select(k, v)
-                else
-                    value = v
-                end
-                if sort then
-                    bstAdd(value)
-                end
-                ret[key] = value
-            else
-                if any then
-                    if any(k, v) then
-                        return true
-                    end
-                elseif all then
-                    if not all(k, v) then
-                        return false
-                    end
+            elseif all then
+                if not all(k, v, s) then
+                    return true, false
                 end
             end
         end
         count = count + 1
+        return false, false
     end
-    if returnTable then
-        local distinctRet
-        local groupRet
-        if sort then
-            local obst = {}
-            local function bstOut(node)
-                if node == nil then
-                    return
+
+    if where == nil then
+        if distinct == nil then
+            -- both nil
+            for k, v in pairs(data) do
+                local directReturn, returnValue = iterate(k, v)
+                if directReturn then
+                    return returnValue
                 end
-                bstOut(node.l)
-                obst[#obst + 1] = node.v
-                bstOut(node.r)
             end
-            bstOut(bst)
-            distinctRet = obst
         else
-            distinctRet = ret
+            -- only distinct
+            local filter1Distinct = {}
+            for k, v in pairs(data) do
+                local dk, dw = distinct(k, v)
+                if filter1Distinct[dk] == nil or filter1Distinct[dk].w > dw then
+                    filter1Distinct[dk] = {
+                        w = dw,
+                        k = k,
+                        v = v,
+                    }
+                end
+            end
+            for _, d in pairs(filter1Distinct) do
+                local directReturn, returnValue = iterate(d.k, d.v)
+                if directReturn then
+                    return returnValue
+                end
+            end
         end
-        if distinct then
-            ret = {}
-            local distinctMap = {}
-            for k, v in pairs(distinctRet) do
-                local distinctKey = distinct(k, v)
-                if distinctMap[distinctKey] == nil then
-                    distinctMap[distinctKey] = 1
-                    ret[k] = v
+    else
+        if distinct == nil then
+            -- only where
+            for k, v in pairs(data) do
+                if where(k, v) then
+                    local directReturn, returnValue = iterate(k, v)
+                    if directReturn then
+                        return returnValue
+                    end
                 end
             end
-            groupRet = ret
         else
-            groupRet = distinctRet
+            -- both where and distinct
+            local filter1Distinct = {}
+            for k, v in pairs(data) do
+                if where(k, v) then
+                    local dk, dw = distinct(k, v)
+                    if filter1Distinct[dk] == nil or filter1Distinct[dk].w > dw then
+                        filter1Distinct[dk] = {
+                            w = dw,
+                            k = k,
+                            v = v,
+                        }
+                    end
+                end
+            end
+            for _, d in pairs(filter1Distinct) do
+                local directReturn, returnValue = iterate(d.k, d.v)
+                if directReturn then
+                    return returnValue
+                end
+            end
+        end
+    end
+
+    if returnTable then
+        if sort then
+            table.sort(ret, sort)
         end
         if groupBy then
-            ret = {}
-            for k, v in pairs(groupRet) do
-                local groupKey = groupBy(k, v)
-                if not ret[groupKey] then
-                    ret[groupKey] = {}
+            local groupRet = {}
+            if asList then
+                for i, v in ipairs(ret) do
+                    local groupKey = groupBy(i, v)
+                    local groupTab = groupRet[groupKey]
+                    if groupTab == nil then
+                        groupTab = {}
+                        groupRet[groupKey] = groupTab
+                    end
+                    _insert(groupTab, v)
                 end
-                if asList then
-                    table.insert(ret[groupKey], v)
-                else
-                    ret[groupKey][k] = v
+            else
+                for k, v in pairs(ret) do
+                    local groupKey = groupBy(k, v)
+                    local groupTab = groupRet[groupKey]
+                    if groupTab == nil then
+                        groupTab = {}
+                        groupRet[groupKey] = groupTab
+                    end
+                    groupTab[k] = v
                 end
             end
-            return ret
-        else
             return groupRet
+        else
+            return ret
         end
     else
         if any then
@@ -559,4 +548,31 @@ function table.keys(t)
         keys[#keys + 1] = k
     end
     return keys
+end
+
+---@generic TKey, TValue, T
+---@param t table<TKey, TValue> | TValue[]
+---@param func fun(key: TKey, value: TValue): T
+---@return T[]
+function table.map(t, func)
+    local ret = {}
+    if type(t) == "table" then
+        for k, v in pairs(t) do
+            local res = func(k, v)
+            if res ~= nil then
+                ret[#ret + 1] = res
+            end
+        end
+    end
+    return ret
+end
+
+function table.concatMap(t, keyName)
+    if type(t) == "table" then
+        return table.concat(table.map(t, function(k, v)
+            return v[keyName] or "NIL"
+        end), ",")
+    else
+        return t
+    end
 end

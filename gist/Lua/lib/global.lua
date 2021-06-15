@@ -387,3 +387,7 @@ function GetLuaType(obj, asStruct)
         return stringifyStruct(struct)
     end
 end
+
+function SafeNumber(v)
+    return v
+end
