@@ -23,7 +23,7 @@
             "type": "lua",
             "request": "launch",
             "name": "Launch test ri",
-            "program": "${workspaceFolder}/gist/Lua/test_removeItem.lua"
+            "program": "${workspaceFolder}/gist/Lua/test_query.lua"
         },
         {
             "type": "lua",

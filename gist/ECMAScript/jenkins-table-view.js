@@ -2,14 +2,34 @@ const axios = require("axios")
 const fs = require("fs")
 const path = require("path")
 
+const fpAll = path.join(__dirname, "all-jenkins.csv")
+
+const cols = [
+    "JOB_NUMBER",
+    "USER",
+    "TIMESTAMP",
+    "COMMIT_ID",
+    "BRANCH",
+    "PLATFORM",
+    "MODE",
+    "VERSION",
+    "MODIFY_LOG",
+    "BUILD_ACTION",
+    "PACKAGE_MODE",
+    "IPA_METHOD",
+    "BUILD_CODE",
+    "ALIAS",
+    "PATCH_PLATFORM_MODE",
+    "PATCH_VERSION",
+    "PATCH_COMMIT",
+]
+
 let max = 1200
-let min = 1210
+let min = 1
 
 if (process.argv.length === 3) {
     try {
-        const tokens = process.argv[2].split("-")
-        min = parseInt(tokens[0], 10)
-        max = parseInt(tokens[1], 10)
+        max = parseInt(process.argv[2], 10)
     } catch (error) {
         console.log("node jenkins-table-view 1-1000")
     }
@@ -38,7 +58,36 @@ function arr2obj(arr, key) {
 
 async function exec() {
     const all = []
+    const existsMap = {}
+    if (fs.existsSync(fpAll)) {
+        const localAll = fs.readFileSync(fpAll).toString().split("\n")
+        for (const lineRaw of localAll) {
+            if (lineRaw.trim().length === 0) {
+                continue
+            }
+            const parts = lineRaw.trim().split(",")
+            if (parts.length !== cols.length) {
+                throw new Error("mismatch")
+            }
+            if (parts[0] === "JOB_NUMBER") {
+                continue
+            }
+            if (parts[1] === "NO_JOB") {
+                continue
+            }
+            const obj = {}
+            for (let i = 0; i < cols.length; i++) {
+                obj[cols[i]] = parts[i]
+            }
+            all.push(obj)
+            existsMap[parts[0]] = true
+        }
+    }
+
     for (let build = min; build <= max; build++) {
+        if (existsMap[build.toString()]) {
+            continue
+        }
         const url = `http://192.168.199.180:8080/pack/app/job/barrett/${build}/api/json`
         let resp
         try {
@@ -84,25 +133,6 @@ async function exec() {
     all.sort((a, b) => {
         return a.JOB_NUMBER - b.JOB_NUMBER
     })
-    const cols = [
-        "JOB_NUMBER",
-        "USER",
-        "TIMESTAMP",
-        "COMMIT_ID",
-        "BRANCH",
-        "PLATFORM",
-        "MODE",
-        "VERSION",
-        "MODIFY_LOG",
-        "BUILD_ACTION",
-        "PACKAGE_MODE",
-        "IPA_METHOD",
-        "BUILD_CODE",
-        "ALIAS",
-        "PATCH_PLATFORM_MODE",
-        "PATCH_VERSION",
-        "PATCH_COMMIT",
-    ]
     let sb = cols.join(",") + "\n"
     for (let i = 0; i < all.length; i++) {
         const e = all[i];
@@ -115,7 +145,7 @@ async function exec() {
         }
         sb = sb + "\n"
     }
-    fs.writeFileSync(path.join(__dirname, "all-jenkins.csv"), sb)
+    fs.writeFileSync(fpAll, sb)
 }
 
 exec()

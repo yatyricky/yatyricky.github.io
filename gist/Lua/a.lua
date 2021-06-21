@@ -1,17 +1,19 @@
-require("gist/Lua/lib/table_ext")
+local a = true
+local b = false
 
-local tab = setmetatable({}, {__mode="v"})
+local function fun(a, b)
+if a and b then
+    return "both true"
+elseif a then
+    return "b false"
+elseif b then
+    return "a false"
+else
+    return "both false"
+end
+end
 
-local f1 = function() print("func1") end
-local f2 = function() print("func2") end
-local f3 = function() print("func3") end
-
-tab[1] = f1
-tab[3] = f2
-tab[7] = f3
-
-print(table.show(tab))
-
-f1 = nil
-collectgarbage()
-print(table.show(tab))
+print(fun(true, true) == "both true")
+print(fun(true, false) == "b false")
+print(fun(false, true) == "a false")
+print(fun(false, false) == "both false")

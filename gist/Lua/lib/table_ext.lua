@@ -127,18 +127,6 @@ function table.join(t, delimeter, formatter)
     return res
 end
 
----@generic TKey, TValue, TSelected, TDistinct, TGroup
----@param data table<TKey, TValue> | TValue[]
----@param opts { select: (fun(k: TKey, v: TValue): TSelected), where: (fun(k: TKey, v: TValue): boolean), any: (fun(k: TKey, v: TValue): boolean), all: (fun(k: TKey, v: TValue): boolean), sort: (fun(a: TSelected | TValue, b: TSelected | TValue): boolean), distinct: (fun(k: TKey, v: TValue): TDistinct), groupBy: (fun(k: TKey, v: TValue): TGroup), asList: boolean }
----@param opts.select (fun(k: TKey, v: TValue): TSelected) TKey is key, TValue is value.
----@param opts.where (fun(k: TKey, v: TValue): boolean) Condition.
----@param opts.sort (fun(a: TSelected | TValue, b: TSelected | TValue): boolean) If select is present, use select's return value, otherwise use TValue.
----@param opts.distinct (fun(k: TKey, v: TValue): TDistinct) The first of those who return the same TDistinct will be used. After sort.
----@param opts.groupBy (fun(k: TKey, v: TValue): TGroup) All those who return the same TGroup will be grouped. After sort.
----@param opts.asList boolean Ignore table's key, use 1, 2, 3... instead.
----@param opts.all (fun(k: TKey, v: TValue): boolean) table.query returns boolean. Ignores select.
----@param opts.any (fun(k: TKey, v: TValue): boolean) table.query returns boolean. Ignores select and all.
----@return table<TKey, TValue> | TSelected[] | table<TGroup, table<TKey, TValue> | TSelected[]> | boolean
 function table.query(data, opts)
     -- parse opts
     opts = opts or {}
