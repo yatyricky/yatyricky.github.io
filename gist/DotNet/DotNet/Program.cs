@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace DotNet
 {
@@ -21,14 +22,17 @@ namespace DotNet
     internal class Int
     {
         public int Value;
+
         public Int(int val)
         {
             Value = val;
         }
+
         public override string ToString()
         {
             return "s" + Value;
         }
+
         public static explicit operator int(Int obj) => obj.Value;
     }
 
@@ -39,10 +43,10 @@ namespace DotNet
             Console.WriteLine("Hello World!");
 
             var sorted = new SortedSet<CustomType>(new CustomTypeComparer());
-            sorted.Add(new CustomType { Age = 15, Name = "Alice", });
-            sorted.Add(new CustomType { Age = 7, Name = "Bob", });
-            sorted.Add(new CustomType { Age = 33, Name = "Chris", });
-            sorted.Add(new CustomType { Age = 5, Name = "David", });
+            sorted.Add(new CustomType {Age = 15, Name = "Alice",});
+            sorted.Add(new CustomType {Age = 7, Name = "Bob",});
+            sorted.Add(new CustomType {Age = 33, Name = "Chris",});
+            sorted.Add(new CustomType {Age = 5, Name = "David",});
             foreach (var item in sorted)
             {
                 Console.WriteLine(item.Name);
@@ -53,7 +57,7 @@ namespace DotNet
         {
             foreach (var item in tab)
             {
-                Console.WriteLine($"[{(int)item.Key}]={item.Value}");
+                Console.WriteLine($"[{(int) item.Key}]={item.Value}");
             }
         }
 
@@ -96,7 +100,6 @@ namespace DotNet
                 {
                     Console.WriteLine($"[{i}]=NULL");
                 }
-                
             }
         }
 
@@ -134,10 +137,12 @@ namespace DotNet
             {
                 index = IndexCount++;
             }
+
             if (index >= IndexTable.Length)
             {
                 Array.Resize(ref IndexTable, IndexTable.Length + IndexGrow);
             }
+
             IndexTable[index] = -2;
             return index;
         }
@@ -154,6 +159,7 @@ namespace DotNet
                 Console.WriteLine("NativeBridgeIndex: double free index or undefined index");
                 return;
             }
+
             IndexTable[index] = IndexFreed;
             IndexFreed = index;
         }
@@ -165,21 +171,25 @@ namespace DotNet
             {
                 Console.WriteLine(AllocateIndex());
             }
+
             Console.WriteLine("free even");
-            for (int i = 0; i < 300; i+=2)
+            for (int i = 0; i < 300; i += 2)
             {
                 FreeIndex(i);
             }
+
             Console.WriteLine("alloc even");
             for (int i = 0; i < 120; i++)
             {
                 Console.WriteLine(AllocateIndex());
             }
+
             Console.WriteLine("free all");
             for (int i = 0; i < 220; i++)
             {
                 FreeIndex(i);
             }
+
             Console.WriteLine("alloc 10");
             for (int i = 0; i < 10; i++)
             {
@@ -201,28 +211,32 @@ namespace DotNet
                 sign += "-";
                 v = -v;
             }
+
             var d = v - Math.Floor(v);
             v -= d;
             var tens = "";
             while (v > p)
             {
                 var n = Math.Floor(v / 10);
-                var digit = (int)(v - n * 10);
+                var digit = (int) (v - n * 10);
                 v = n;
                 tens = digit + tens;
             }
+
             if (tens.Length == 0)
             {
                 tens = "0";
             }
+
             var pts = "";
             while (d > p)
             {
                 var n = d * 10;
-                var digit = (int)Math.Floor(n);
+                var digit = (int) Math.Floor(n);
                 pts += digit;
                 d = (n - digit) / 10f;
             }
+
             pts = pts.TrimEnd('0');
             if (pts.Length == 0)
             {
@@ -275,7 +289,25 @@ namespace DotNet
             //    Console.WriteLine(item);
             //}
 
-            NPPATest.Start();
+            // NPPATest.Start();
+            TestEndOfLine();
+        }
+
+        private static void TestEndOfLine()
+        {
+            int counter = 0;
+            string line;
+
+            // Read the file and display it line by line.  
+            System.IO.StreamReader file = new System.IO.StreamReader(@"D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\mixed_eol.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                System.Console.WriteLine($"[{line.Length}] : {BitConverter.ToString(Encoding.ASCII.GetBytes(line))}");
+                counter++;
+            }
+
+            file.Close();
+            System.Console.WriteLine("There were {0} lines.", counter);
         }
     }
 }

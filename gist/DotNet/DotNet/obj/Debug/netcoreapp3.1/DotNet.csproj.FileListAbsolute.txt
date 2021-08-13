@@ -11,3 +11,16 @@ D:\Projects\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNe
 D:\Projects\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.dll
 D:\Projects\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.pdb
 D:\Projects\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.genruntimeconfig.cache
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.exe
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.deps.json
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.runtimeconfig.json
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.runtimeconfig.dev.json
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.dll
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\bin\Debug\netcoreapp3.1\DotNet.pdb
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.csprojAssemblyReference.cache
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.AssemblyInfoInputs.cache
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.AssemblyInfo.cs
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.csproj.CoreCompileInputs.cache
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.dll
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.pdb
+D:\workspace\yatyricky.github.io\gist\DotNet\DotNet\obj\Debug\netcoreapp3.1\DotNet.genruntimeconfig.cache

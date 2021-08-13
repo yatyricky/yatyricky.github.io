@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\yatyricky.github.io\\gist\\DotNet\\DotNet\\DotNet.csproj",
+      "projectUniqueName": "D:\\workspace\\yatyricky.github.io\\gist\\DotNet\\DotNet\\DotNet.csproj",
       "projectName": "DotNet",
-      "projectPath": "D:\\Projects\\yatyricky.github.io\\gist\\DotNet\\DotNet\\DotNet.csproj",
+      "projectPath": "D:\\workspace\\yatyricky.github.io\\gist\\DotNet\\DotNet\\DotNet.csproj",
       "packagesPath": "C:\\Users\\yatyr\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\yatyricky.github.io\\gist\\DotNet\\DotNet\\obj\\",
+      "outputPath": "D:\\workspace\\yatyricky.github.io\\gist\\DotNet\\DotNet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yatyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
