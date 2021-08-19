@@ -564,3 +564,15 @@ function table.concatMap(t, keyName)
         return t
     end
 end
+
+function _arrayIter(a, i)
+    
+    local v = a[i]
+    if v then
+        return i, v
+    end
+end
+
+function each(a)
+    return _arrayIter, a, 0
+end
