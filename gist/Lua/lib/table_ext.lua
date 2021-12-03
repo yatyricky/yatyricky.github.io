@@ -566,7 +566,6 @@ function table.concatMap(t, keyName)
 end
 
 function _arrayIter(a, i)
-    
     local v = a[i]
     if v then
         return i, v
@@ -575,4 +574,22 @@ end
 
 function each(a)
     return _arrayIter, a, 0
+end
+
+function table.getOrCreateTable(t, k)
+    local v = t[k]
+    if not v then
+        v = {}
+        t[k] = v
+    end
+    return v
+end
+
+function table.getOrCreateTableByPath(t, ...)
+    local a = table.getOrCreateTable
+    local c = t
+    for _, k in pairs({ ... }) do
+        c = a(c, k)
+    end
+    return c
 end

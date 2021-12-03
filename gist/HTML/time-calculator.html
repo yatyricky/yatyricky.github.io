@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .button {
+            display: inline-block;
+            border: 1px solid;
+            width: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <title>Time Calculator</title>
+</head>
+
+<body>
+    <div>
+        <span>timezone</span>
+        <input id="now-timezone" />
+        <span>timestamp</span>
+        <input id="now-timestamp" />
+        <div id="now-date-2-timestamp" class="button">←</div>
+        <div id="now-timestamp-2-date" class="button">→</div>
+        <span>date</span>
+        <input id="now-date" />
+        <div id="now" class="button">N</div>
+    </div>
+    <br/>
+    <div>
+        <span>timezone</span>
+        <input id="left-timezone" />
+        <span>timestamp</span>
+        <input id="left-timestamp" />
+        <div id="left-date-2-timestamp" class="button">←</div>
+        <div id="left-timestamp-2-date" class="button">→</div>
+        <span>date</span>
+        <input id="left-date" />
+    </div>
+    <div>
+        <div id="add" class="button">+</div>
+        <div id="minus" class="button">-</div>
+    </div>
+    <div>
+        <span>timezone</span>
+        <input id="right-timezone" />
+        <span>timestamp</span>
+        <input id="right-timestamp" />
+        <div id="right-date-2-timestamp" class="button">←</div>
+        <div id="right-timestamp-2-date" class="button">→</div>
+        <span>date</span>
+        <input id="right-date" />
+    </div>
+    <div>
+        <div class="button">=</div>
+    </div>
+    <div>
+        <span>timezone</span>
+        <input id="res-timezone" />
+        <span>timestamp</span>
+        <input id="res-timestamp" />
+        <div id="res-date-2-timestamp" class="button">←</div>
+        <div id="res-timestamp-2-date" class="button">→</div>
+        <span>date</span>
+        <input id="res-date" />
+        <span>parts</span>
+        <input id="res-parts" />
+    </div>
+
+</body>
+<script>
+    function parseNumber(any) {
+        // console.log(`got str ${any}`)
+        try {
+            let val = parseFloat(any)
+            if (isNaN(val)) {
+                // console.log(`is nan`)
+                return 0
+            }
+            return val
+        } catch (error) {
+            // console.log(`exception`)
+            return 0
+        }
+    }
+
+    function pad(val) {
+        return (val < 10 ? "0" : "") + val
+    }
+
+    function timestamp2date(time) {
+        let date = new Date(time * 1000)
+        console.log(`converted date is ${date}`)
+        return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}T${pad(date.getUTCHours())}:${pad(date.getUTCMinutes())}:${pad(date.getUTCSeconds())}`
+    }
+
+    function parseInputTime(domzone, dominput) {
+        let time = parseNumber(dominput.value)
+        let zone = parseNumber(domzone.value)
+        console.log(`got zone ${zone} time ${time}`)
+        return time + zone * 3600
+    }
+
+    function domTimestamp2Date(domZone, domTimestamp, domDate) {
+        let time = parseInputTime(domZone, domTimestamp)
+        domDate.value = timestamp2date(time)
+    }
+
+    function domDate2Timestamp(domZone, domTimestamp, domDate) {
+        let s = domDate.value
+        let y = parseNumber(s.substring(0, 4))
+        let m = parseNumber(s.substring(5, 7)) - 1
+        let d = parseNumber(s.substring(8, 10))
+        let h = parseNumber(s.substring(11, 13))
+        let n = parseNumber(s.substring(14, 16))
+        let c = parseNumber(s.substring(17, 19))
+        let parsedTimestamp = Date.UTC(y, m, d, h, n, c)
+        let convertedTimestamp = parsedTimestamp - parseNumber(domZone.value) * 3600 * 1000
+        let date = new Date(convertedTimestamp)
+        // console.log(parsedTimestamp, convertedTimestamp)
+        // console.log(`${s} ${y} ${m} ${d} ${h} ${n} ${c} ${date}`)
+        domTimestamp.value = date.getTime() / 1000
+    }
+
+function seconds2Parts(time) {
+    let days = Math.floor( time / 86400)
+    time -= days * 86400
+    let hours = Math.floor( time / 3600)
+    time -= hours * 3600
+    let minutes = Math.floor( time / 60)
+    time -= minutes * 60
+    return `${days}-${hours}-${minutes}-${time}`
+}
+
+let nowTimezone = document.getElementById("now-timezone")
+let nowTimestamp = document.getElementById("now-timestamp")
+let nowDate = document.getElementById("now-date")
+
+let leftTimezone = document.getElementById("left-timezone")
+let leftTimestamp = document.getElementById("left-timestamp")
+let leftDate = document.getElementById("left-date")
+
+let rightTimezone = document.getElementById("right-timezone")
+let rightTimestamp = document.getElementById("right-timestamp")
+let rightDate = document.getElementById("right-date")
+
+let resTimezone = document.getElementById("res-timezone")
+let resTimestamp = document.getElementById("res-timestamp")
+let resDate = document.getElementById("res-date")
+let resParts = document.getElementById("res-parts")
+
+document.getElementById("now").onclick = () => {
+    nowTimestamp.value = Date.now() / 1000
+    nowTimezone.value = 8
+    domTimestamp2Date(nowTimezone, nowTimestamp, nowDate)
+}
+
+    document.getElementById("left-timestamp-2-date").onclick = () => {
+        domTimestamp2Date(leftTimezone, leftTimestamp, leftDate)
+    }
+
+    document.getElementById("left-date-2-timestamp").onclick = () => {
+        domDate2Timestamp(leftTimezone, leftTimestamp, leftDate)
+    }
+
+document.getElementById("right-timestamp-2-date").onclick = () => {
+    domTimestamp2Date(rightTimezone, rightTimestamp, rightDate)
+}
+
+document.getElementById("right-date-2-timestamp").onclick = () => {
+    domDate2Timestamp(rightTimezone, rightTimestamp, rightDate)
+}
+
+document.getElementById("res-timestamp-2-date").onclick = () => {
+    domTimestamp2Date(resTimezone, resTimestamp, resDate)
+}
+
+document.getElementById("res-date-2-timestamp").onclick = () => {
+    domDate2Timestamp(resTimezone, resTimestamp, resDate)
+}
+
+function add(a, b) {
+    return a + b
+}
+
+function minus(a, b) {
+    return a - b
+}
+
+function execOperation(op){
+    let left = parseNumber(leftTimestamp.value)
+    let right = parseNumber(rightTimestamp.value)
+    let res = op(left, right)
+    resTimestamp.value = res
+    resTimezone.value = 0
+    domTimestamp2Date(resTimezone, resTimestamp, resDate)
+    resParts.value = seconds2Parts(res)
+}
+
+document.getElementById("add").onclick = () => {
+    execOperation(add)
+}
+
+document.getElementById("minus").onclick = () => {
+    execOperation(minus)
+}
+</script>
+
+</html>

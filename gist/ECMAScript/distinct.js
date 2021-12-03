@@ -7,4 +7,5 @@ for (const line of all) {
 }
 let keys = Object.keys(map)
 let sorted = keys.sort()
-fs.writeFileSync("2.log", sorted.join("\n"))
+let filtered = sorted.filter(e => e.startsWith("127.0.0.1"))
+fs.writeFileSync("2.log", filtered.join("\n"))

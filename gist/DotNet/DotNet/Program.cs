@@ -261,6 +261,7 @@ namespace DotNet
 
         private static void Main(string[] args)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             //ConditionalWeakTable();
             //WeakArray();
             //TestManualAllocFree();
@@ -290,7 +291,41 @@ namespace DotNet
             //}
 
             // NPPATest.Start();
-            TestEndOfLine();
+            // TestEndOfLine();
+
+            // TestMiniJson();
+
+            // EPPlusHelper.Workbook.Test2();
+            
+            ProtoLang.Parser.Tokenize();
+        }
+
+        private static void TestMiniJson()
+        {
+            var nil = MiniJSON.Json.DeserializeObject(null);
+            Console.WriteLine($"nil: {nil.IsNull} {nil}");
+            
+            var emptyString = MiniJSON.Json.DeserializeObject("");
+            Console.WriteLine($"emptyString: {emptyString.IsNull} {emptyString}");
+            
+            var whiteSpaces = MiniJSON.Json.DeserializeObject("  ");
+            Console.WriteLine($"whiteSpaces: {whiteSpaces.IsNull} {whiteSpaces}");
+            
+            var invalidJson = MiniJSON.Json.DeserializeObject("{xxx");
+            Console.WriteLine($"invalidJson: {invalidJson.IsNull} {invalidJson}");
+            
+            var singleData = MiniJSON.Json.DeserializeObject("15");
+            Console.WriteLine($"singleData: {singleData.IsNull} {singleData}");
+            
+            var simpleObject = MiniJSON.Json.DeserializeObject("{\"a\":15,\"b\":\"hello\",\"c\":{\"d\":-77}}");
+            Console.WriteLine($"simpleObject: {simpleObject.IsNull} {simpleObject}");
+            Console.WriteLine($"simpleObject.get a: {simpleObject.GetString("a")}");
+            Console.WriteLine($"simpleObject.get b: {simpleObject.GetString("b")}");
+            Console.WriteLine($"simpleObject.get c: {simpleObject.GetString("c")}");
+            Console.WriteLine($"simpleObject.get d: {simpleObject.GetString("d")}");
+            
+            var array = MiniJSON.Json.DeserializeObject("[15,27,\"abc\"]");
+            Console.WriteLine($"array: {array.IsNull} {array}");
         }
 
         private static void TestEndOfLine()

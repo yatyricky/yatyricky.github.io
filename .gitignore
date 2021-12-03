@@ -43,3 +43,8 @@ node_modules
 
 gist/ECMAScript/all-jenkins.csv
 *.log
+
+# dotnet
+gist/DotNet/DotNet/bin
+gist/DotNet/DotNet/obj
+gist/DotNet/.vs

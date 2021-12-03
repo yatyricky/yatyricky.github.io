@@ -1,5 +1,5 @@
 require("gist/Lua/lib/global")
-require("gist\\Lua\\lib\\table_ext")
+require("gist/Lua/lib/table_ext")
 
 -- local cls = {}
 
@@ -47,6 +47,6 @@ require("gist\\Lua\\lib\\table_ext")
 -- print(cls.getAge(20190602))
 -- print(cls.getAge(20190603))
 
-local date = os.date("*t", 1597363200)
+local date = os.date("!*t", 1630567684)
 
 print(table.show(date))

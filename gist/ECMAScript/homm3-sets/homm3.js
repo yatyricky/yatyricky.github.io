@@ -125,15 +125,15 @@ const AllSets = [
     //         ["Shield", "狼人王盾"],
     //     ],
     // },
-    // {
-    //     Name: "野蛮盔甲",
-    //     Parts: [
-    //         ["Helmet", "智慧之冠"],
-    //         ["Armor", "巨人战甲"],
-    //         ["Weapon", "恶魔之棒"],
-    //         ["Shield", "狂魔盾"],
-    //     ],
-    // },
+    {
+        Name: "Ironfist of the Ogre",
+        Parts: [
+            ["Helmet", "智慧之冠"],
+            ["Armor", "巨人战甲"],
+            ["Weapon", "恶魔之棒"],
+            ["Shield", "狂魔盾"],
+        ],
+    },
     // {
     //     Name: "地狱战甲",
     //     Parts: [
@@ -151,14 +151,14 @@ const AllSets = [
     //         ["Necklace", "抗魔链"],
     //     ],
     // },
-    // {
-    //     Name: "外交",
-    //     Parts: [
-    //         ["Cloaks", "大使勋带"],
-    //         ["Necklace", "政治家勋章"],
-    //         ["Rings", "礼仪之戒"],
-    //     ],
-    // },
+    {
+        Name: "Diplomat's Cloak",
+        Parts: [
+            ["Cloaks", "大使勋带"],
+            ["Necklace", "政治家勋章"],
+            ["Rings", "礼仪之戒"],
+        ],
+    },
     // {
     //     Name: "速度",
     //     Parts: [
@@ -225,6 +225,12 @@ const AllSets = [
     //         ["Rings", "骑士手套"],
     //     ],
     // },
+    {
+        Name: "Golden Goose",
+        Parts: [
+            ["Trinkets", "黄金包", "黄金袋", "黄金囊"],
+        ],
+    }
 ]
 
 let stack = [];
