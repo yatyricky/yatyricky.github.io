@@ -1,6 +1,5 @@
 ﻿namespace ProtoLang
 {
-
     public enum TokenType
     {
         NULL,
@@ -17,12 +16,10 @@
     {
         public TokenType Type;
         public string Content;
-        public string Payload;
 
         public Token(string content, TokenType type)
         {
             Content = content;
-            // Payload = payload;
             Type = type;
         }
 

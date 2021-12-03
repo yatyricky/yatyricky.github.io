@@ -61,6 +61,11 @@ git push origin tagname
 # delete branch
 git push -d <remote_name> <branch_name>
 git branch -d <branch_name>
+
+# export all history of file
+for sha in `git rev-list HEAD -- protos/user.proto`; do
+    git show ${sha}:protos/user.proto > ./exportfolder/user_${sha}.proto
+done
 ```
 
 ```

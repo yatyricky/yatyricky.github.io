@@ -1,85 +1,69 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 
 namespace ProtoLang
 {
-    public class Lexer
+    internal class Lexer
     {
-
-        private string _filePath;
         private StreamReader _reader;
-        private StringBuilder _sb;
-        private int[] _buffer;
-        private int _bufferIndex;
+        private readonly StringBuilder _sb;
 
         public Lexer(string filePath)
         {
-            _filePath = filePath;
-            _reader = new StreamReader(_filePath);
+            _reader = new StreamReader(filePath);
             _sb = new StringBuilder();
-            _buffer = new int[128];
-            _bufferIndex = 0;
         }
 
-        public Token Next()
+        internal Token Next()
+        {
+            var token = NextToken();
+            Console.WriteLine($"Emit {token}");
+            return token;
+        }
+
+        internal Token NextToken()
         {
             Token token;
             if (_reader == null)
             {
-                token = new Token(string.Empty, TokenType.NULL);
-                Console.WriteLine($"Emit token - {token}");
-                return token;
+                return new Token(string.Empty, TokenType.NULL);
             }
-            var c = 0;
+
+            int c;
             while ((c = _reader.Peek()) > 0)
             {
                 if (IsEOL(c))
                 {
-                    token = new Token(ReadEOL(), TokenType.EOFL);
-                    Console.WriteLine($"Emit token - {token}");
-                    return token;
+                    return new Token(ReadEOL(), TokenType.EOFL);
                 }
 
                 if (IsWhiteSpace(c))
                 {
-                    token = new Token(ReadWhiteSpace(), TokenType.WTSP);
-                    Console.WriteLine($"Emit token - {token}");
-                    return token;
+                    return new Token(ReadWhiteSpace(), TokenType.WTSP);
                 }
 
                 if (IsSplitter(c))
                 {
-                    token = new Token(ReadSplitter(), TokenType.SPLT);
-                    Console.WriteLine($"Emit token - {token}");
-                    return token;
+                    return new Token(ReadSplitter(), TokenType.SPLT);
                 }
 
                 if (IsIdentifier(c))
                 {
-                    token = new Token(ReadIdentifier(), TokenType.IDEN);
-                    Console.WriteLine($"Emit token - {token}");
-                    return token;
+                    return new Token(ReadIdentifier(), TokenType.IDEN);
                 }
 
                 if (IsInt(c))
                 {
-                    token = new Token(ReadInt(), TokenType.INTL);
-                    Console.WriteLine($"Emit token - {token}");
-                    return token;
+                    return new Token(ReadInt(), TokenType.INTL);
                 }
 
-                token = new Token(ReadText(), TokenType.TEXT);
-                Console.WriteLine($"Emit token - {token}");
-                return token;
+                return new Token(ReadText(), TokenType.TEXT);
             }
 
             _reader.Close();
             _reader = null;
-            token = new Token(string.Empty, TokenType.NULL);
-            Console.WriteLine($"Emit token - {token}");
-            return token;
+            return new Token(string.Empty, TokenType.NULL);
         }
 
         private bool IsWhiteSpace(int c)
@@ -98,11 +82,6 @@ namespace ProtoLang
             } while (c > 0 && IsWhiteSpace(c));
 
             return _sb.ToString();
-        }
-
-        private bool IsLineWhiteSpace(int c)
-        {
-            return c == ' ' || c == '\t' || c == '\r';
         }
 
         private bool IsSplitter(int c)
