@@ -1,32 +1,27 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ProtoLang
 {
-    internal class Node
+    public class Node
     {
-        private readonly string _name;
-        private readonly string _content;
-        private readonly List<Node> _children;
-
-        internal string Name => _name;
-        internal string Content => _content;
-        internal List<Node> Children => _children;
+        internal string Name { get; }
+        internal string Content { get; }
+        internal List<Node> Children { get; }
 
         internal Node(string name, params Node[] children)
         {
-            _name = name;
-            _children = new List<Node>();
+            Name = name;
+            Children = new List<Node>();
             AddChild(children);
         }
 
         internal Node(string name, string content)
         {
-            _name = name;
-            _content = content;
-            _children = new List<Node>();
+            Name = name;
+            Content = content;
+            Children = new List<Node>();
         }
 
         internal void AddChild(params Node[] children)
@@ -40,7 +35,7 @@ namespace ProtoLang
             {
                 if (child != null)
                 {
-                    _children.Add(child);
+                    Children.Add(child);
                 }
             }
         }
@@ -53,27 +48,27 @@ namespace ProtoLang
             }
 
             sb.Append('[');
-            sb.Append(curr._name);
+            sb.Append(curr.Name);
             sb.Append(']');
-            if (!string.IsNullOrEmpty(curr._content))
+            if (!string.IsNullOrEmpty(curr.Content))
             {
                 sb.Append(" - ");
-                sb.Append(curr._content);
+                sb.Append(curr.Content);
             }
 
             sb.Append('\n');
-            foreach (var child in curr._children)
+            foreach (var child in curr.Children)
             {
                 ToText(sb, child, level + 4);
             }
         }
 
-        internal List<Node> FindAll(string name)
+        public List<Node> FindAll(string name)
         {
-            return (from node in _children where node._name == name select node).ToList();
+            return (from node in Children where node.Name == name select node).ToList();
         }
 
-        internal Node Find(string name)
+        public Node Find(string name)
         {
             return FindAll(name).FirstOrDefault();
         }

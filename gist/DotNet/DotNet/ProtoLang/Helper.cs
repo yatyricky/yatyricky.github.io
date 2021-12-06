@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ProtoLang
 {
@@ -14,27 +13,6 @@ namespace ProtoLang
             public string Type;
             public string Value;
             public bool Reserved;
-        }
-
-        private static string SerializeFieldType(Node field)
-        {
-            var simple = field.Find("SimpleType");
-            if (simple != null)
-            {
-                return simple.Content;
-            }
-            var repeated = field.Find("RepeatedType");
-            if (repeated != null)
-            {
-                return $"repeated {repeated .Find("SimpleType").Content}";
-            }
-            var map = field.Find("MapType");
-            if (map != null)
-            {
-                var genericTypes = map.FindAll("SimpleType");
-                return $"map<{genericTypes[0].Content},{genericTypes[1].Content}>";
-            }
-            throw new Exception();
         }
 
         private static Dictionary<string, Entry[]> ConvertProto(Node root)
@@ -54,7 +32,7 @@ namespace ProtoLang
                         {
                             Reserved = false,
                             Name = field.Find("FieldName").Content,
-                            Type = SerializeFieldType(field),
+                            Type = Formatter.FieldTypeToString(field),
                             Value = field.Find("FieldNumber").Content
                         };
                     }
@@ -67,8 +45,10 @@ namespace ProtoLang
                         };
                     }
                 }
+
                 dict.Add(message.Find("MessageName").Content, entries);
             }
+
             return dict;
         }
 
@@ -81,10 +61,10 @@ namespace ProtoLang
             {
                 if (d2.ContainsKey(kv.Key))
                 {
-                    var leftArr= kv.Value;
+                    var leftArr = kv.Value;
                     var rightArr = d2[kv.Key];
 
-                    for (int i = 0; i < Math.Min(leftArr.Length,rightArr.Length); i++)
+                    for (int i = 0; i < Math.Min(leftArr.Length, rightArr.Length); i++)
                     {
                         var left = leftArr[i];
                         var right = rightArr[i];
@@ -96,10 +76,11 @@ namespace ProtoLang
                         {
                             if (left.Type != right.Type)
                             {
-                                errs.Add($"message {kv.Key} field {i+1} changed from [{left.Type}]{left.Name} to [{right.Type}]{right.Name}");
+                                errs.Add($"message {kv.Key} field {i + 1} changed from [{left.Type}]{left.Name} to [{right.Type}]{right.Name}");
                             }
                         }
                     }
+
                     if (leftArr.Length > rightArr.Length)
                     {
                         errs.Add($"message {kv.Key} had {leftArr.Length} fields, but now have only {rightArr.Length} fields");
@@ -110,14 +91,15 @@ namespace ProtoLang
                     errs.Add($"new ver does not have message {kv.Key} any more");
                 }
             }
+
             return errs;
         }
 
         public static void Detect()
         {
-            var dir= @"C:\Users\yatyr\workspace\barrett-client\exportfolder\";
+            var dir = @"C:\Users\yatyr\workspace\barrett-client\exportfolder\";
             var files = Directory.GetFiles(dir).ToList();
-            files.Sort((a,b) =>
+            files.Sort((a, b) =>
             {
                 var ca = File.GetCreationTime(a);
                 var cb = File.GetCreationTime(b);
@@ -134,7 +116,6 @@ namespace ProtoLang
                     Console.WriteLine(item);
                 }
             }
-            
         }
     }
 }

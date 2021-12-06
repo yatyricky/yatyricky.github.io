@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ProtoLang
 {
@@ -6,11 +6,11 @@ namespace ProtoLang
     {
         public override string Message { get; }
 
-        public SyntaxException()
+        internal SyntaxException()
         {
         }
 
-        public SyntaxException(string message)
+        internal SyntaxException(string message)
         {
             Message = message;
         }

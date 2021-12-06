@@ -1,6 +1,6 @@
-﻿namespace ProtoLang
+namespace ProtoLang
 {
-    public enum TokenType
+    internal enum TokenType
     {
         NULL,
         IDEN, // dataEntry
@@ -12,12 +12,12 @@
         EOFL,
     }
 
-    public class Token
+    internal class Token
     {
-        public TokenType Type;
-        public string Content;
+        public readonly TokenType Type;
+        public readonly string Content;
 
-        public Token(string content, TokenType type)
+        internal Token(string content, TokenType type)
         {
             Content = content;
             Type = type;

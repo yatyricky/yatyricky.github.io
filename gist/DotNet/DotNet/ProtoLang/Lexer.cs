@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 
@@ -9,7 +8,7 @@ namespace ProtoLang
         private StreamReader _reader;
         private readonly StringBuilder _sb;
 
-        public Lexer(string filePath)
+        internal Lexer(string filePath)
         {
             _reader = new StreamReader(filePath);
             _sb = new StringBuilder();
@@ -17,14 +16,6 @@ namespace ProtoLang
 
         internal Token Next()
         {
-            var token = NextToken();
-            Console.WriteLine($"Emit {token}");
-            return token;
-        }
-
-        internal Token NextToken()
-        {
-            Token token;
             if (_reader == null)
             {
                 return new Token(string.Empty, TokenType.NULL);

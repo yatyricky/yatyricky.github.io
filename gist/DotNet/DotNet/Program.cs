@@ -297,8 +297,9 @@ namespace DotNet
 
             // EPPlusHelper.Workbook.Test2();
 
-            ProtoLang.Parser.Tokenize();
+            //ProtoLang.Parser.Tokenize();
             //ProtoLang.Helper.Detect();
+            ProtoLang.Formatter.FormatAllProtoFiles();
         }
 
         private static void TestMiniJson()

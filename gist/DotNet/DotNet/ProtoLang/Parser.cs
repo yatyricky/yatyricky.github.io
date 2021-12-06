@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace ProtoLang
@@ -16,7 +14,7 @@ namespace ProtoLang
             _stack = new Stack<Token>();
         }
 
-        internal Node ParseProto()
+        public Node ParseProto()
         {
             var node = new Node("Proto3");
             var headers = ParseHeaders();
@@ -192,9 +190,9 @@ namespace ProtoLang
             return ParseLineComment() ?? ParseBlockComment();
         }
 
-        private Node ParseLineComment()
+        private Node ParseLineComment(bool dontWrap = false)
         {
-            var token = NextNonWhiteSpaceToken();
+            var token = NextNonWhiteSpaceToken(dontWrap);
             if (token.Type != TokenType.SPLT || token.Content != "/")
             {
                 return null;
@@ -307,7 +305,7 @@ namespace ProtoLang
                     throw new SyntaxException();
                 }
 
-                body.AddChild(field);
+                body.AddChild(field, comment);
             }
         }
 
@@ -354,7 +352,7 @@ namespace ProtoLang
                     throw new SyntaxException();
                 }
 
-                body.AddChild(field);
+                body.AddChild(field, comment);
             }
         }
 
@@ -436,7 +434,8 @@ namespace ProtoLang
             }
 
             _stack.Pop();
-            var comment = ParseLineComment();
+            var comment = ParseLineComment(true);
+            ConsumeEOL();
             return new Node("ActiveField", fieldType, new Node("FieldName", fieldName), new Node("FieldNumber", fieldNumber), comment);
         }
 
@@ -522,7 +521,21 @@ namespace ProtoLang
             }
 
             _stack.Pop();
-            return new Node("ReservedField", new Node("FieldNumber", fieldNumber), ParseLineComment());
+            var comment = ParseLineComment(true);
+            ConsumeEOL();
+            return new Node("ReservedField", new Node("FieldNumber", fieldNumber), comment);
+        }
+
+        private void ConsumeEOL()
+        {
+            while (_stack.Count > 0)
+            {
+                var c = _stack.Peek();
+                if (c.Type == TokenType.EOFL)
+                {
+                    _stack.Pop();
+                }
+            }
         }
 
         private Token NextNonWhiteSpaceToken(bool excludeEOL = false)
@@ -555,24 +568,6 @@ namespace ProtoLang
                     }
                 }
             } while (true);
-        }
-
-        // test
-        public static void Tokenize()
-        {
-            //foreach (var file in Directory.GetFiles(@"C:\Users\yatyr\workspace\barrett-client\protos"))
-            //{
-            //    if (file.EndsWith(".proto"))
-            //    {
-            //        var baseName = Path.GetFileNameWithoutExtension(file);
-            //        var parser = new Parser(file);
-            //        var node = parser.ParseProto();
-            //        File.WriteAllText(@"C:\Users\yatyr\workspace\barrett-client\protos\" + baseName + "-ast.txt", node.ToString());
-            //    }
-            //}
-            var parser = new Parser(@"C:\Users\yatyr\workspace\barrett-client\exportfolder\user_876a5306dd0eba21e0e10bbf4cd841f7968cd30a.proto");
-            var node = parser.ParseProto();
-            Console.WriteLine(node.ToString());
         }
     }
 }
