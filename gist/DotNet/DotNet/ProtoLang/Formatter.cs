@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using UnityEditor;
 
 namespace ProtoLang
 {
@@ -237,7 +236,7 @@ namespace ProtoLang
             File.WriteAllText(path, sb.ToString());
         }
 
-        [MenuItem("Tools/Proto/Format All Proto")]
+        //[MenuItem("Tools/Proto/Format All Proto")]
         public static void FormatAllProtoFiles()
         {
             foreach (var file in Directory.GetFiles("../protos"))

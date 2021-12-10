@@ -86,6 +86,8 @@ namespace Excel4Unity
                         return dateTime.ToString("yyyy-MM-dd HH:mm:ss");
                     case DBNull _:
                         return "";
+                    case bool boolVal:
+                        return boolVal ? "TRUE" : "FALSE";
                     default:
                         throw new Exception($"uncaught type {cell.GetType()} {cell} @ {colIndex},{rowIndex}");
                 }

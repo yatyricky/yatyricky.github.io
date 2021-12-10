@@ -48,3 +48,4 @@ gist/ECMAScript/all-jenkins.csv
 gist/DotNet/DotNet/bin
 gist/DotNet/DotNet/obj
 gist/DotNet/.vs
+.vscode

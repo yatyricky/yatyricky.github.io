@@ -299,7 +299,8 @@ namespace DotNet
 
             //ProtoLang.Parser.Tokenize();
             //ProtoLang.Helper.Detect();
-            ProtoLang.Formatter.FormatAllProtoFiles();
+            //ProtoLang.Formatter.FormatAllProtoFiles();
+            EditorTools.ExportThinkingAnalytics.LuaCodeGen();
         }
 
         private static void TestMiniJson()
