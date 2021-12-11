@@ -1,5 +1,3 @@
-require("gist/Lua/lib/table_ext")
-
 local setmetatable = setmetatable
 local error = error
 local pcall = pcall
@@ -19,127 +17,159 @@ local function defaultOnRejected(reason)
     error(reason)
 end
 
-local function printChain(root)
-    local sb = tostring(root) .. "("
-    for i, v in ipairs(root.next) do
-        sb = sb .. printChain(v.promise) .. " "
-    end
-    sb = sb .. ")"
-    return sb
-end
-
+---@class Promise
 local cls = {
     __isPromise = true
 }
 
 cls.__index = cls
 
-function cls.New(func)
+---@generic T
+---@param executor fun(resolve: (fun(result: T): void), reject: (fun(reason: string): void))
+---@return Promise<T>
+function cls.New(executor)
     local inst = setmetatable({}, cls)
-    -- print("PROMISE:"..tostring(inst).." new")
     inst.state = PENDING
     inst.next = {}
-    if func then
-        -- print("PROMISE:"..tostring(inst).." new call func")
-        local success, errMsg = pcall(func, function(result)
-            -- print("PROMISE:"..tostring(inst).." will callback resolve with", result)
+    if executor then
+        local success, errMsg = pcall(executor, function(result)
             inst:_resolve(result)
-        end, function (err)
-            -- print("PROMISE:"..tostring(inst).." will callback reject with", err)
-            inst:_reject(err)
+        end, function(reason)
+            inst:_reject(reason)
         end)
         if not success then
-            -- print("PROMISE:"..tostring(inst).." will callback reject with exception", errMsg)
             inst:_reject(errMsg)
         end
     end
     return inst
 end
 
-function cls:_resolve(result)
-    if self == result then
-        self:_reject("TypeError: attempting to resolve with the promise itself")
-        return
+---@param promises Promise[]
+---@return Promise
+function cls.All(promises)
+    local remaining = #promises
+    local results = {}
+    local p = cls.New()
+
+    local checkFinished = function()
+        if remaining > 0 then
+            return
+        end
+        p:_resolve(results)
     end
-    if self.state ~= PENDING then
-        -- print("PROMISE:"..tostring(self).. " resolve again, skipping ...")
-        return
+
+    for i, v in ipairs(promises) do
+        v:Then(function(result)
+            results[i] = result
+            remaining = remaining - 1
+            checkFinished()
+        end, function(reason)
+            p:_reject(reason)
+        end)
     end
-    -- print("PROMISE:"..tostring(self).. " will transite to fulfilled", result)
-    self.state = FULFILLED
-    self.result = result
-    if type(result) == "table" and result.__isPromise then
-        -- print("PROMISE:"..tostring(self).. " will resolve with new promise:" .. tostring(result))
-        result.next = self.next
-        self.next = {
-            {
-                promise = result,
-                onFulfilled = function(_result)
-                    result:_resolve(_result)
-                end,
-                onRejected = function(_reason)
-                    result:_reject(_reason)
-                end
-            }
-        }
-        -- print(printChain(self))
-        self.redirected = true
-    end
-    self:_run()
+    checkFinished()
+
+    return p
 end
 
-function cls:_reject(reason)
-    if self.state ~= PENDING then
-        return
+---@param promises Promise[]
+---@return Promise
+function cls.Race(promises)
+    local p = cls.New()
+    if #promises == 0 then
+        p:_resolve()
     end
-    -- print("PROMISE:"..tostring(self).. " will transit to rejected", reason)
-    self.state = REJECTED
-    self.reason = reason
-    self:_run()
+
+    for _, v in ipairs(promises) do
+        v:Then(function(result)
+            p:_resolve(result)
+        end, function(reason)
+            p:_reject(reason)
+        end)
+    end
+
+    return p
 end
 
+---@generic T
+---@param onFulfilled (fun(result: T): void) | nil
+---@param onRejected (fun(reason: string): void) | nil
+---@return Promise<T>
 function cls:Then(onFulfilled, onRejected)
     local p = cls.New()
-    -- print("PROMISE:"..tostring(self).. " Then, new promise=", tostring(p))
     local data = {
         promise = p,
         onFulfilled = type(onFulfilled) == "function" and onFulfilled or defaultOnFulfilled,
         onRejected = type(onRejected) == "function" and onRejected or defaultOnRejected
     }
     if self.redirected then
-        t_insert(self.next[1].promise.next, data)
+        t_insert(self.redirected.next, data)
+        self.redirected:_run()
     else
         t_insert(self.next, data)
+        self:_run()
     end
-    -- print("After then: " .. printChain(self))
-    self:_run()
+
     return p
 end
 
+---@param onRejected (fun(reason: string): void)
+---@return Promise
+function cls:Catch(onRejected)
+    return self:Then(nil, onRejected)
+end
+
 function cls:_run()
-    -- print("PROMISE:"..tostring(self).." will run")
-    -- print(printChain(self))
-    for _, v in ipairs(self.next) do
-        -- print("PROMISE:"..tostring(self).." running " .. tostring(v.promise))
-        if self.state == PENDING then
-            -- print("PROMISE:"..tostring(self).." pending, do nothing")
-            break
-        end
+    if self.state == PENDING then
+        return
+    end
+
+    for i, v in ipairs(self.next) do
         local pState
         local pReturn
         if self.state == FULFILLED then
-            -- print("PROMISE:"..tostring(self).." fulfilled:"..tostring(v.promise).." will call onFulfilled with", self.result)
             pState, pReturn = pcall(v.onFulfilled, self.result)
             if pState then
-                -- print("PROMISE:"..tostring(self).." fulfilled:"..tostring(v.promise).." will resolve", pReturn)
                 v.promise:_resolve(pReturn)
             end
         end
         if not pState or self.state == REJECTED then
-            pState, pReturn = pcall(v.onRejected, pState and self.reason or pReturn)
-            v.promise:_reject(pReturn)
+            pState, pReturn = pcall(v.onRejected, pReturn and pReturn or self.reason)
+            v.promise:_reject(pReturn and pReturn or self.reason)
         end
+        self.next[i] = nil
     end
+end
+
+function cls:_resolve(result)
+    if self.state ~= PENDING then
+        return
+    end
+
+    if self == result then
+        self:_reject("Attempting to resolve with the promise itself")
+        return
+    end
+
+    self.state = FULFILLED
+    self.result = result
+    if type(result) == "table" and result.__isPromise then
+        result.next = self.next
+        result:_run()
+        self.redirected = result
+    else
+        self:_run()
+    end
+end
+
+function cls:_reject(reason)
+    if self.state ~= PENDING then
+        return
+    end
+
+    self.state = REJECTED
+    self.reason = reason
+    self:_run()
 end
 
 return cls

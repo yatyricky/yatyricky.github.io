@@ -66,15 +66,15 @@ function class(classname, super)
     return cls
 end
 
-function assert(value, expected)
-    local ta = type(value)
-    local tb = type(expected)
-    if value == expected then
-        print(string.format("[OK] %s(%s) is %s(%s)", value, type(value), expected, type(expected)))
-    else
-        print(string.format("[FAIL] %s(%s) is not %s(%s)", value, type(value), expected, type(expected)))
-    end
-end
+-- function assert(value, expected)
+--     local ta = type(value)
+--     local tb = type(expected)
+--     if value == expected then
+--         print(string.format("[OK] %s(%s) is %s(%s)", value, type(value), expected, type(expected)))
+--     else
+--         print(string.format("[FAIL] %s(%s) is not %s(%s)", value, type(value), expected, type(expected)))
+--     end
+-- end
 
 ---@param obj any
 ---@param asStruct boolean true=return table false=return string rep
