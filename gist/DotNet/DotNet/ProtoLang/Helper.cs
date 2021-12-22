@@ -11,9 +11,16 @@ namespace ProtoLang
         {
             public string Name;
             public string Type;
-            public string Value;
+            public int Value;
             public bool Reserved;
         }
+
+        private static readonly Dictionary<string, string> MessageNameConversion = new Dictionary<string, string>
+        {
+            {"FTNNLoginReq", "M4399LoginReq"},
+            {"FTNNOrderReq", "PayM4399OrderReq"},
+            {"VIVOLoginReq", "VivoLoginReq"},
+        };
 
         private static Dictionary<string, Entry[]> ConvertProto(Node root)
         {
@@ -22,37 +29,52 @@ namespace ProtoLang
             foreach (var message in messages)
             {
                 var body = message.Find("MessageBody");
-                var entries = new Entry[body.Children.Count];
-                for (int i = 0; i < entries.Length; i++)
+                var entries = new List<Entry>();
+                foreach (var field in body.Children)
                 {
-                    var field = body.Children[i];
                     if (field.Name == "ActiveField")
                     {
-                        entries[i] = new Entry
+                        entries.Add(new Entry
                         {
                             Reserved = false,
                             Name = field.Find("FieldName").Content,
                             Type = Formatter.FieldTypeToString(field),
-                            Value = field.Find("FieldNumber").Content
-                        };
+                            Value = int.Parse(field.Find("FieldNumber").Content)
+                        });
+                    }
+                    else if (field.Name == "ReservedField")
+                    {
+                        entries.Add(new Entry
+                        {
+                            Reserved = true,
+                            Value = int.Parse(field.Find("FieldNumber").Content)
+                        });
+                    }
+                    else if (field.Name == "LineComment")
+                    {
+                        // ignore
                     }
                     else
                     {
-                        entries[i] = new Entry
-                        {
-                            Reserved = true,
-                            Value = field.Find("FieldNumber").Content
-                        };
+                        throw new Exception($"unhandled {field}");
                     }
                 }
 
-                dict.Add(message.Find("MessageName").Content, entries);
+                entries.Sort((a, b) => a.Value < b.Value ? -1 : 1);
+
+                var messageName = message.Find("MessageName").Content;
+                if (MessageNameConversion.ContainsKey(messageName))
+                {
+                    messageName = MessageNameConversion[messageName];
+                }
+
+                dict.Add(messageName, entries.ToArray());
             }
 
             return dict;
         }
 
-        public static List<string> SmoothUpgrade(string f1, string f2)
+        public static List<string> SmoothUpgrade(string f1, string f2, bool checkName = false)
         {
             var errs = new List<string>();
             var d1 = ConvertProto(new Parser(f1).ParseProto());
@@ -76,7 +98,15 @@ namespace ProtoLang
                         {
                             if (left.Type != right.Type)
                             {
-                                errs.Add($"message {kv.Key} field {i + 1} changed from [{left.Type}]{left.Name} to [{right.Type}]{right.Name}");
+                                errs.Add($"message {kv.Key} field {i + 1} type changed from {left.Type} to {right.Type}");
+                            }
+
+                            if (checkName)
+                            {
+                                if (left.Name != right.Name)
+                                {
+                                    errs.Add($"message {kv.Key} field {i + 1} name changed from {left.Name} to {right.Name}");
+                                }
                             }
                         }
                     }

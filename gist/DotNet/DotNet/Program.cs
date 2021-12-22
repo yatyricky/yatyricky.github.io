@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using UnityEngine;
 
 namespace DotNet
 {
@@ -300,7 +301,21 @@ namespace DotNet
             //ProtoLang.Parser.Tokenize();
             //ProtoLang.Helper.Detect();
             //ProtoLang.Formatter.FormatAllProtoFiles();
-            EditorTools.ExportThinkingAnalytics.LuaCodeGen();
+            //EditorTools.ExportThinkingAnalytics.LuaCodeGen();
+
+            // upgrade proto
+            var errs = ProtoLang.Helper.SmoothUpgrade("../../../old.proto", "../../../new.proto", true);
+            Debug.Log("old -> new");
+            foreach (var err in errs)
+            {
+                Debug.Log(err);
+            }
+            errs = ProtoLang.Helper.SmoothUpgrade("../../../server.proto", "../../../new.proto", true);
+            Debug.Log("server -> new");
+            foreach (var err in errs)
+            {
+                Debug.Log(err);
+            }
         }
 
         private static void TestMiniJson()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using UnityEditor;
 
 namespace ProtoLang
 {
@@ -61,33 +62,42 @@ namespace ProtoLang
             return sb.ToString();
         }
 
-        private static void Format(string path)
+        /// <summary>
+        /// Convert AST to formatted code.
+        /// </summary>
+        /// <param name="node">AST root</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static string Format(Node node)
         {
-            var node = new Parser(path).ParseProto();
             var sb = new StringBuilder();
             var headers = node.Find("Headers");
-            var syntax = headers.Find("HeaderSyntax");
-            if (syntax != null)
-            {
-                sb.Append($"syntax = {syntax.Find("String").Content};\n");
-            }
 
-            var imports = headers.FindAll("HeaderImport");
-            if (imports.Count > 0)
+            var prevHeader = "";
+            foreach (var header in headers.Children)
             {
-                sb.Append('\n');
-            }
+                if (!string.IsNullOrEmpty(prevHeader) && prevHeader != header.Name)
+                {
+                    sb.Append('\n');
+                }
 
-            foreach (var import in imports)
-            {
-                sb.Append($"import {import.Find("String").Content};\n");
-            }
+                switch (header.Name)
+                {
+                    case "HeaderSyntax":
+                        sb.Append($"syntax = {header.Find("String").Content};\n");
+                        break;
+                    case "HeaderImport":
+                        sb.Append($"import {header.Find("String").Content};\n");
+                        break;
+                    case "HeaderOption":
+                        sb.Append($"option {header.Find("OptionName").Content} = {header.Find("String").Content};\n");
+                        break;
+                    case "LineComment":
+                        sb.Append($"{header.Content}\n");
+                        break;
+                }
 
-            var option = headers.Find("HeaderOption");
-            if (option != null)
-            {
-                sb.Append('\n');
-                sb.Append($"option {option.Find("OptionName").Content} = {option.Find("String").Content};\n");
+                prevHeader = header.Name;
             }
 
             var messages = node.Find("Messages");
@@ -228,22 +238,30 @@ namespace ProtoLang
                         }
                     }
 
-                    sb.Append($"}}\n");
+                    sb.Append("}\n");
                 }
             }
 
-            //File.WriteAllText(path + ".ast", node.ToString());
-            File.WriteAllText(path, sb.ToString());
+            return sb.ToString();
         }
 
-        //[MenuItem("Tools/Proto/Format All Proto")]
+        private static void FormatFile(string path)
+        {
+            var node = new Parser(path).ParseProto();
+            var code = Format(node);
+
+            //File.WriteAllText(path + ".ast", node.ToString());
+            File.WriteAllText(path, code);
+        }
+
+        [MenuItem("Tools/Proto/Format All Proto")]
         public static void FormatAllProtoFiles()
         {
             foreach (var file in Directory.GetFiles("../protos"))
             {
                 if (file.EndsWith(".proto"))
                 {
-                    Format(file);
+                    FormatFile(file);
                 }
             }
         }

@@ -6,9 +6,9 @@ namespace ProtoLang
 {
     public class Node
     {
-        internal string Name { get; }
-        internal string Content { get; }
-        internal List<Node> Children { get; }
+        internal string Name { get; private set; }
+        internal string Content { get; private set; }
+        internal List<Node> Children { get; private set; }
 
         internal Node(string name, params Node[] children)
         {
@@ -71,6 +71,14 @@ namespace ProtoLang
         public Node Find(string name)
         {
             return FindAll(name).FirstOrDefault();
+        }
+
+        public Node ReplaceWith(Node newNode)
+        {
+            Name = newNode.Name;
+            Content = newNode.Content;
+            Children = newNode.Children;
+            return newNode;
         }
 
         public override string ToString()
