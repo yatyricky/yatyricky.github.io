@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProtoLang;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
@@ -298,24 +300,23 @@ namespace DotNet
 
             // EPPlusHelper.Workbook.Test2();
 
-            //ProtoLang.Parser.Tokenize();
-            //ProtoLang.Helper.Detect();
-            //ProtoLang.Formatter.FormatAllProtoFiles();
             //EditorTools.ExportThinkingAnalytics.LuaCodeGen();
 
-            // upgrade proto
-            var errs = ProtoLang.Helper.SmoothUpgrade("../../../old.proto", "../../../new.proto", true);
-            Debug.Log("old -> new");
-            foreach (var err in errs)
+            #region proto
+            foreach (var file in Directory.GetFiles(@"C:\Users\yatyr\Downloads\proto"))
             {
-                Debug.Log(err);
+                if (!file.EndsWith(".proto"))
+                {
+                    continue;
+                }
+                var path = Path.GetFullPath(file);
+                var parser = new Parser(path);
+                var node = parser.ParseProto();
+                File.WriteAllText(path + ".ast", node.ToString());
+                var formatted = Formatter.Format(node);
+                File.WriteAllText(path + ".pretty", formatted);
             }
-            errs = ProtoLang.Helper.SmoothUpgrade("../../../server.proto", "../../../new.proto", true);
-            Debug.Log("server -> new");
-            foreach (var err in errs)
-            {
-                Debug.Log(err);
-            }
+            #endregion
         }
 
         private static void TestMiniJson()

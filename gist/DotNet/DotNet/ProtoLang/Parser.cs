@@ -174,12 +174,13 @@ namespace ProtoLang
                 var comment = ParseComment();
                 var message = ParseMessage();
                 var @enum = ParseEnum();
-                if (comment == null && message == null && @enum == null)
+                var service = ParseService();
+                if (comment == null && message == null && @enum == null && service == null)
                 {
                     break;
                 }
 
-                node.AddChild(comment, message, @enum);
+                node.AddChild(comment, message, @enum, service);
             }
 
             return node;
@@ -393,7 +394,7 @@ namespace ProtoLang
 
         private Node ParseAnyField()
         {
-            return ParseReservedField() ?? ParseActiveField();
+            return ParseMessage() ?? ParseReservedField() ?? ParseActiveField();
         }
 
         private Node ParseActiveField()
@@ -487,14 +488,13 @@ namespace ProtoLang
 
         private Node ParseFieldTypeSimple()
         {
-            var token = NextNonWhiteSpaceToken();
-            if (token.Type != TokenType.IDEN)
+            var ns = ParseNamespace();
+            if (ns == null)
             {
                 return null;
             }
 
-            _stack.Pop();
-            return new Node("SimpleType", token.Content);
+            return new Node("SimpleType", ns);
         }
 
         private Node ParseReservedField()
@@ -524,6 +524,320 @@ namespace ProtoLang
             var comment = ParseLineComment(true);
             ConsumeEOL();
             return new Node("ReservedField", new Node("FieldNumber", fieldNumber), comment);
+        }
+
+        private Node ParseService()
+        {
+            var token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN || token.Content != "service")
+            {
+                return null;
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN)
+            {
+                throw new SyntaxException("service missing: iden");
+            }
+
+            var serviceName = token.Content;
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "{")
+            {
+                throw new SyntaxException("service iden missing: {");
+            }
+
+            _stack.Pop();
+            var service = new Node("Service", new Node("ServiceName", serviceName));
+            var body = new Node("ServiceBody");
+            service.AddChild(body);
+            while (true)
+            {
+                token = NextNonWhiteSpaceToken();
+                if (token.Type == TokenType.SPLT && token.Content == "}")
+                {
+                    _stack.Pop();
+                    break;
+                }
+
+                var rpc = ParseRPC();
+                var comment = ParseLineComment();
+                if (rpc == null && comment == null)
+                {
+                    throw new SyntaxException("service body has neither rpc nor comment");
+                }
+
+                body.AddChild(rpc, comment);
+            }
+
+            return service;
+        }
+
+        private Node ParseRPC()
+        {
+            var token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN || token.Content != "rpc")
+            {
+                return null;
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN)
+            {
+                throw new SyntaxException("rpc missing: iden");
+            }
+
+            var rpcName = token.Content;
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "(")
+            {
+                throw new SyntaxException("rpc missing: (");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN)
+            {
+                throw new SyntaxException("rpc ( missing: iden");
+            }
+
+            var takes = token.Content;
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != ")")
+            {
+                throw new SyntaxException("rpc(iden missing: )");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN || token.Content != "returns")
+            {
+                throw new SyntaxException("rpc (iden) missing: returns");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "(")
+            {
+                throw new SyntaxException("rpc iden(takes) returns missing: (");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN)
+            {
+                throw new SyntaxException("rpc iden(takes) returns( missing: iden");
+            }
+
+            var returns = token.Content;
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != ")")
+            {
+                throw new SyntaxException("rpc iden(takes) returns(returns missing: )");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || (token.Content != ";" && token.Content != "{"))
+            {
+                throw new SyntaxException("rpc iden(takes) returns(returns) missing: ;|{");
+            }
+
+            _stack.Pop();
+            var rpc = new Node("RPC",
+                new Node("RPCSignature",
+                    new Node("RPCName", rpcName),
+                    new Node("RPCTakes", takes),
+                    new Node("RPCReturns", returns)
+                )
+            );
+            if (token.Content == "{")
+            {
+                var body = new Node("RPCBody");
+                while (true)
+                {
+                    var option = ParseRPCOption();
+                    if (option == null)
+                    {
+                        token = NextNonWhiteSpaceToken();
+                        if (token.Type != TokenType.SPLT || token.Content != "}")
+                        {
+                            throw new SyntaxException("rpc body must end with }");
+                        }
+
+                        _stack.Pop();
+                        break;
+                    }
+                    else
+                    {
+                        body.AddChild(option);
+                    }
+                }
+
+                rpc.AddChild(body);
+            }
+
+            return rpc;
+        }
+
+        private Node ParseRPCOption()
+        {
+            var token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN || token.Content != "option")
+            {
+                return null;
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "(")
+            {
+                throw new SyntaxException("option missing: (");
+            }
+
+            _stack.Pop();
+            var ns = ParseNamespace();
+            if (ns == null)
+            {
+                throw new SyntaxException("option( missing: namespace");
+            }
+
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != ")")
+            {
+                throw new SyntaxException("option(namespace missing: )");
+            }
+
+            _stack.Pop();
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "=")
+            {
+                throw new SyntaxException("option(namespace) missing: =");
+            }
+
+            _stack.Pop();
+            var obj = ParseRPCOptionDefine();
+            if (obj == null)
+            {
+                throw new SyntaxException("option(namespace)= missing: {");
+            }
+
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != ";")
+            {
+                throw new SyntaxException("option(namespace) ={} missing: ;");
+            }
+
+            _stack.Pop();
+            return new Node("RPCOption", ns, obj);
+        }
+
+        private Node ParseNamespace()
+        {
+            var token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.IDEN)
+            {
+                return null;
+            }
+
+            var ns = new Node("Namespace");
+            ns.AddChild(new Node("String", token.Content));
+
+            _stack.Pop();
+            while (true)
+            {
+                token = NextNonWhiteSpaceToken();
+                if (token.Type != TokenType.SPLT || token.Content != ".")
+                {
+                    break;
+                }
+
+                _stack.Pop();
+                token = NextNonWhiteSpaceToken();
+                if (token.Type != TokenType.IDEN)
+                {
+                    throw new SyntaxException("namespace. missing: iden");
+                }
+
+                ns.AddChild(new Node("String", token.Content));
+                _stack.Pop();
+            }
+
+            return ns;
+        }
+
+        private Node ParseRPCOptionDefine()
+        {
+            var token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "{")
+            {
+                return null;
+            }
+
+            _stack.Pop();
+            var def = new Node("RPCOptionDefine");
+            while (true)
+            {
+                var ensureNext = false;
+                token = NextNonWhiteSpaceToken();
+                if (token.Type == TokenType.SPLT && token.Content == ",")
+                {
+                    if (def.Children.Count == 0)
+                    {
+                        throw new SyntaxException("kvp must not start with ,");
+                    }
+
+                    ensureNext = true;
+                    _stack.Pop();
+                    token = NextNonWhiteSpaceToken();
+                }
+
+                if (token.Type != TokenType.IDEN)
+                {
+                    if (ensureNext)
+                    {
+                        throw new SyntaxException("{kv, missing: iden");
+                    }
+
+                    break;
+                }
+
+                var key = token.Content;
+
+                _stack.Pop();
+                token = NextNonWhiteSpaceToken();
+                if (token.Type != TokenType.SPLT || token.Content != ":")
+                {
+                    throw new SyntaxException("{key missing: :");
+                }
+
+                _stack.Pop();
+                var value = ParseString();
+                if (value == null)
+                {
+                    throw new SyntaxException("{key: missing: \"\"");
+                }
+
+                def.AddChild(new Node("KVPair", new Node("Key", key), new Node("Value", value.Content)));
+            }
+
+            token = NextNonWhiteSpaceToken();
+            if (token.Type != TokenType.SPLT || token.Content != "}")
+            {
+                throw new SyntaxException("{kv missing: }");
+            }
+
+            _stack.Pop();
+
+            return def;
         }
 
         private void ConsumeEOL()

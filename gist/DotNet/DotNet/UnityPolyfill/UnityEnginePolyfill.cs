@@ -10,5 +10,17 @@ namespace UnityEngine
         {
             Console.WriteLine(msg);
         }
+
+        public static void Log(object obj)
+        {
+            if (null == obj)
+            {
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine(obj.ToString());
+            }
+        }
     }
 }
