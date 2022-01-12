@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="2000" height="2000"></canvas>
+<script>
+/**
+ * @type {HTMLCanvasElement}
+ */
+var canvas = document.getElementById("myCanvas");
+var c = canvas.getContext("2d");
+
+var spacing = {x:10,y:20}
+
+var all = [
+    { name: "node 1", r:{x: 0, y: 0, w: 100, h: 50}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 2", r:{x: 0, y: 0, w: 120, h: 40}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 3", r:{x: 0, y: 0, w: 150, h: 60}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 4", r:{x: 0, y: 0, w: 200, h: 30}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 5", r:{x: 0, y: 0, w: 130, h: 50}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 6", r:{x: 0, y: 0, w: 100, h: 50}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 7", r:{x: 0, y: 0, w: 120, h: 40}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 8", r:{x: 0, y: 0, w: 150, h: 60}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 9", r:{x: 0, y: 0, w: 200, h: 30}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 10", r:{x: 0, y: 0, w: 130, h: 50}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 11", r:{x: 0, y: 0, w: 200, h: 30}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 12", r:{x: 0, y: 0, w: 130, h: 50}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+    { name: "node 13", r:{x: 0, y: 0, w: 190, h: 70}, b: {x:0,y:0,w:0,h:0}, children: [], parent: null },
+]
+
+function r2s(r) {
+    return `[${r.x},${r.y},${r.w},${r.h}]`
+}
+
+// init bounds
+for (const n of all) {
+    n.b.w = n.r.w
+    n.b.h = n.r.h
+}
+
+function resizeBounds(n) {
+    var maxHeight = 0
+    var totalWidth = 0
+    for (let i = 0; i < n.children.length; i++) {
+        const e = n.children[i];
+        var eb = e.b
+        if (eb.h > maxHeight) {
+            maxHeight = eb.h
+        }
+        totalWidth += eb.w
+        if (i > 0) {
+            totalWidth += spacing.x
+        }
+    }
+    var b = n.b
+    b.w = Math.max(totalWidth, n.r.w)
+    b.h = n.r.h + spacing.y + maxHeight
+
+    var startX = 0
+    for (const e of n.children) {
+        var eb = e.b
+        eb.x = startX
+        startX += spacing.x + eb.w
+        eb.y = spacing.y + n.r.h
+    }
+
+    if (n.parent !== null) {
+        resizeBounds(n.parent)
+    }
+}
+
+function getWorldBoundPos(n) {
+    var b = n.b
+    var ret = {x:b.x,y:b.y}
+    if (n.parent !== null) {
+        var pb = getWorldBoundPos(n.parent)
+        ret.x+=pb.x
+        ret.y+=pb.y
+    }
+    return ret
+}
+
+// edges
+function addChild(parent, child) {
+    parent.children.push(child)
+    child.parent = parent
+
+    resizeBounds(parent)
+}
+
+addChild(all[0], all[1])
+addChild(all[0], all[2])
+addChild(all[1], all[3])
+addChild(all[2], all[4])
+addChild(all[2], all[5])
+addChild(all[2], all[6])
+addChild(all[3], all[7])
+addChild(all[3], all[12])
+addChild(all[4], all[8])
+addChild(all[4], all[9])
+addChild(all[7], all[10])
+addChild(all[7], all[11])
+
+// render nodes
+var i = 0
+c.font = "14px Arial"
+for (const n of all) {
+    var x = i * spacing.x
+    var y = i++ * spacing.y
+    var r = n.r
+    var b = n.b
+    r.x = x
+    r.y = y
+    var pos = getWorldBoundPos(n)
+    var ax = pos.x + b.w / 2 - r.w / 2
+    var ay = pos.y
+
+    c.fillStyle = "#3498db";
+    c.fillRect(ax, ay, r.w, r.h)
+
+    // bound
+    c.strokeStyle = "#9b59b6"
+    c.strokeRect(pos.x, pos.y, b.w, b.h)
+
+    // info
+    c.fillStyle = "#000000"
+    c.fillText(`${n.name}`, ax + 5, ay + 14)
+}
+
+function getOutPort(n) {
+    var r = n.r
+    var b = n.b
+    var pos = getWorldBoundPos(n)
+    return {
+        x: pos.x + b.w / 2,
+        y: pos.y + r.h
+    }
+}
+
+function getInPort(n) {
+    var r = n.r
+    var b = n.b
+    var pos = getWorldBoundPos(n)
+    return {
+        x: pos.x + b.w / 2,
+        y: pos.y
+    }
+}
+
+// render edges
+for (const n of all) {
+    var out = getOutPort(n)
+    for (const e of n.children) {
+        c.strokeStyle = "#27ae60"
+        c.beginPath();
+        c.moveTo(out.x, out.y);
+        var inPort = getInPort(e)
+        c.lineTo(inPort.x, inPort.y);
+        c.stroke();
+    }
+}
+
+</script>
+</body>
+
+</html>
