@@ -593,3 +593,16 @@ function table.getOrCreateTableByPath(t, ...)
     end
     return c
 end
+
+function table.access(t, ...)
+    local p = { ... }
+    local c = t
+    for _, v in ipairs(p) do
+        if type(c) == "table" then
+            c = c[v]
+        else
+            return nil
+        end
+    end
+    return c
+end

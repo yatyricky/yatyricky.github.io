@@ -1,5 +1,5 @@
 require("gist/Lua/lib/table_ext")
-require("gist/Lua/lib/string_exit")
+-- require("gist/Lua/lib/string_exit")
 
 -- local NAME = "Store"
 
@@ -297,23 +297,27 @@ require("gist/Lua/lib/string_exit")
 
 -- return export
 
-local cls = {}
+-- local cls = {}
 
-function cls:initCurfewTimes(config)
-    local lines = string.split(config, "\n")
-    for _, line in pairs(lines) do
-        line = string.trim(line)
-        if #line == 14 then
-            local year = tonumber(string.sub(line, 1, 4))
-            local month = tonumber(string.sub(line, 5, 6))
-            local day = tonumber(string.sub(line, 7, 8))
-            local hour = tonumber(string.sub(line, 9, 10))
-            local m = table.getOrCreateTableByPath(self.curfewConfigs, year, month, day)
-            m[hour] = 1
-        end
-    end
-    print(table.show(a))
-end
+-- function cls:initCurfewTimes(config)
+--     local lines = string.split(config, "\n")
+--     for _, line in pairs(lines) do
+--         line = string.trim(line)
+--         if #line == 14 then
+--             local year = tonumber(string.sub(line, 1, 4))
+--             local month = tonumber(string.sub(line, 5, 6))
+--             local day = tonumber(string.sub(line, 7, 8))
+--             local hour = tonumber(string.sub(line, 9, 10))
+--             local m = table.getOrCreateTableByPath(self.curfewConfigs, year, month, day)
+--             m[hour] = 1
+--         end
+--     end
+--     print(table.show(a))
+-- end
 
-local a= {}
-local v = table.getOrCreateTableByPath(a, "k1", 2, "k3", 4)
+-- local a= {}
+-- local v = table.getOrCreateTableByPath(a, "k1", 2, "k3", 4)
+
+local t= {a={b={c={}}}}
+
+print(table.show(table.access(t, "aa", "b", "c", "d")))
