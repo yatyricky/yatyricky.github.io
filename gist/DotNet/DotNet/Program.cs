@@ -265,6 +265,12 @@ namespace DotNet
         private static void Main(string[] args)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var fp1 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var fp2 = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+            Console.WriteLine(fp1);
+            Console.WriteLine(fp2);
+            Console.WriteLine(Path.GetFullPath(fp1));
+            Console.WriteLine(Path.GetFullPath(fp2));
             //ConditionalWeakTable();
             //WeakArray();
             //TestManualAllocFree();
@@ -303,19 +309,19 @@ namespace DotNet
             //EditorTools.ExportThinkingAnalytics.LuaCodeGen();
 
             #region proto
-            foreach (var file in Directory.GetFiles(@"C:\Users\yatyr\Downloads\proto"))
-            {
-                if (!file.EndsWith(".proto"))
-                {
-                    continue;
-                }
-                var path = Path.GetFullPath(file);
-                var parser = new Parser(path);
-                var node = parser.ParseProto();
-                File.WriteAllText(path + ".ast", node.ToString());
-                var formatted = Formatter.Format(node);
-                File.WriteAllText(path + ".pretty", formatted);
-            }
+            //foreach (var file in Directory.GetFiles(@"C:\Users\yatyr\Downloads\proto"))
+            //{
+            //    if (!file.EndsWith(".proto"))
+            //    {
+            //        continue;
+            //    }
+            //    var path = Path.GetFullPath(file);
+            //    var parser = new Parser(path);
+            //    var node = parser.ParseProto();
+            //    File.WriteAllText(path + ".ast", node.ToString());
+            //    var formatted = Formatter.Format(node);
+            //    File.WriteAllText(path + ".pretty", formatted);
+            //}
             #endregion
         }
 
