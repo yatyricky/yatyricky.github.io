@@ -49,4 +49,10 @@ require("gist/Lua/lib/table_ext")
 
 local date = os.date("!*t", 1630567684)
 
-print(table.show(date))
+local now = os.time()
+
+for i = 1, 10 do
+    print(os.date("%w",now + (i)*86400))
+end
+
+-- print(table.stringify(date))

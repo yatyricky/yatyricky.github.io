@@ -324,29 +324,33 @@ function table.equals(a, b, path)
     return true
 end
 
-function table.isSubsetOf(a, b, info)
+function table.compare(a, b, info)
     info = info or { path = { "" }, left = nil, right = nil }
     local ta = type(a)
     local tb = type(b)
     if ta ~= tb then
-        info.left = string.format("Left=[%s]%s", ta, tostring(a))
-        info.right = string.format("Right=[%s]%s", tb, tostring(b))
-        print(false, table.concat(info.path, "/"), info.left, info.right)
+        print(table.concat(info.path, "/"), ta, table.toJSON(a), tb, table.toJSON(b))
     else
         if ta ~= "table" then
             if a == b then
                 return true
             else
-                info.left = string.format("Left=[%s]%s", ta, tostring(a))
-                info.right = string.format("Right=[%s]%s", tb, tostring(b))
-                print(false, table.concat(info.path, "/"), info.left, info.right)
+                print(table.concat(info.path, "/"), ta, table.toJSON(a), tb, table.toJSON(b))
             end
         else
+            local bKeys = {}
+            for k, _ in pairs(b) do
+                bKeys[k] = 1
+            end
             for k, v in pairs(a) do
+                bKeys[k] = nil
                 table.insert(info.path, tostring(k))
-                if b then
-                    table.isSubsetOf(v, b[k], info)
-                end
+                table.compare(v, b[k], info)
+                table.remove(info.path, #info.path)
+            end
+            for k, _ in pairs(bKeys) do
+                table.insert(info.path, tostring(k))
+                table.compare(a[k], b[k], info)
                 table.remove(info.path, #info.path)
             end
         end
@@ -434,7 +438,7 @@ end
 ---@param t table
 ---@param indent string
 ---@return string
-function table.toJSON(t, indent)
+function table.toJSON(tab)
     local function parsePrimitive(o)
         local to = type(o)
         if to == "string" then
@@ -442,21 +446,12 @@ function table.toJSON(t, indent)
         end
         local so = tostring(o)
         if to == "function" then
-            -- local info = debug.getinfo(o, "S")
-            -- info.name is nil because o is not a calling level
-            -- if info.what == "C" then
-            --     return '"' .. so .. ", C function" .. '"'
-            -- else
-            --     -- the information is defined through lines
-            --     return '"' .. so .. ", defined in (" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source .. '"'
-            -- end
             return '"' .. so .. '"'
         else
             return so
         end
     end
-
-    local function parseTable(t, lindent, pindent, cached)
+    local function parseTable(t, cached)
         if type(t) ~= "table" then
             return parsePrimitive(t)
         end
@@ -466,37 +461,19 @@ function table.toJSON(t, indent)
             return '"_ ref ' .. str .. '"'
         end
         cached[str] = true
-        local sb = "{"
-        if lindent then
-            sb = sb .. "\n"
-        end
-        local idt = lindent or ""
-        local oindent = indent or ""
-        local nindent = lindent and idt .. oindent or nil
-        local colonw = lindent and " " or ""
-        sb = sb .. idt .. '"_ ":' .. colonw .. '"' .. str .. '"'
+        local items = {}
         for k, v in pairs(t) do
-            if lindent then
-                sb = sb .. ",\n"
-            else
-                sb = sb .. ","
-            end
             local ks
             if type(k) == "number" then
-                ks = "_ " .. k
+                ks = "[" .. k .. "]"
             else
                 ks = tostring(k)
             end
-            sb = sb .. idt .. '"' .. ks .. '":' .. colonw .. parseTable(v, nindent, lindent, cached)
+            table.insert(items, ks .. "=" .. parseTable(v, cached))
         end
-        if lindent then
-            sb = sb .. "\n" .. (pindent or "")
-        end
-        sb = sb .. "}"
-        -- cached[str] = false
-        return sb
+        return "{" .. table.concat(items, ",") .. "}"
     end
-    return parseTable(t, indent)
+    return parseTable(tab)
 end
 
 ---@generic V
@@ -605,4 +582,108 @@ function table.access(t, ...)
         end
     end
     return c
+end
+
+---@generic K, V
+---@param tab table<K, V>
+---@return table<V, K>
+function table.k2v(tab)
+    local result = {}
+    for k, v in pairs(tab) do
+        result[v] = k
+    end
+    return result
+end
+
+function table.stringify(tab)
+    local function parsePrimitive(o)
+        local to = type(o)
+        if to == "string" then
+            return '"' .. o .. '"'
+        end
+        local so = tostring(o)
+        if to == "function" then
+            return '"' .. so .. '"'
+        else
+            return so
+        end
+    end
+    local function parseTable(t, cached)
+        if type(t) ~= "table" then
+            return parsePrimitive(t)
+        end
+        cached = cached or {}
+        local str = tostring(t)
+        if cached[str] then
+            return '"_ ref ' .. str .. '"'
+        end
+        cached[str] = true
+        local items = {}
+        for k, v in pairs(t) do
+            local ks
+            if type(k) == "number" then
+                ks = "[" .. k .. "]"
+            else
+                ks = tostring(k)
+            end
+            table.insert(items, ks .. "=" .. parseTable(v, cached))
+        end
+        return "{" .. table.concat(items, ",") .. "}"
+    end
+    return parseTable(tab)
+end
+
+---从list中获得数量为N的组合
+---@generic T
+---@param list T[]
+---@param n int
+---@return T[][]
+function table.combination(list, n)
+    if n <= 0 then
+        return {}
+    end
+    local len = #list
+    n = math.min(len, n)
+    local ptrs = {}
+    for i = 1, n do
+        table.insert(ptrs, i)
+    end
+    local result = {}
+    while true do
+        local one = {}
+        for i = 1, n do
+            local p = ptrs[i]
+            table.insert(one, list[p])
+        end
+        table.insert(result, one)
+        -- cant move
+        if ptrs[1] > len - n then
+            break
+        end
+        -- move ptr
+        for i = n, 1, -1 do
+            if ptrs[i] < len - (n - i) then
+                ptrs[i] = ptrs[i] + 1
+                for j = i + 1, n do
+                    ptrs[j] = ptrs[i] + j - i
+                end
+                break
+            end
+        end
+    end
+    return result
+end
+
+---从list中获得所有组合
+---@generic T
+---@param list T[]
+---@return T[][]
+function table.allCombinations(list)
+    local result = {}
+    for i = 1, #list do
+        for _, v in ipairs(table.combination(list, i)) do
+            table.insert(result, v)
+        end
+    end
+    return result
 end
