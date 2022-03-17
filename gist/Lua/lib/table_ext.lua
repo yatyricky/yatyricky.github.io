@@ -687,3 +687,11 @@ function table.allCombinations(list)
     end
     return result
 end
+
+function table.range(n)
+    local ret = {}
+    for i = 1, n do
+        table.insert(ret, i)
+    end
+    return ret
+end

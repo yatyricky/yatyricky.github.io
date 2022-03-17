@@ -17,6 +17,12 @@ local function defaultOnRejected(reason)
     error(reason)
 end
 
+local function cancelPromises(promises)
+    for _, v in ipairs(promises) do
+        v:_cancel("cancelled")
+    end
+end
+
 ---@class Promise
 local cls = {
     __isPromise = true
@@ -31,6 +37,7 @@ function cls.New(executor)
     local inst = setmetatable({}, cls)
     inst.state = PENDING
     inst.next = {}
+    inst.parent = nil
     if executor then
         local success, errMsg = pcall(executor, function(result)
             inst:_resolve(result)
@@ -65,6 +72,7 @@ function cls.All(promises)
             checkFinished()
         end, function(reason)
             p:_reject(reason)
+            cancelPromises(promises)
         end)
     end
     checkFinished()
@@ -83,8 +91,10 @@ function cls.Race(promises)
     for _, v in ipairs(promises) do
         v:Then(function(result)
             p:_resolve(result)
+            cancelPromises(promises)
         end, function(reason)
             p:_reject(reason)
+            cancelPromises(promises)
         end)
     end
 
@@ -104,9 +114,11 @@ function cls:Then(onFulfilled, onRejected)
     }
     if self.redirected then
         t_insert(self.redirected.next, data)
+        p.parent = self.redirected
         self.redirected:_run()
     else
         t_insert(self.next, data)
+        p.parent = self
         self:_run()
     end
 
@@ -117,6 +129,14 @@ end
 ---@return Promise
 function cls:Catch(onRejected)
     return self:Then(nil, onRejected)
+end
+
+function cls:Finally(onFinally)
+    return self:Then(function (result)
+        return onFinally(true, result)
+    end, function (reason)
+        return onFinally(false, reason)
+    end)
 end
 
 function cls:_run()
@@ -155,6 +175,9 @@ function cls:_resolve(result)
     self.result = result
     if type(result) == "table" and result.__isPromise then
         result.next = self.next
+        for _, v in pairs(self.next) do
+            v.promise.parent = result
+        end
         result:_run()
         self.redirected = result
     else
@@ -170,6 +193,17 @@ function cls:_reject(reason)
     self.state = REJECTED
     self.reason = reason
     self:_run()
+end
+
+function cls:_cancel(reason)
+    if self.state ~= PENDING then
+        return
+    end
+    local curr = self
+    while curr.parent ~= nil and curr.parent.state == PENDING do
+        curr = curr.parent
+    end
+    curr:_reject(reason)
 end
 
 return cls
