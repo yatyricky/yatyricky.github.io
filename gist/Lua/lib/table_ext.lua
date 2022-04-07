@@ -1,4 +1,5 @@
 require("gist/Lua/lib/global")
+local Random = require("gist/Lua/lib/Random")
 
 local t_insert = table.insert
 
@@ -10,11 +11,11 @@ function table.show(t, name, indent, nice)
     local cart     -- a container
     local autoref  -- for self references
     local eol = nice and "\n" or ";"
-    local indentIncre = nice and (indent and indent or "  ") or ""
+    local indentIncrement = indent and indent or (nice and "  " or "")
 
     -- (RiciLake) returns true if the table is empty
-    local function isemptytable(t)
-        return next(t) == nil
+    local function isemptytable(_t)
+        return next(_t) == nil
     end
 
     local function basicSerialize(o)
@@ -35,21 +36,21 @@ function table.show(t, name, indent, nice)
         end
     end
 
-    local function addtocart(value, name, indent, saved, field)
-        indent = indent or ""
+    local function addtocart(value, _name, _indent, saved, field)
+        _indent = _indent or ""
         saved = saved or {}
-        field = field or name
+        field = field or _name
 
-        cart = cart .. indent .. field
+        cart = cart .. _indent .. field
 
         if type(value) ~= "table" then
             cart = cart .. "=" .. basicSerialize(value) .. eol
         else
             if saved[value] then
                 cart = cart .. "=(" .. saved[value] .. ")" .. eol
-                autoref = autoref .. name .. "=" .. saved[value] .. eol
+                autoref = autoref .. _name .. "=" .. saved[value] .. eol
             else
-                saved[value] = name
+                saved[value] = _name
 
                 if isemptytable(value) then
                     cart = cart .. "={(" .. tostring(value) .. ")}" .. eol
@@ -57,12 +58,12 @@ function table.show(t, name, indent, nice)
                     cart = cart .. "={(" .. tostring(value) .. ")" .. eol
                     for k, v in pairs(value) do
                         k = basicSerialize(k)
-                        local fname = string.format("%s[%s]", name, k)
+                        local fname = string.format("%s[%s]", _name, k)
                         field = string.format("[%s]", k)
                         -- three spaces between levels
-                        addtocart(v, fname, indent .. indentIncre, saved, field)
+                        addtocart(v, fname, _indent .. indentIncrement, saved, field)
                     end
-                    cart = cart .. indent .. "}" .. eol
+                    cart = cart .. _indent .. "}" .. eol
                 end
             end
         end
@@ -435,8 +436,7 @@ function table.isArray(t)
     return true
 end
 
----@param t table
----@param indent string
+---@param tab table
 ---@return string
 function table.toJSON(tab)
     local function parsePrimitive(o)
@@ -595,44 +595,6 @@ function table.k2v(tab)
     return result
 end
 
-function table.stringify(tab)
-    local function parsePrimitive(o)
-        local to = type(o)
-        if to == "string" then
-            return '"' .. o .. '"'
-        end
-        local so = tostring(o)
-        if to == "function" then
-            return '"' .. so .. '"'
-        else
-            return so
-        end
-    end
-    local function parseTable(t, cached)
-        if type(t) ~= "table" then
-            return parsePrimitive(t)
-        end
-        cached = cached or {}
-        local str = tostring(t)
-        if cached[str] then
-            return '"_ ref ' .. str .. '"'
-        end
-        cached[str] = true
-        local items = {}
-        for k, v in pairs(t) do
-            local ks
-            if type(k) == "number" then
-                ks = "[" .. k .. "]"
-            else
-                ks = tostring(k)
-            end
-            table.insert(items, ks .. "=" .. parseTable(v, cached))
-        end
-        return "{" .. table.concat(items, ",") .. "}"
-    end
-    return parseTable(tab)
-end
-
 ---从list中获得数量为N的组合
 ---@generic T
 ---@param list T[]
@@ -692,6 +654,122 @@ function table.range(n)
     local ret = {}
     for i = 1, n do
         table.insert(ret, i)
+    end
+    return ret
+end
+
+function table.explode(t, piles, portion, fluctuation)
+    local tab = {}
+    for k, v in pairs(t) do
+        local remain = v
+        for i = 1, piles do
+            local c
+            if i == piles then
+                c = remain
+            else
+                local r = portion + math.random() * fluctuation * 2 - fluctuation
+                c = math.min(math.ceil(v * math.clamp(r, 0, 1)), remain)
+                remain = remain - c
+            end
+            if c > 0 then
+                t_insert(tab, { [k] = c })
+            end
+        end
+    end
+    return tab
+end
+
+---从Array中移除一个随机值并返回，原Array顺序不保证
+---@generic T
+---@param t T[]
+---@return T
+function table.listRemoveRandomUnordered(t)
+    local len = #t
+    local i = math.random(len)
+    local v = t[i]
+    if v then
+        t[i] = t[len]
+        t[len] = nil
+    end
+    return v
+end
+
+---@generic K, V
+---@param t table<K, V>
+---@return { key: K, value: V }[]
+function table.table2list(t)
+    local ret = {}
+    if type(t) ~= "table" then
+        return ret
+    end
+    for k, v in pairs(t) do
+        table.insert(ret, { key = k, value = v })
+    end
+    return ret
+end
+
+function table.shallowToString(t, kFunc, vFunc, delimeter1, delimeter2)
+    local s = table.table2list(t)
+    table.sort(s, function(a, b)
+        return a.key < b.key
+    end)
+    delimeter2 = delimeter2 or "="
+    return table.join(s, delimeter1 or ";", function(kv)
+        local sa = kFunc and kFunc(kv.key) or kv.key
+        local sb = vFunc and vFunc(kv.value) or kv.value
+        return tostring(sa) .. delimeter2 .. tostring(sb)
+    end)
+end
+
+---@generic K
+---@param tab table<K, number>
+---@param k K
+---@param v number
+---@return number, boolean result, is new
+function table.addNum(tab, k, v)
+    local isNew
+    local r = tab[k]
+    if not r then
+        r = v
+        isNew = true
+    else
+        r = r + v
+        isNew = false
+    end
+    tab[k] = r
+    return r, isNew
+end
+
+function table.addTable(t1, t2)
+    t1 = t1 or {}
+    local addNum = table.addNum
+    if t2 then
+        for k, v in pairs(t2) do
+            addNum(t1, k, v)
+        end
+    end
+    return t1
+end
+
+function table.intersectLists(t1, t2)
+    local v1 = table.k2v(t1)
+    local r = {}
+    for _, v in ipairs(t2) do
+        if v1[v] ~= nil then
+            r[v] = 1
+        end
+    end
+    return table.keys(r)
+end
+
+---@generic TValue, T
+---@param t TValue[]
+---@param func fun(key: int, value: TValue): T
+---@return T[]
+function table.imap(t, func)
+    local ret = {}
+    for i, v in ipairs(t) do
+        ret[i] = func(i, v)
     end
     return ret
 end

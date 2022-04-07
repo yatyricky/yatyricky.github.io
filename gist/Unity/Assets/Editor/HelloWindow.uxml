@@ -5,6 +5,12 @@
         xmlns:editor="UnityEditor.UIElements"
         xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
 >
-    <engine:Label text="Hello World! From UXML"/>
-    <engine:Label text="another text" name="btn" class="btn" />
+    <engine:Button text="Change" name="Change"/>
+    <engine:VisualElement class="table" name="Table">
+        <engine:VisualElement class="th-wrap">
+            <engine:VisualElement class="th" name="THead"/>
+            <engine:VisualElement class="th-scroll-placeholder"/>
+        </engine:VisualElement>
+        <engine:ListView class="table-listview" name="TBody" />
+    </engine:VisualElement>
 </engine:UXML>

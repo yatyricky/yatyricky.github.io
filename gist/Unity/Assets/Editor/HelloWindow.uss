@@ -1,10 +1,42 @@
-Label {
-    font-size: 20px;
-    -unity-font-style: bold;
-    color: rgb(68, 138, 255);
-    -unity-text-align: middle-center;
-}
+/*Label {*/
+/*    font-size: 20px;*/
+/*    -unity-font-style: bold;*/
+/*    color: rgb(68, 138, 255);*/
+/*    -unity-text-align: middle-center;*/
+/*}*/
 
 .btn {
     -unity-text-align: middle-center;
+}
+
+.table-listview {
+    --unity-item-height: 16;
+    height: 200px;
+}
+
+.th-wrap{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.th {
+    width: auto;
+    flex-direction: row;
+    -unity-font-style: bold;
+    flex: 1;
+}
+
+.th-scroll-placeholder{
+    flex: 1;
+    max-width: 14px;
+}
+
+.tr {
+    width: auto;
+    flex-direction: row;
+}
+
+.td {
+    overflow: hidden;
 }
