@@ -20,11 +20,18 @@ public class BeatDetection : MonoBehaviour
 
     public int sampleRate;
 
+    public float mult;
+
     private int _sampleBlocks;
     private float[] _frameEnergy;
     private int _frameIndex;
+    private float[] _frameAvgE;
+    private int _avgEIndex;
+    private float _varE;
+    private float _c;
 
     public Transform averageE;
+    public Transform c;
 
     private AudioSource _audioSource;
 
@@ -55,11 +62,28 @@ public class BeatDetection : MonoBehaviour
         }
 
         sum /= _sampleBlocks;
+        _frameAvgE[_avgEIndex++ % _sampleBlocks] = sum;
+
+        var errorSum = 0f;
+        for (int i = 0; i < _sampleBlocks; i++)
+        {
+            var error = Mathf.Pow(sum - _frameEnergy[(_frameIndex + i) % _sampleBlocks], 2f);
+            errorSum += error;
+        }
+
+        errorSum /= _sampleBlocks;
+        _varE = errorSum;
+        _c = mult * _varE + 1.5142857f;
 
         var height = sum * 3f;
         averageE.localScale = new Vector3(10f, height, 1f);
         var cpos = averageE.localPosition;
         averageE.localPosition = new Vector3(cpos.x, height / 2f, cpos.z);
+
+        height = _c * 3f;
+        c.localScale = new Vector3(10f, height, 1f);
+        cpos = c.localPosition;
+        c.localPosition = new Vector3(cpos.x, height / 2f, cpos.z);
     }
 
     // Start is called before the first frame update
@@ -67,6 +91,8 @@ public class BeatDetection : MonoBehaviour
     {
         _sampleBlocks = Mathf.FloorToInt(sampleRate / blockSize);
         _frameEnergy = new float[_sampleBlocks];
+        _frameAvgE = new float[_sampleBlocks];
+        _avgEIndex = 0;
 
         _samples = new float[channelsCount][];
         max = new float[channelsCount];
