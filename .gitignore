@@ -49,3 +49,7 @@ gist/DotNet/DotNet/bin
 gist/DotNet/DotNet/obj
 gist/DotNet/.vs
 .vscode
+
+# lua
+gist/Lua/left.lua
+gist/Lua/right.lua
