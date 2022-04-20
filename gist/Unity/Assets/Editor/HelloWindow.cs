@@ -181,7 +181,7 @@ public class HelloWindow : EditorWindow
             var tar = Mathf.Max(prevColSize[_resizingIndex] +delta.x,30f);
             colSize[_resizingIndex] = prevColSize[_resizingIndex] +delta.x;
             RefreshResizeAreas();
-            _listView.Refresh();
+            _listView.Rebuild();
             FeedData(_thead, header);
             if (tar<=30f)
             {
@@ -228,6 +228,6 @@ public class HelloWindow : EditorWindow
     private void Update()
     {
         Repaint();
-        _listView.Refresh();
+        _listView.Rebuild();
     }
 }
