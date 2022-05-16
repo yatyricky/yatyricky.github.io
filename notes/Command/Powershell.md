@@ -37,3 +37,6 @@ git status | findstr "prefab" | measure-object -line
 ## Copy
 New-Item -ItemType File -Path $destination -Force
 Copy-Item $source $destination -Force
+
+## which
+Get-Command

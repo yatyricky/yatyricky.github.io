@@ -1,9 +1,11 @@
-local config = {}
+local t = setmetatable({}, {
+    __index = function(t, k)
+        return "ooo"
+    end
+})
 
-local cls = {}
+t = {}
 
-cls.config = config
+local a
 
-config = {1}
-
-print(cls.config[1])
+print(t[nil])

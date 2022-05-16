@@ -47,12 +47,23 @@ require("gist/Lua/lib/table_ext")
 -- print(cls.getAge(20190602))
 -- print(cls.getAge(20190603))
 
-local date = os.date("!*t", 1630567684)
-
-local now = os.time()
-
-for i = 1, 10 do
-    print(os.date("%w",now + (i)*86400))
+function GFunction_GetMonthExcl(timestamp)
+    local today = os.date("!*t", timestamp)
+    return today.year * 100 + today.month
 end
 
--- print(table.stringify(date))
+function GFunction_GetMonth(timestamp)
+    local today = os.date("*t", timestamp)
+    return today.year * 100 + today.month
+end
+
+-- local date = os.date("!*t", 1630567684)
+
+local now = 1651363200
+
+-- for i = 1, 10 do
+--     print(os.date("%w",now + (i)*86400))
+-- end
+
+print(GFunction_GetMonthExcl(now))
+print(GFunction_GetMonth(now))
