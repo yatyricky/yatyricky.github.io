@@ -5,3 +5,7 @@ end
 math.round = function(value)
     return math.floor(value + 0.5)
 end
+
+math.fuzzySqrt = function(value)
+    
+end

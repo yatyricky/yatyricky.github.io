@@ -442,34 +442,36 @@ function table.toJSON(tab)
     local function parsePrimitive(o)
         local to = type(o)
         if to == "string" then
-            return '"' .. o .. '"'
+            return "\"" .. o .. "\""
         end
         local so = tostring(o)
         if to == "function" then
-            return '"' .. so .. '"'
+            return "\"" .. so .. "\""
         else
             return so
         end
     end
-    local function parseTable(t, cached)
+    local function parseTable(t, cached, p)
         if type(t) ~= "table" then
             return parsePrimitive(t)
         end
         cached = cached or {}
-        local str = tostring(t)
-        if cached[str] then
-            return '"_ ref ' .. str .. '"'
+        p = p or "/"
+        local tc = cached[t]
+        if tc then
+            return "\"ref: " .. tc .. "\""
         end
-        cached[str] = true
+        cached[t] = p
         local items = {}
         for k, v in pairs(t) do
-            local ks
+            local ks = tostring(k)
+            local key
             if type(k) == "number" then
-                ks = "[" .. k .. "]"
+                key = "\"[" .. ks .. "]\""
             else
-                ks = tostring(k)
+                key = "\"" .. ks .. "\""
             end
-            table.insert(items, ks .. "=" .. parseTable(v, cached))
+            table.insert(items, key .. ":" .. parseTable(v, cached, p .. ks .. "/"))
         end
         return "{" .. table.concat(items, ",") .. "}"
     end
@@ -772,4 +774,12 @@ function table.imap(t, func)
         ret[i] = func(i, v)
     end
     return ret
+end
+
+function table.reduce(t, func, init)
+    init = init or 0
+    for k, v in pairs(t) do
+        init = func(k, v, init)
+    end
+    return init
 end

@@ -1,19 +1,26 @@
-local a = true
-local b = false
+require("gist.Lua.lib.table_ext")
 
-local function fun(a, b)
-if a and b then
-    return "both true"
-elseif a then
-    return "b false"
-elseif b then
-    return "a false"
-else
-    return "both false"
-end
+function table_mulTable(t, o)
+    for k, v in pairs(t) do
+        local m = o[k]
+        if m ~= nil then
+            t[k] = v * m
+        end
+    end
 end
 
-print(fun(true, true) == "both true")
-print(fun(true, false) == "b false")
-print(fun(false, true) == "a false")
-print(fun(false, false) == "both false")
+local a = {
+    x = 1,
+    y = 0.5,
+    w = 66
+}
+print(table.toJSON(a))
+
+local m = {
+    x = 0.5,
+    w = 0.5
+}
+
+table_mulTable(a, m)
+
+print(table.toJSON(a))

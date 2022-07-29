@@ -1,0 +1,94 @@
+<html>
+
+<body>
+    <input type="range" min="0" max="100" value="50" class="slider" id="myRange" onchange="render()">
+    <canvas id="myCanvas" width="800" height="800"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    let slider = document.getElementById("myRange")
+
+    function clamp(v) {
+        return Math.max(Math.min(v, 1), 0)
+    }
+
+    function getSign(x) {
+        return x >= 0 ? 1 : -1
+    }
+
+    function norm1(x) {
+        return x > 0.5 ? 0.5 : 0
+    }
+
+    let i2c_out = [0, 0]
+
+    function i2c(i, o) {
+        let i1 = (10 + o - i) % 8
+        let a1 = i1 * 0.125 * Math.PI * 2
+        let x1 = Math.cos(a1)
+        let y1 = Math.sin(a1)
+        let signX1 = getSign(x1)
+        let signY1 = getSign(y1)
+        let absX1 = Math.abs(x1)
+        let absY1 = Math.abs(y1)
+        let nX1 = norm1(absX1)
+        let nY1 = norm1(absY1)
+        let mulX1 = nX1 * signX1
+        let mulY1 = nY1 * signY1
+        let lX1 = mulX1 + 0.5
+        let lY1 = 0.5 - mulY1
+        i2c_out[0] = lX1
+        i2c_out[1] = lY1
+    }
+
+    let polar_out = [0, 0]
+
+    function polar(x2, y2, x1, y1) {
+        polar_out[0] = ((x2 * 2) | 0) - ((x1 * 2) | 0)
+        polar_out[1] = ((y2 * 2) | 0) - ((y1 * 2) | 0)
+    }
+
+    function render() {
+        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        let p = parseInt(slider.value) / 100
+        const r = 100
+        const q = Math.PI / 4
+        const s = r / 2 * Math.sqrt(2)
+
+        for (let i = 1; i <= 8; i++) {
+            let a = i * 0.125
+            let a125 = (i - 1) * 0.125
+            if (p < a) {
+                ctx.beginPath();
+                ctx.moveTo(r / 2, r / 2);
+                // p1
+                i2c(i, 0)
+                let ox1 = i2c_out[0]
+                let oy1 = i2c_out[1]
+                ctx.lineTo(ox1 * r, oy1 * r);
+                // p2
+                let angle = clamp((p - a125) / 0.125) * q
+                let d = Math.sin(angle) * s
+                i2c(i, 1)
+                let cx1 = i2c_out[0]
+                let cy1 = i2c_out[1]
+                polar(ox1, oy1, cx1, cy1)
+                ctx.lineTo(cx1 * r + d * polar_out[0], cy1 * r + d * polar_out[1]);
+                ctx.fill();
+            }
+        }
+    }
+
+    // slider.addEventListener("onchange", (ev) => render)
+    slider.addEventListener("mousemove", (ev) => {
+        const x = ev.pageX - ev.currentTarget.offsetLeft;
+        const y = ev.pageY - ev.currentTarget.offsetTop;
+        slider.value = (x / 128 * 100).toString()
+        render()
+    })
+    render()
+
+</script>
+
+</html>
