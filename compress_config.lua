@@ -1,5 +1,17 @@
-local bit = require("bit")
-local t = require("big_config")
+local old_require = require
+
+function require(mod)
+    if mod == "MemorySafe.SafeNumber" then
+        return function (val)
+            return {
+                _is_safe = true,
+                _value = val
+            }
+        end
+    end
+
+    return old_require(mod)
+end
 
 -- string:      stext
 -- bool:        b1
@@ -99,9 +111,16 @@ local function convert(tab)
     end
 end
 
-convert(t.config)
+local was_meta = {}
 
-print(">>> report stores " .. tostring(count))
+function setmetatable(any)
+    was_meta[convert(any)] = 1
+    return any
+end
+
+local t = require("big_config")
+
+convert(t.Item)
 
 local k2v = {}
 local keys = {}
@@ -114,12 +133,6 @@ end
 table.sort(keys, function(a, b)
     return tonumber(string.sub(a, 5)) < tonumber(string.sub(b, 5))
 end)
-
--- for _, key in ipairs(keys) do
---     print(key, k2v[key])
--- end
-
-print("<<< report stores")
 
 local function restore_base(val)
     if string.sub(val, 1, 3) == "___" then
@@ -177,10 +190,16 @@ end
 -- emit code
 print("local t = {}")
 for i, to_rest in ipairs(to_restore) do
-    print("t[" .. tostring(i) .. "] = " .. restore(to_rest))
+    local expr = restore(to_rest)
+    if was_meta["___t" .. tostring(i)] then
+        expr = "setmetatable(" .. expr .. ", __meta__)"
+    end
+    print("t[" .. tostring(i) .. "] = " .. expr)
 end
 
-print(t.config)
+for key, value in pairs(was_meta) do
+    print(key, value)
+end
 
 -- print(get_signature(t))
 -- print(get_signature(t.config[3].map))
