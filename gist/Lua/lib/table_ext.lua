@@ -1,10 +1,16 @@
-require("gist/Lua/lib/global")
-local Random = require("gist/Lua/lib/Random")
+require("gist.Lua.lib.global")
+local Random = require("gist.Lua.lib.Random")
+require("gist.Lua.lib.math_ext")
 
 local t_insert = table.insert
+local m_clamp = math.clamp
 
 function table.isEmpty(t)
     return next(t) == nil
+end
+
+local function esc(str)
+    return string.gsub(str, "\\", "/")
 end
 
 function table.show(t, name, indent, nice)
@@ -27,7 +33,7 @@ function table.show(t, name, indent, nice)
                 return string.format("%q", so .. ":C function")
             else
                 -- the information is defined through lines
-                return string.format("%q", so .. ":(" .. info.linedefined .. "-" .. info.lastlinedefined .. ")" .. info.source)
+                return esc(fts(o))
             end
         elseif type(o) == "number" or type(o) == "boolean" then
             return so
@@ -81,19 +87,21 @@ end
 ---@generic T
 ---@param tab T[]
 ---@param from number Optional One-based index at which to begin extraction.
----@param to number Optional One-based index before which to end extraction.
----@param shallow boolean Optional Performs shallow copy on table or not.
+---@param to number | nil Optional One-based index before which to end extraction.
+---@param deep boolean | nil Optional Performs shallow copy on table or not.
 ---@return T[]
-function table.slice(tab, from, to, shallow)
-    from = from and math.clamp(from, 1, #tab + 1) or 1
-    to = to and math.clamp(to, 1, #tab) or #tab
+function table.slice(tab, from, to, deep)
+    local len = #tab
+    from = from and m_clamp(from, 1, len + 1) or 1
+    to = to and m_clamp(to, 1, len) or len
     local result = {}
     for i = from, to, 1 do
-        if tab[i] then
-            if type(tab[i]) ~= "table" or shallow then
-                table.insert(result, tab[i])
+        local it = tab[i]
+        if it then
+            if type(it) == "table" and deep then
+                t_insert(result, clone(it))
             else
-                table.insert(result, clone(tab[i]))
+                t_insert(result, it)
             end
         end
     end
@@ -446,7 +454,7 @@ function table.toJSON(tab)
         end
         local so = tostring(o)
         if to == "function" then
-            return "\"" .. so .. "\""
+            return "\"" .. esc(fts(o)) .. "\""
         else
             return so
         end
@@ -466,8 +474,11 @@ function table.toJSON(tab)
         for k, v in pairs(t) do
             local ks = tostring(k)
             local key
-            if type(k) == "number" then
+            local tk = type(k)
+            if tk == "number" then
                 key = "\"[" .. ks .. "]\""
+            elseif tk == "function" then
+                key = "\"" .. esc(fts(k)) .. "\""
             else
                 key = "\"" .. ks .. "\""
             end
@@ -782,4 +793,19 @@ function table.reduce(t, func, init)
         init = func(k, v, init)
     end
     return init
+end
+
+function table.range(a, b, c)
+    if a == nil then
+        a, b, c = 1, 10, 1
+    elseif b == nil then
+        a, b, c = 1, a, 1
+    elseif c == nil then
+        c = 1
+    end
+    local r = {}
+    for i = a, b, c do
+        table.insert(r, i)
+    end
+    return r
 end

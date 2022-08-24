@@ -391,3 +391,34 @@ end
 function SafeNumber(v)
     return v
 end
+
+function fts(fn)
+    local info = debug.getinfo(fn, "S")
+    return string.format("fn%s:%s-%s", info.source, info.linedefined, info.lastlinedefined)
+end
+
+local filter = {
+    bind = 1,
+    unbind = 1,
+    unbindPaths = 1,
+    unbindContext = 1,
+    insert = 1,
+    remove = 1,
+    len = 1,
+    pairs = 1,
+    ipairs = 1,
+}
+
+function bountable2s(t)
+    if type(t) == "table" then
+        local tb = {}
+        for key, value in pairs(t) do
+            if not filter[key] then
+                tb[key] = bountable2s(value)
+            end
+        end
+        return tb
+    else
+        return t
+    end
+end
