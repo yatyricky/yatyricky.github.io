@@ -23,13 +23,10 @@ Assets
 ┃  ┣━ Config_bl
 ┃  ┗━ Config_wx
 ┣━ LuaFramework
-┃  ┣━ config
-┃  ┃  ┣━ ExportData
-┃  ┃  ┣━ ExportData_cn
-┃  ┃  ┣━ ExportData_bl
-┃  ┃  ┗━ ExportData_wx
-┃  ┣━ LuaV1
-┃  ┗━ LuaV2
+┃  ┣━ Config
+┃  ┃  ┗━ ExportData*
+┃  ┣━ Lua*
+┃  ┗━ ToLua
 ┣━ LoadResources
 ┃  ┣━ game
 ┃  ┃  ┣━ bullet*
