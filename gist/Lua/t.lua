@@ -1,6 +1,11 @@
-require("gist.Lua.lib.global")
-require("gist.Lua.lib.table_ext")
+local t = setmetatable({}, {
+    __index = function (t, k)
+        print("indexed")
+        return 3
+    end
+})
 
-local tab = {1,2,3,4,5}
-
-print(table.concat(table.slice(tab, 3), ","))
+for i = 1, t.len, 1 do
+    print("iter" .. tostring(i))
+end
+end
