@@ -1,11 +1,10 @@
-local t = setmetatable({}, {
-    __index = function (t, k)
-        print("indexed")
-        return 3
-    end
-})
+local Vector3 = require("gist.Lua.lib.Vector3")
 
-for i = 1, t.len, 1 do
-    print("iter" .. tostring(i))
-end
-end
+local v1 = Vector3.new(3,1,4)
+local norm = Vector3.new(0,0,1)
+
+local proj = Vector3.Project(v1, norm)
+local projPlane = Vector3.ProjectOnPlane(v1, norm)
+
+print(proj:tostring())
+print(projPlane:tostring())
