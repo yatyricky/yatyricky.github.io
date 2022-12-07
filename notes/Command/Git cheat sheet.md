@@ -88,4 +88,5 @@ done
 	ck = checkout
 	rs = reset --
 	cf = clean -f
+	find = grep -w -n
 ```
