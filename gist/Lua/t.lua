@@ -1,14 +1,10 @@
-require("gist.Lua.lib.math_ext")
-require("gist.Lua.lib.table_ext")
+local Vector3 = require("gist.Lua.lib.Vector3")
 
-local f = { [2] = 10,[40]=20,[90]=40 }
+local v1 = Vector3.new(3,1,4)
+local norm = Vector3.new(0,0,1)
 
-local sum = 0
+local proj = Vector3.Project(v1, norm)
+local projPlane = Vector3.ProjectOnPlane(v1, norm)
 
-for i = 1, 100 do
-    local res = math.piecewiseFunc(f, i)
-    print(tostring(i) .. "," .. tostring(res))
-    sum = sum + res
-end
-
-print("exp="..tostring(sum / 100))
+print(proj:tostring())
+print(projPlane:tostring())
