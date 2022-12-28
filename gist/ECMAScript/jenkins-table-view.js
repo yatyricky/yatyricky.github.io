@@ -22,6 +22,21 @@ const cols = [
     "PATCH_PLATFORM_MODE",
     "PATCH_VERSION",
     "PATCH_COMMIT",
+    "CURRENTBRANCH",
+    "DebugOrRelease",
+    "ISDEBUG",
+    "CURRENTVERSION",
+    "CHANNEL",
+    "DOUBLECHANNEL",
+    "CURRENTCHANNEL",
+    "IS_NHP_ENC_AB",
+    "ISBUNDLE",
+    "ISONLYBUILDLUA",
+    "ISFIRMAPK",
+    "ISUPLOADUPX",
+    "ISEXPORTPORJECT",
+    "ISBUILD32",
+    "JENKINS_ROT",
 ]
 
 let max = 1200
@@ -31,8 +46,12 @@ if (process.argv.length === 3) {
     try {
         max = parseInt(process.argv[2], 10)
     } catch (error) {
-        console.log("node jenkins-table-view 1-1000")
+        console.log("node jenkins-table-view 5000")
+        process.exit(1)
     }
+} else {
+    console.log("node jenkins-table-view 5000")
+    process.exit(1)
 }
 
 function g(obj, dft, ...stringLiterals) {
@@ -67,7 +86,7 @@ async function exec() {
             }
             const parts = lineRaw.trim().split(",")
             if (parts.length !== cols.length) {
-                throw new Error("mismatch")
+                continue
             }
             if (parts[0] === "JOB_NUMBER") {
                 continue
@@ -86,9 +105,10 @@ async function exec() {
 
     for (let build = min; build <= max; build++) {
         if (existsMap[build.toString()]) {
+            console.log(`Skip requested build ${build}`)
             continue
         }
-        const url = `http://192.168.199.180:8080/pack/app/job/barrett/${build}/api/json`
+        const url = `http://192.168.20.19:8080/pack/app/job/barrett_new/${build}/api/json`
         let resp
         try {
             resp = await axios.default.get(url, {
@@ -124,6 +144,7 @@ async function exec() {
             }
             all.push(paramObj)
         } catch (error) {
+            console.log(`\u001B[31mRequest failed. Build: ${build}\u001B[0m`)
             all.push({
                 JOB_NUMBER: build,
                 USER: "NO_JOB"

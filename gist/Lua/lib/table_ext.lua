@@ -809,3 +809,14 @@ function table.range(a, b, c)
     end
     return r
 end
+
+function table.reverse(t)
+    local len = #t
+    local n = math.floor(len / 2)
+    for i = 1, n do
+        local j = len - i + 1
+        local tmp = t[j]
+        t[j] = t[i]
+        t[i] = tmp
+    end
+end
