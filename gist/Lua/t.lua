@@ -1,10 +1,20 @@
-local Vector3 = require("gist.Lua.lib.Vector3")
+require("gist/Lua/lib/string_ext")
 
-local v1 = Vector3.new(3,1,4)
-local norm = Vector3.new(0,0,1)
+local function min0(v)
+    return v < 0 and 0 or v
+end
 
-local proj = Vector3.Project(v1, norm)
-local projPlane = Vector3.ProjectOnPlane(v1, norm)
+print(string.splitFirst("65535_adf", "_"))
+print(string.splitFirst("", "_"))
+print(string.splitFirst("65535_adf_zzz", "_"))
+print(string.splitFirst("65535", "_"))
+print(string.splitFirst("766_", "_"))
+print(string.splitFirst("-65535", "_"))
+print(string.splitFirst("-766_", "_"))
+print(string.splitFirst("_999_", "_"))
+print(string.splitFirst("itemset", "_"))
 
-print(proj:tostring())
-print(projPlane:tostring())
+-- print(min0(-1))
+-- print(min0(-0))
+-- print(min0(0))
+-- print(min0(1))

@@ -17,6 +17,17 @@ function string.split(inputstr, sep)
     return t
 end
 
+function string.splitFirst(inputstr, sep)
+    if string.len(inputstr) == 0 then
+        return ""
+    end
+    sep = sep or "%s"
+    for field in string.gmatch(inputstr, "([^" .. sep .. "]*)(" .. sep .. "?)") do
+        return field
+    end
+    return ""
+end
+
 function string.start_with(str1, str2)
     return string.sub(str1, 1, #str2) == str2
 end
