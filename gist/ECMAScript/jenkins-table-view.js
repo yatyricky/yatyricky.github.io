@@ -108,7 +108,7 @@ async function exec() {
             console.log(`Skip requested build ${build}`)
             continue
         }
-        const url = `http://192.168.20.19:8080/pack/app/job/barrett_new/${build}/api/json`
+        const url = `http://192.168.30.6:8080/job/barrett_new/${build}/api/json`
         let resp
         try {
             resp = await axios.default.get(url, {
