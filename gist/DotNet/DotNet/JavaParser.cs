@@ -40,8 +40,23 @@ namespace DotNet
             "Utils",
         };
 
+        // earth(str), water(agi), fire(int), air(fai)
+        // strike(str) (+armor, -fat), slash(str+agi) (+no_armor, -armor), thrust(agi) (+fat, -no_fat)
+        // upg only adds talents
         private static NBAPI javaAPI;
 
+        // mace, strike, slow-fast
+        // great mace, strike, slow-slow
+        // sword, slash, moderate-moderate
+        // great sword, slash/ strike, moderate-slow
+        // rapier, thrust, fast-fast
+        // axe, slash, fast-slow
+        // great axe, slash, moderate-slow
+        // bow, thrust
+        // great bow, thrust
+        // cross bow, thrust
+        // wand, strike, on swing: xx
+        // staff, strike, on swing: xx
         private static Type ParseJavaType(string str)
         {
             switch (str)
@@ -54,6 +69,24 @@ namespace DotNet
             }
         }
 
+        // on swing, chance:
+        // on strike, chance:
+        // every x seconds:
+
+        // fire missile
+        // burn
+        // poison
+        // summon
+        // damage
+        // heal
+        // add attr
+        // add buff
+        // remove buff
+        // forced move(blink, tp)
+        // threat
+        // cast spell
+        // extend buff
+        // cooldown
         private static Dictionary<string, NBMethod> ParseJavaToClass(string source)
         {
             var cls = new Dictionary<string, NBMethod>();
