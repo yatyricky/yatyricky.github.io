@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",
+    "prompt-sync": "^4.2.0",
     "xlsx": "^0.17.2"
   }
 }

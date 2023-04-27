@@ -271,6 +271,9 @@ namespace DotNet
             Console.WriteLine(fp2);
             Console.WriteLine(Path.GetFullPath(fp1));
             Console.WriteLine(Path.GetFullPath(fp2));
+
+            Console.WriteLine("What hast thou done?");
+
             //ConditionalWeakTable();
             //WeakArray();
             //TestManualAllocFree();
