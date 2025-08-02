@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 二十四条常犯的逻辑谬误
-categories: [misc]
+categories: [logic]
 source: 果壳网
 ---
 

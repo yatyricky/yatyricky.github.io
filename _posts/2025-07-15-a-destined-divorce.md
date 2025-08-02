@@ -6,7 +6,7 @@ source: https://www.bilibili.com/video/BV1oJuEz9EmP
 author: 知遇心理
 ---
 
-> 原帖为视频媒体，我使用[网易见外](https://jianwai.youdao.com/)平台将视频语音解析为文字，放在这里。原视频著名“未经作者授权，禁止转载”。  
+> 原帖为视频媒体，我使用[网易见外](https://jianwai.youdao.com/)平台将视频语音解析为文字，放在这里。原视频著明“未经作者授权，禁止转载”。  
 > 以下是正文：
 
 夫妻会不会离婚，其实从一开始就能预判。
