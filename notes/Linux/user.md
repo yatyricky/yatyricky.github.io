@@ -193,3 +193,12 @@ ssh nef-root
 4. 定期轮换密钥：建议每 3-6 个月更新一次密钥对
 
 💡 最佳实践：使用 sudo 而非 su，配置 NOPASSWD 避免记忆 root 密码，同时通过 sudo 日志保留完整的操作审计轨迹。这样既安全又方便，是生产环境的标配做法。
+
+```bash
+ensure_user() {
+    if ! id -u "$frp_user" >/dev/null 2>&1; then
+        echo "Creating system user '$frp_user'..."
+        sudo useradd --system --no-create-home --shell /usr/sbin/nologin "$frp_user"
+    fi
+}
+```
