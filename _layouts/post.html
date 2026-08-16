@@ -15,7 +15,11 @@ layout: default
     <p class="post-source">Source: {{ page.source }}</p>
   {% endif %}
   
-  {{ content }}
+  {% if page.cipher %}
+    {% include encrypted-post.html %}
+  {% else %}
+    {{ content }}
+  {% endif %}
   {% include comments.html %}
 </article>
 

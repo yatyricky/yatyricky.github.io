@@ -1,0 +1,103 @@
+<div id="enc-data" hidden>{{ page.cipher }}</div>
+<div id="enc-ui" style="margin:2rem 0;">
+  <input type="password" id="enc-key" placeholder="输入口令" autocomplete="off"
+         style="font-size:1rem;padding:.35rem .5rem;border:1px solid #dbdbdb;border-radius:2px;">
+  <button type="button" id="enc-btn" style="font-size:1rem;padding:.35rem .9rem;">解密</button>
+  <span id="enc-msg" style="margin-left:.6rem;color:#c00;"></span>
+</div>
+<div id="enc-out" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  // ---- enc core: keep byte-identical with crypt.js ----
+  var ENC_ITER = 150000;
+
+  function b64uToBytes(s) {
+    s = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  function bytesToB64u(bytes) {
+    var bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  async function deriveKey(password, salt, iter) {
+    var mat = await crypto.subtle.importKey(
+      'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', hash: 'SHA-256', salt: salt, iterations: iter },
+      mat, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  }
+
+  async function encryptText(password, text, iter) {
+    iter = iter || ENC_ITER;
+    var salt = crypto.getRandomValues(new Uint8Array(16));
+    var iv = crypto.getRandomValues(new Uint8Array(12));
+    var key = await deriveKey(password, salt, iter);
+    var ct = new Uint8Array(await crypto.subtle.encrypt(
+      { name: 'AES-GCM', iv: iv }, key, new TextEncoder().encode(text)));
+    return 'ENC1.' + bytesToB64u(salt) + '.' + bytesToB64u(iv) + '.' + bytesToB64u(ct);
+  }
+
+  async function decryptText(password, envelope, iter) {
+    iter = iter || ENC_ITER;
+    var parts = envelope.trim().split('.');
+    if (parts.length !== 4 || parts[0] !== 'ENC1') throw new Error('bad envelope');
+    var key = await deriveKey(password, b64uToBytes(parts[1]), iter);
+    var pt = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv: b64uToBytes(parts[2]) }, key, b64uToBytes(parts[3]));
+    return new TextDecoder().decode(pt);
+  }
+  // ---- end enc core ----
+
+  var data = document.getElementById('enc-data').textContent.trim();
+  var ui = document.getElementById('enc-ui');
+  var input = document.getElementById('enc-key');
+  var btn = document.getElementById('enc-btn');
+  var msg = document.getElementById('enc-msg');
+  var out = document.getElementById('enc-out');
+
+  async function decrypt(pw) {
+    btn.disabled = true;
+    btn.textContent = '解密中…';
+    msg.textContent = '';
+    try {
+      var text = await decryptText(pw, data);
+      if (typeof marked !== 'undefined') {
+        out.innerHTML = marked.parse(text);
+      } else { // CDN unreachable: fall back to escaped plain text
+        out.innerHTML = '<pre>' + text.replace(/[&<>]/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
+        }) + '</pre>';
+      }
+      out.hidden = false;
+      ui.hidden = true;
+      try { sessionStorage.setItem('enc-key', pw); } catch (e) {}
+    } catch (e) {
+      msg.textContent = '口令错误';
+      try { sessionStorage.removeItem('enc-key'); } catch (e) {}
+    }
+    btn.disabled = false;
+    btn.textContent = '解密';
+  }
+
+  btn.addEventListener('click', function () { decrypt(input.value); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); decrypt(input.value); }
+  });
+
+  var saved;
+  try { saved = sessionStorage.getItem('enc-key'); } catch (e) {}
+  if (saved) {
+    input.value = saved;
+    decrypt(saved);
+  }
+})();
+</script>
